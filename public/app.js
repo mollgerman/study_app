@@ -95,11 +95,13 @@ function renderShell() {
       </header>
       <nav class="tabs">
         ${tabButton("practice", "Practice")}
+        ${tabButton("ultimate", "Ultimate")}
         ${tabButton("past", "Past Exam")}
         ${tabButton("missed", "Missed")}
         ${tabButton("stats", "Scores")}
       </nav>
       ${state.tab === "practice" ? practiceView() : ""}
+      ${state.tab === "ultimate" ? ultimateView() : ""}
       ${state.tab === "past" ? pastView() : ""}
       ${state.tab === "missed" ? missedView() : ""}
       ${state.tab === "stats" ? statsView() : ""}
@@ -166,6 +168,32 @@ function topicList() {
         </div>
       `).join("")}
     </div>
+  `;
+}
+
+function ultimateView() {
+  return `
+    <section class="grid">
+      <aside class="panel">
+        <h2>Ultimate</h2>
+        <div class="setup">
+          <label>Questions per set
+            ${sizeSegments()}
+          </label>
+          <button class="btn primary" id="start-ultimate">Start ultimate set</button>
+          ${state.error ? `<p class="error">${escapeHtml(state.error)}</p>` : ""}
+        </div>
+      </aside>
+      <div class="panel">
+        <h2>Priority 200</h2>
+        <div class="stats-row">
+          <div class="metric"><strong>200</strong><span>priority questions</span></div>
+          <div class="metric"><strong>104</strong><span>covered topics</span></div>
+          <div class="metric"><strong>Mix</strong><span>past-style and lecture</span></div>
+          <div class="metric"><strong>Why</strong><span>explained answers</span></div>
+        </div>
+      </div>
+    </section>
   `;
 }
 
@@ -343,6 +371,7 @@ function bindShell() {
     state.topic = event.target.value;
   });
   document.querySelector("#start-practice")?.addEventListener("click", () => startPractice(state.mode));
+  document.querySelector("#start-ultimate")?.addEventListener("click", () => startPractice("ultimate"));
   document.querySelector("#start-past")?.addEventListener("click", () => startPractice("past_exam"));
   document.querySelector("#start-missed")?.addEventListener("click", () => startPractice("missed"));
 }

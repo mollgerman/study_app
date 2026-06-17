@@ -1,0 +1,5438 @@
+[
+  {
+    "id": "SIM-001",
+    "group": "past_exam_style_generated",
+    "topic": "Functions and default arguments",
+    "question": "Given def f(x=5, y=7): pass, the call f() is valid Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because both parameters have default values, so no argument is required.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because both parameters have default values, so no argument is required.",
+    "whyCorrect": "The correct answer is \"True\" because both parameters have default values, so no argument is required.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-002",
+    "group": "past_exam_style_generated",
+    "topic": "Functions and default arguments",
+    "question": "Given def f(x=5, y=7): pass, the call f(3) is valid Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the positional argument 3 is assigned to x; y keeps its default.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the positional argument 3 is assigned to x; y keeps its default.",
+    "whyCorrect": "The correct answer is \"True\" because the positional argument 3 is assigned to x; y keeps its default.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-003",
+    "group": "past_exam_style_generated",
+    "topic": "Functions and default arguments",
+    "question": "Given def f(x=5, y=7): pass, the call f(y=3) is valid Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because keyword arguments can specify only one parameter when others have defaults.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because keyword arguments can specify only one parameter when others have defaults.",
+    "whyCorrect": "The correct answer is \"True\" because keyword arguments can specify only one parameter when others have defaults.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-004",
+    "group": "past_exam_style_generated",
+    "topic": "Functions and default arguments",
+    "question": "Given def f(x=5, y=7): pass, the call f(y=3, x=1) is valid Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because keyword arguments can be reordered.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because keyword arguments can be reordered.",
+    "whyCorrect": "The correct answer is \"True\" because keyword arguments can be reordered.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-005",
+    "group": "past_exam_style_generated",
+    "topic": "Functions and arguments",
+    "question": "Given def f(a, b): pass, the call f(6) sets b to 0 automatically.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because b has no default value, so Python raises TypeError.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because b has no default value, so Python raises TypeError.",
+    "whyCorrect": "The correct answer is \"False\" because b has no default value, so Python raises TypeError.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-006",
+    "group": "past_exam_style_generated",
+    "topic": "Functions and arguments",
+    "question": "Given def f(a, b=0): pass, the call f(6) is valid Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because a receives 6 and b uses its default value 0.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because a receives 6 and b uses its default value 0.",
+    "whyCorrect": "The correct answer is \"True\" because a receives 6 and b uses its default value 0.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-007",
+    "group": "past_exam_style_generated",
+    "topic": "Functions and arguments",
+    "question": "The definition def f(a=1, b): pass is valid Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because a non-default parameter cannot follow a default parameter.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because a non-default parameter cannot follow a default parameter.",
+    "whyCorrect": "The correct answer is \"False\" because a non-default parameter cannot follow a default parameter.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-008",
+    "group": "past_exam_style_generated",
+    "topic": "Functions and arguments",
+    "question": "In Python, positional arguments must always appear before keyword arguments in a function call.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because after using a keyword argument, following arguments must also be keyword arguments.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because after using a keyword argument, following arguments must also be keyword arguments.",
+    "whyCorrect": "The correct answer is \"True\" because after using a keyword argument, following arguments must also be keyword arguments.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-009",
+    "group": "past_exam_style_generated",
+    "topic": "Functions and arguments",
+    "question": "The call f(a=1, 2) is valid Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because a positional argument cannot follow a keyword argument.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because a positional argument cannot follow a keyword argument.",
+    "whyCorrect": "The correct answer is \"False\" because a positional argument cannot follow a keyword argument.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-010",
+    "group": "past_exam_style_generated",
+    "topic": "Functions and arguments",
+    "question": "The call f(1, b=2) can be valid if f has parameters a and b.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because a positional argument may be followed by a keyword argument.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because a positional argument may be followed by a keyword argument.",
+    "whyCorrect": "The correct answer is \"True\" because a positional argument may be followed by a keyword argument.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-011",
+    "group": "past_exam_style_generated",
+    "topic": "Functions and return",
+    "question": "A Python function without a return statement returns None.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because python returns None implicitly when no return value is provided.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because python returns None implicitly when no return value is provided.",
+    "whyCorrect": "The correct answer is \"True\" because python returns None implicitly when no return value is provided.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-012",
+    "group": "past_exam_style_generated",
+    "topic": "Functions and return",
+    "question": "The return statement can send a value back from a function.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because return exits the function and provides its result.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because return exits the function and provides its result.",
+    "whyCorrect": "The correct answer is \"True\" because return exits the function and provides its result.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-013",
+    "group": "past_exam_style_generated",
+    "topic": "Functions and return",
+    "question": "Code after return in the same function block is normally executed before the function exits.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because after return, the function exits immediately.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because after return, the function exits immediately.",
+    "whyCorrect": "The correct answer is \"False\" because after return, the function exits immediately.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-014",
+    "group": "past_exam_style_generated",
+    "topic": "Functions and pass",
+    "question": "The pass keyword can be used as an empty function body.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because pass is a no-operation statement used as a placeholder.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because pass is a no-operation statement used as a placeholder.",
+    "whyCorrect": "The correct answer is \"True\" because pass is a no-operation statement used as a placeholder.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-015",
+    "group": "past_exam_style_generated",
+    "topic": "Type hints",
+    "question": "Python type hints are normally enforced by the interpreter at runtime like Java types.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because type hints are annotations; Python can ignore them at runtime.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because type hints are annotations; Python can ignore them at runtime.",
+    "whyCorrect": "The correct answer is \"False\" because type hints are annotations; Python can ignore them at runtime.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-016",
+    "group": "past_exam_style_generated",
+    "topic": "Type hints",
+    "question": "def add(a: int, b: int) -> int: is valid Python syntax.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because function parameters and return values can have type annotations.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because function parameters and return values can have type annotations.",
+    "whyCorrect": "The correct answer is \"True\" because function parameters and return values can have type annotations.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-017",
+    "group": "past_exam_style_generated",
+    "topic": "Static checking",
+    "question": "mypy can be used to check Python type hints statically.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because mypy is a static type checker for Python.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because mypy is a static type checker for Python.",
+    "whyCorrect": "The correct answer is \"True\" because mypy is a static type checker for Python.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-018",
+    "group": "past_exam_style_generated",
+    "topic": "Dynamic typing",
+    "question": "A variable can refer to an int first and later refer to a string in Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because python variables are dynamically typed references.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because python variables are dynamically typed references.",
+    "whyCorrect": "The correct answer is \"True\" because python variables are dynamically typed references.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-019",
+    "group": "past_exam_style_generated",
+    "topic": "Strong typing",
+    "question": "The expression 2 + '2' evaluates to 4 in Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because python does not automatically convert the string '2' to int for addition.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because python does not automatically convert the string '2' to int for addition.",
+    "whyCorrect": "The correct answer is \"False\" because python does not automatically convert the string '2' to int for addition.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-020",
+    "group": "past_exam_style_generated",
+    "topic": "Strong typing",
+    "question": "The expression 2 + int('2') evaluates to 4 in Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because int('2') converts the string to an integer.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because int('2') converts the string to an integer.",
+    "whyCorrect": "The correct answer is \"True\" because int('2') converts the string to an integer.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-021",
+    "group": "past_exam_style_generated",
+    "topic": "Strings",
+    "question": "Python strings are mutable, so s[0] = 'A' is valid.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because strings are immutable in Python.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because strings are immutable in Python.",
+    "whyCorrect": "The correct answer is \"False\" because strings are immutable in Python.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-022",
+    "group": "past_exam_style_generated",
+    "topic": "Strings",
+    "question": "There is no separate character type in Python; a character is a string of length 1.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because python uses str objects for both strings and single characters.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because python uses str objects for both strings and single characters.",
+    "whyCorrect": "The correct answer is \"True\" because python uses str objects for both strings and single characters.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-023",
+    "group": "past_exam_style_generated",
+    "topic": "String literals",
+    "question": "The expression 'abc' 'def' creates the string 'abcdef'.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because adjacent string literals are concatenated by Python.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because adjacent string literals are concatenated by Python.",
+    "whyCorrect": "The correct answer is \"True\" because adjacent string literals are concatenated by Python.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-024",
+    "group": "past_exam_style_generated",
+    "topic": "String literals",
+    "question": "Triple-quoted strings can contain multiple lines.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because triple quotes allow multi-line string literals.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because triple quotes allow multi-line string literals.",
+    "whyCorrect": "The correct answer is \"True\" because triple quotes allow multi-line string literals.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-025",
+    "group": "past_exam_style_generated",
+    "topic": "String conversion",
+    "question": "str(34) returns the string '34'.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because str() converts an object to its string representation.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because str() converts an object to its string representation.",
+    "whyCorrect": "The correct answer is \"True\" because str() converts an object to its string representation.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-026",
+    "group": "past_exam_style_generated",
+    "topic": "String formatting",
+    "question": "f'Hello {name}!' is an f-string in Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because f-strings use expressions inside braces.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because f-strings use expressions inside braces.",
+    "whyCorrect": "The correct answer is \"True\" because f-strings use expressions inside braces.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-027",
+    "group": "past_exam_style_generated",
+    "topic": "String formatting",
+    "question": "'Hello {}'.format('World') returns 'Hello World'.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because format() substitutes arguments into placeholders.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because format() substitutes arguments into placeholders.",
+    "whyCorrect": "The correct answer is \"True\" because format() substitutes arguments into placeholders.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-028",
+    "group": "past_exam_style_generated",
+    "topic": "String methods",
+    "question": "' too long '.strip() returns 'too long'.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because strip() removes surrounding whitespace.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because strip() removes surrounding whitespace.",
+    "whyCorrect": "The correct answer is \"True\" because strip() removes surrounding whitespace.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-029",
+    "group": "past_exam_style_generated",
+    "topic": "String methods",
+    "question": "'apples and pears'.split() returns ['apples', 'and', 'pears'].",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because split() without arguments separates on whitespace.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because split() without arguments separates on whitespace.",
+    "whyCorrect": "The correct answer is \"True\" because split() without arguments separates on whitespace.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-030",
+    "group": "past_exam_style_generated",
+    "topic": "String methods",
+    "question": "' and '.join(['apples', 'pears']) returns 'apples and pears'.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because join() inserts the separator between list elements.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because join() inserts the separator between list elements.",
+    "whyCorrect": "The correct answer is \"True\" because join() inserts the separator between list elements.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-031",
+    "group": "past_exam_style_generated",
+    "topic": "String methods",
+    "question": "s.replace('a', 'b') modifies the original string object s in place.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because strings are immutable; replace() returns a new string.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because strings are immutable; replace() returns a new string.",
+    "whyCorrect": "The correct answer is \"False\" because strings are immutable; replace() returns a new string.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-032",
+    "group": "past_exam_style_generated",
+    "topic": "String iteration",
+    "question": "for c in 'abcd': print(c) prints 'abcd' as the first line.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because iteration over a string produces one character at a time; first is 'a'.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because iteration over a string produces one character at a time; first is 'a'.",
+    "whyCorrect": "The correct answer is \"False\" because iteration over a string produces one character at a time; first is 'a'.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-033",
+    "group": "past_exam_style_generated",
+    "topic": "String iteration",
+    "question": "for c in 'abcd': print(c) prints 'a' as the first line.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the first character of 'abcd' is 'a'.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the first character of 'abcd' is 'a'.",
+    "whyCorrect": "The correct answer is \"True\" because the first character of 'abcd' is 'a'.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-034",
+    "group": "past_exam_style_generated",
+    "topic": "Membership",
+    "question": "'User' in 'User experience' evaluates to True.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the substring 'User' exists in the larger string.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the substring 'User' exists in the larger string.",
+    "whyCorrect": "The correct answer is \"True\" because the substring 'User' exists in the larger string.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-035",
+    "group": "past_exam_style_generated",
+    "topic": "String find",
+    "question": "'User experience'.find('Admin') returns -1.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because find() returns -1 when the substring is not found.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because find() returns -1 when the substring is not found.",
+    "whyCorrect": "The correct answer is \"True\" because find() returns -1 when the substring is not found.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-036",
+    "group": "past_exam_style_generated",
+    "topic": "Lists",
+    "question": "Lists in Python are ordered collections.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because list elements keep an order and can be indexed.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because list elements keep an order and can be indexed.",
+    "whyCorrect": "The correct answer is \"True\" because list elements keep an order and can be indexed.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-037",
+    "group": "past_exam_style_generated",
+    "topic": "Lists",
+    "question": "Lists in Python are mutable.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because list elements can be changed after creation.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because list elements can be changed after creation.",
+    "whyCorrect": "The correct answer is \"True\" because list elements can be changed after creation.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-038",
+    "group": "past_exam_style_generated",
+    "topic": "Lists",
+    "question": "A list can contain values of different types, such as ['abc', 34, [3,4]].",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because python lists can store heterogeneous objects.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because python lists can store heterogeneous objects.",
+    "whyCorrect": "The correct answer is \"True\" because python lists can store heterogeneous objects.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-039",
+    "group": "past_exam_style_generated",
+    "topic": "List append",
+    "question": "After a=[1,2,3]; a.append(4), the list is [1,2,3,4].",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because append() adds one object at the end.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because append() adds one object at the end.",
+    "whyCorrect": "The correct answer is \"True\" because append() adds one object at the end.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-040",
+    "group": "past_exam_style_generated",
+    "topic": "List append",
+    "question": "After a=[1,2,3]; a.append([4,5,6]), len(a) is 6.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because append() adds the whole list as one element, so length becomes 4.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because append() adds the whole list as one element, so length becomes 4.",
+    "whyCorrect": "The correct answer is \"False\" because append() adds the whole list as one element, so length becomes 4.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-041",
+    "group": "past_exam_style_generated",
+    "topic": "List append",
+    "question": "After a=[1,2,3]; a.append([4,5,6]), the last element is [4,5,6].",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the argument list is appended as a single element.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the argument list is appended as a single element.",
+    "whyCorrect": "The correct answer is \"True\" because the argument list is appended as a single element.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-042",
+    "group": "past_exam_style_generated",
+    "topic": "List extend",
+    "question": "After a=[1,2,3]; a.extend([4,5,6]), len(a) is 6.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because extend() adds each element from the iterable.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because extend() adds each element from the iterable.",
+    "whyCorrect": "The correct answer is \"True\" because extend() adds each element from the iterable.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-043",
+    "group": "past_exam_style_generated",
+    "topic": "List extend",
+    "question": "After a=[1,2,3]; a.extend([4,5,6]), the list becomes [1,2,3,[4,5,6]].",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because that is append() behavior, not extend() behavior.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because that is append() behavior, not extend() behavior.",
+    "whyCorrect": "The correct answer is \"False\" because that is append() behavior, not extend() behavior.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-044",
+    "group": "past_exam_style_generated",
+    "topic": "List insert",
+    "question": "a.insert(0, x) inserts x at the beginning of list a.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because index 0 is the start of the list.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because index 0 is the start of the list.",
+    "whyCorrect": "The correct answer is \"True\" because index 0 is the start of the list.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-045",
+    "group": "past_exam_style_generated",
+    "topic": "List assignment",
+    "question": "a[i] = x can replace an existing list element.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because lists support item assignment.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because lists support item assignment.",
+    "whyCorrect": "The correct answer is \"True\" because lists support item assignment.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-046",
+    "group": "past_exam_style_generated",
+    "topic": "List concatenation",
+    "question": "data + [6,7,8] creates a new list rather than modifying data in place.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because + returns a new concatenated list.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because + returns a new concatenated list.",
+    "whyCorrect": "The correct answer is \"True\" because + returns a new concatenated list.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-047",
+    "group": "past_exam_style_generated",
+    "topic": "List pop",
+    "question": "s.pop() removes and returns the last element of a list.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because pop() without an index works on the last element.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because pop() without an index works on the last element.",
+    "whyCorrect": "The correct answer is \"True\" because pop() without an index works on the last element.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-048",
+    "group": "past_exam_style_generated",
+    "topic": "List remove",
+    "question": "s.remove(x) removes the first matching value x from a list.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because remove() searches by value, not by index.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because remove() searches by value, not by index.",
+    "whyCorrect": "The correct answer is \"True\" because remove() searches by value, not by index.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-049",
+    "group": "past_exam_style_generated",
+    "topic": "List slicing",
+    "question": "For data=[3,4,45,26,1], data[2] is 45.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because indexing starts at 0, so index 2 is the third element.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because indexing starts at 0, so index 2 is the third element.",
+    "whyCorrect": "The correct answer is \"True\" because indexing starts at 0, so index 2 is the third element.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-050",
+    "group": "past_exam_style_generated",
+    "topic": "List slicing",
+    "question": "For data=[3,4,45,26,1], data[-1] is 1.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because index -1 refers to the last element.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because index -1 refers to the last element.",
+    "whyCorrect": "The correct answer is \"True\" because index -1 refers to the last element.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-051",
+    "group": "past_exam_style_generated",
+    "topic": "List slicing",
+    "question": "For data=[3,4,45,26,1], data[1:3] is [4,45].",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the start index is included and the stop index is excluded.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the start index is included and the stop index is excluded.",
+    "whyCorrect": "The correct answer is \"True\" because the start index is included and the stop index is excluded.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-052",
+    "group": "past_exam_style_generated",
+    "topic": "List slicing",
+    "question": "For data=[3,4,45,26,1], data[:-1] excludes the last element.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because a stop index of -1 stops before the last element.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because a stop index of -1 stops before the last element.",
+    "whyCorrect": "The correct answer is \"True\" because a stop index of -1 stops before the last element.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-053",
+    "group": "past_exam_style_generated",
+    "topic": "List slicing",
+    "question": "For l=[1,2,3,4,5], sum(l[1:3]) equals 5.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because l[1:3] is [2,3], and 2+3=5.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because l[1:3] is [2,3], and 2+3=5.",
+    "whyCorrect": "The correct answer is \"True\" because l[1:3] is [2,3], and 2+3=5.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-054",
+    "group": "past_exam_style_generated",
+    "topic": "List sorting",
+    "question": "a.sort() sorts a list in place.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because list.sort() modifies the list object.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because list.sort() modifies the list object.",
+    "whyCorrect": "The correct answer is \"True\" because list.sort() modifies the list object.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-055",
+    "group": "past_exam_style_generated",
+    "topic": "List sorting",
+    "question": "a.sort() returns the sorted list.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because list.sort() returns None.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because list.sort() returns None.",
+    "whyCorrect": "The correct answer is \"False\" because list.sort() returns None.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-056",
+    "group": "past_exam_style_generated",
+    "topic": "List sorting",
+    "question": "sorted(a) returns a new sorted list and leaves a itself unchanged.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because sorted() does not modify the original iterable.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because sorted() does not modify the original iterable.",
+    "whyCorrect": "The correct answer is \"True\" because sorted() does not modify the original iterable.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-057",
+    "group": "past_exam_style_generated",
+    "topic": "List sorting",
+    "question": "sorted((3,1,2)) returns a tuple.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because sorted() always returns a list.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because sorted() always returns a list.",
+    "whyCorrect": "The correct answer is \"False\" because sorted() always returns a list.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-058",
+    "group": "past_exam_style_generated",
+    "topic": "Tuples",
+    "question": "Tuples are immutable sequences.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because tuple contents cannot be reassigned after creation.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because tuple contents cannot be reassigned after creation.",
+    "whyCorrect": "The correct answer is \"True\" because tuple contents cannot be reassigned after creation.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-059",
+    "group": "past_exam_style_generated",
+    "topic": "Tuples",
+    "question": "A tuple can be iterated in a for loop.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because tuples are iterable sequences.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because tuples are iterable sequences.",
+    "whyCorrect": "The correct answer is \"True\" because tuples are iterable sequences.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-060",
+    "group": "past_exam_style_generated",
+    "topic": "Tuples",
+    "question": "Given t=(1,2,3), t.append(4) is valid Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because tuples do not have append() and are immutable.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because tuples do not have append() and are immutable.",
+    "whyCorrect": "The correct answer is \"False\" because tuples do not have append() and are immutable.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-061",
+    "group": "past_exam_style_generated",
+    "topic": "Tuples",
+    "question": "Given t=(1,2,3), t[0] = 9 is valid Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because tuple item assignment is not allowed.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because tuple item assignment is not allowed.",
+    "whyCorrect": "The correct answer is \"False\" because tuple item assignment is not allowed.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-062",
+    "group": "past_exam_style_generated",
+    "topic": "Tuple creation",
+    "question": "t = 'Brian', creates a tuple with one element.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the trailing comma creates a one-element tuple.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the trailing comma creates a one-element tuple.",
+    "whyCorrect": "The correct answer is \"True\" because the trailing comma creates a one-element tuple.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-063",
+    "group": "past_exam_style_generated",
+    "topic": "Tuple creation",
+    "question": "t = ('Brian') creates a tuple with one element.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because without the comma, it is just a string in parentheses.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because without the comma, it is just a string in parentheses.",
+    "whyCorrect": "The correct answer is \"False\" because without the comma, it is just a string in parentheses.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-064",
+    "group": "past_exam_style_generated",
+    "topic": "Tuple conversion",
+    "question": "tuple([1,2,3]) creates (1,2,3).",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because tuple() can convert an iterable into a tuple.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because tuple() can convert an iterable into a tuple.",
+    "whyCorrect": "The correct answer is \"True\" because tuple() can convert an iterable into a tuple.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-065",
+    "group": "past_exam_style_generated",
+    "topic": "Tuple conversion",
+    "question": "tuple('123') has length 3.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because it creates ('1','2','3').",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because it creates ('1','2','3').",
+    "whyCorrect": "The correct answer is \"True\" because it creates ('1','2','3').",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-066",
+    "group": "past_exam_style_generated",
+    "topic": "Tuple conversion",
+    "question": "tuple(1,2,3) is the correct way to create (1,2,3).",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because tuple() takes at most one iterable argument; use (1,2,3).",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because tuple() takes at most one iterable argument; use (1,2,3).",
+    "whyCorrect": "The correct answer is \"False\" because tuple() takes at most one iterable argument; use (1,2,3).",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-067",
+    "group": "past_exam_style_generated",
+    "topic": "Tuple sorting",
+    "question": "For tuples, comparison is done element by element from the first element.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because tuple comparison starts with element 0, then proceeds if needed.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because tuple comparison starts with element 0, then proceeds if needed.",
+    "whyCorrect": "The correct answer is \"True\" because tuple comparison starts with element 0, then proceeds if needed.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-068",
+    "group": "past_exam_style_generated",
+    "topic": "range",
+    "question": "range(10) produces values from 0 to 10 inclusive.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because the stop value is excluded; it produces 0 through 9.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because the stop value is excluded; it produces 0 through 9.",
+    "whyCorrect": "The correct answer is \"False\" because the stop value is excluded; it produces 0 through 9.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-069",
+    "group": "past_exam_style_generated",
+    "topic": "range",
+    "question": "range(1,3) produces 1 and 2.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the stop value 3 is excluded.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the stop value 3 is excluded.",
+    "whyCorrect": "The correct answer is \"True\" because the stop value 3 is excluded.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-070",
+    "group": "past_exam_style_generated",
+    "topic": "range",
+    "question": "range(0,15,5) produces 0, 5, 10.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because it stops before 15.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because it stops before 15.",
+    "whyCorrect": "The correct answer is \"True\" because it stops before 15.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-071",
+    "group": "past_exam_style_generated",
+    "topic": "range",
+    "question": "range(15,0,-5) produces 15, 10, 5.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because with a negative step, it stops before going past 0; 0 is excluded.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because with a negative step, it stops before going past 0; 0 is excluded.",
+    "whyCorrect": "The correct answer is \"True\" because with a negative step, it stops before going past 0; 0 is excluded.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-072",
+    "group": "past_exam_style_generated",
+    "topic": "range",
+    "question": "The last element generated by range(15,0,-5) is 0.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because 0 is the stop value and is excluded.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because 0 is the stop value and is excluded.",
+    "whyCorrect": "The correct answer is \"False\" because 0 is the stop value and is excluded.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-073",
+    "group": "past_exam_style_generated",
+    "topic": "List comprehension",
+    "question": "[x*x for x in range(3)] creates [0,1,4].",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because range(3) gives 0,1,2 and their squares are 0,1,4.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because range(3) gives 0,1,2 and their squares are 0,1,4.",
+    "whyCorrect": "The correct answer is \"True\" because range(3) gives 0,1,2 and their squares are 0,1,4.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-074",
+    "group": "past_exam_style_generated",
+    "topic": "Sets",
+    "question": "A set stores duplicate elements exactly as many times as they are inserted.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because set elements are unique; duplicates are removed.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because set elements are unique; duplicates are removed.",
+    "whyCorrect": "The correct answer is \"False\" because set elements are unique; duplicates are removed.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-075",
+    "group": "past_exam_style_generated",
+    "topic": "Sets",
+    "question": "{} creates an empty set in Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because {} creates an empty dictionary; use set() for an empty set.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because {} creates an empty dictionary; use set() for an empty set.",
+    "whyCorrect": "The correct answer is \"False\" because {} creates an empty dictionary; use set() for an empty set.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-076",
+    "group": "past_exam_style_generated",
+    "topic": "Sets",
+    "question": "set([3,4]) creates a mutable set.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because set() creates a mutable set object.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because set() creates a mutable set object.",
+    "whyCorrect": "The correct answer is \"True\" because set() creates a mutable set object.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-077",
+    "group": "past_exam_style_generated",
+    "topic": "Sets",
+    "question": "frozenset([7,8]) creates an immutable set-like object.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because frozenset is immutable.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because frozenset is immutable.",
+    "whyCorrect": "The correct answer is \"True\" because frozenset is immutable.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-078",
+    "group": "past_exam_style_generated",
+    "topic": "Sets",
+    "question": "Sets are indexable with s[0] because they are ordered.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because sets are unordered and not indexable.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because sets are unordered and not indexable.",
+    "whyCorrect": "The correct answer is \"False\" because sets are unordered and not indexable.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-079",
+    "group": "past_exam_style_generated",
+    "topic": "Sets",
+    "question": "For a={1,2,3} and b={3,4}, a & b is {3}.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because & computes intersection.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because & computes intersection.",
+    "whyCorrect": "The correct answer is \"True\" because & computes intersection.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-080",
+    "group": "past_exam_style_generated",
+    "topic": "Sets",
+    "question": "For a={1,2,3} and b={3,4}, a | b is the union {1,2,3,4}.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because | computes union.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because | computes union.",
+    "whyCorrect": "The correct answer is \"True\" because | computes union.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-081",
+    "group": "past_exam_style_generated",
+    "topic": "Sets",
+    "question": "remove(e) raises an exception if e is not in the set.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because remove() fails for missing elements; discard() does not.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because remove() fails for missing elements; discard() does not.",
+    "whyCorrect": "The correct answer is \"True\" because remove() fails for missing elements; discard() does not.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-082",
+    "group": "past_exam_style_generated",
+    "topic": "Dictionaries",
+    "question": "A dictionary stores key-value pairs.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because dict objects map keys to values.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because dict objects map keys to values.",
+    "whyCorrect": "The correct answer is \"True\" because dict objects map keys to values.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-083",
+    "group": "past_exam_style_generated",
+    "topic": "Dictionaries",
+    "question": "In m={'Python':3}, the expression 'Python' in m checks whether 'Python' is a key.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because membership on a dict checks keys.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because membership on a dict checks keys.",
+    "whyCorrect": "The correct answer is \"True\" because membership on a dict checks keys.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-084",
+    "group": "past_exam_style_generated",
+    "topic": "Dictionaries",
+    "question": "Only hashable objects can be dictionary keys.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because dictionary keys must be hashable.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because dictionary keys must be hashable.",
+    "whyCorrect": "The correct answer is \"True\" because dictionary keys must be hashable.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-085",
+    "group": "past_exam_style_generated",
+    "topic": "Dictionaries",
+    "question": "m.keys(), m.values(), and m.items() are dynamic views of the dictionary.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because views reflect the current dictionary state.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because views reflect the current dictionary state.",
+    "whyCorrect": "The correct answer is \"True\" because views reflect the current dictionary state.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-086",
+    "group": "past_exam_style_generated",
+    "topic": "Standard input",
+    "question": "input() reads one line and returns it as a string.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because input() returns text from standard input.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because input() returns text from standard input.",
+    "whyCorrect": "The correct answer is \"True\" because input() returns text from standard input.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-087",
+    "group": "past_exam_style_generated",
+    "topic": "Standard output",
+    "question": "print() sends data to standard output.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because print() writes to STDOUT.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because print() writes to STDOUT.",
+    "whyCorrect": "The correct answer is \"True\" because print() writes to STDOUT.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-088",
+    "group": "past_exam_style_generated",
+    "topic": "File redirection",
+    "question": "The shell operator > appends output to an existing file.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because > replaces the output file content; >> appends.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because > replaces the output file content; >> appends.",
+    "whyCorrect": "The correct answer is \"False\" because > replaces the output file content; >> appends.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-089",
+    "group": "past_exam_style_generated",
+    "topic": "File redirection",
+    "question": "The shell operator >> appends output to a file.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because >> appends rather than replacing.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because >> appends rather than replacing.",
+    "whyCorrect": "The correct answer is \"True\" because >> appends rather than replacing.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-090",
+    "group": "past_exam_style_generated",
+    "topic": "Files",
+    "question": "f.read() reads the whole file content, not just one line.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because read() returns the remaining entire file content.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because read() returns the remaining entire file content.",
+    "whyCorrect": "The correct answer is \"True\" because read() returns the remaining entire file content.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-091",
+    "group": "past_exam_style_generated",
+    "topic": "Files",
+    "question": "f.readline() reads one line from a text file.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because readline() reads a single line.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because readline() reads a single line.",
+    "whyCorrect": "The correct answer is \"True\" because readline() reads a single line.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-092",
+    "group": "past_exam_style_generated",
+    "topic": "Files",
+    "question": "Iterating for line in f is an efficient way to read a text file line by line.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because file objects are iterable by line.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because file objects are iterable by line.",
+    "whyCorrect": "The correct answer is \"True\" because file objects are iterable by line.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-093",
+    "group": "past_exam_style_generated",
+    "topic": "Files",
+    "question": "A file opened with with open(...) as f: is closed after leaving the with block.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the context manager closes the file automatically.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the context manager closes the file automatically.",
+    "whyCorrect": "The correct answer is \"True\" because the context manager closes the file automatically.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-094",
+    "group": "past_exam_style_generated",
+    "topic": "Logging",
+    "question": "If logging level is WARNING, DEBUG messages are normally displayed.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because DEBUG is lower than WARNING and is hidden at WARNING level.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because DEBUG is lower than WARNING and is hidden at WARNING level.",
+    "whyCorrect": "The correct answer is \"False\" because DEBUG is lower than WARNING and is hidden at WARNING level.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-095",
+    "group": "past_exam_style_generated",
+    "topic": "Logging",
+    "question": "If logging level is WARNING, ERROR messages are normally displayed.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because ERROR is more severe than WARNING.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because ERROR is more severe than WARNING.",
+    "whyCorrect": "The correct answer is \"True\" because ERROR is more severe than WARNING.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-096",
+    "group": "past_exam_style_generated",
+    "topic": "Logging",
+    "question": "Logging is mainly used to show program state without changing control flow.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because logging records information and does not normally change execution.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because logging records information and does not normally change execution.",
+    "whyCorrect": "The correct answer is \"True\" because logging records information and does not normally change execution.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-097",
+    "group": "past_exam_style_generated",
+    "topic": "Assertions",
+    "question": "assert c == 4 raises AssertionError if c is not equal to 4 during normal execution.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because a failed assert raises AssertionError unless assertions are disabled.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because a failed assert raises AssertionError unless assertions are disabled.",
+    "whyCorrect": "The correct answer is \"True\" because a failed assert raises AssertionError unless assertions are disabled.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-098",
+    "group": "past_exam_style_generated",
+    "topic": "Assertions",
+    "question": "assert is recommended for normal user-facing error handling.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because assertions are for debugging/invariants, not regular error handling.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because assertions are for debugging/invariants, not regular error handling.",
+    "whyCorrect": "The correct answer is \"False\" because assertions are for debugging/invariants, not regular error handling.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-099",
+    "group": "past_exam_style_generated",
+    "topic": "Assertions",
+    "question": "Python may ignore assert statements when code is run with the -O option.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because optimization disables assert statements.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because optimization disables assert statements.",
+    "whyCorrect": "The correct answer is \"True\" because optimization disables assert statements.",
+    "reviewed": true
+  },
+  {
+    "id": "SIM-100",
+    "group": "past_exam_style_generated",
+    "topic": "Exceptions",
+    "question": "The raise keyword can be used to raise an exception manually.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because raise starts exception propagation.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because raise starts exception propagation.",
+    "whyCorrect": "The correct answer is \"True\" because raise starts exception propagation.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-101",
+    "group": "lecture_priority_selected",
+    "topic": "Code layout",
+    "question": "What does Python use to define blocks of code?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Indentation"
+      },
+      {
+        "key": "B",
+        "text": "Curly braces only"
+      },
+      {
+        "key": "C",
+        "text": "begin/end keywords"
+      },
+      {
+        "key": "D",
+        "text": "Semicolons only"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"Indentation\" because python uses indentation instead of brackets/braces for blocks.",
+    "correctAnswer": "Indentation",
+    "simpleExplanation": "The correct answer is \"Indentation\" because python uses indentation instead of brackets/braces for blocks.",
+    "whyCorrect": "The correct answer is \"Indentation\" because python uses indentation instead of brackets/braces for blocks.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-102",
+    "group": "lecture_priority_selected",
+    "topic": "Typing",
+    "question": "Python is dynamically typed. What does this mean?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "A variable name can later refer to an object of a different type"
+      },
+      {
+        "key": "B",
+        "text": "Python automatically converts every type in every expression"
+      },
+      {
+        "key": "C",
+        "text": "Python has no types"
+      },
+      {
+        "key": "D",
+        "text": "Variables must declare their type before use"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"A variable name can later refer to an object of a different type\" because dynamic typing means the name can refer to objects of different types during execution.",
+    "correctAnswer": "A variable name can later refer to an object of a different type",
+    "simpleExplanation": "The correct answer is \"A variable name can later refer to an object of a different type\" because dynamic typing means the name can refer to objects of different types during execution.",
+    "whyCorrect": "The correct answer is \"A variable name can later refer to an object of a different type\" because dynamic typing means the name can refer to objects of different types during execution.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-103",
+    "group": "lecture_priority_selected",
+    "topic": "Strong typing",
+    "question": "What happens in Python 3 when evaluating 2 + '2'?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "It returns 4"
+      },
+      {
+        "key": "B",
+        "text": "It returns '22'"
+      },
+      {
+        "key": "C",
+        "text": "It raises TypeError"
+      },
+      {
+        "key": "D",
+        "text": "It returns None"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "The correct answer is \"It raises TypeError\" because python is strongly typed; int and str are not implicitly added together.",
+    "correctAnswer": "It raises TypeError",
+    "simpleExplanation": "The correct answer is \"It raises TypeError\" because python is strongly typed; int and str are not implicitly added together.",
+    "whyCorrect": "The correct answer is \"It raises TypeError\" because python is strongly typed; int and str are not implicitly added together.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-104",
+    "group": "lecture_priority_selected",
+    "topic": "Input",
+    "question": "What type does input() return in Python?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Always str"
+      },
+      {
+        "key": "B",
+        "text": "Always int"
+      },
+      {
+        "key": "C",
+        "text": "A type automatically detected from user input"
+      },
+      {
+        "key": "D",
+        "text": "Always bytes"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"Always str\" because input() reads a line of text; numeric conversion must be explicit.",
+    "correctAnswer": "Always str",
+    "simpleExplanation": "The correct answer is \"Always str\" because input() reads a line of text; numeric conversion must be explicit.",
+    "whyCorrect": "The correct answer is \"Always str\" because input() reads a line of text; numeric conversion must be explicit.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-105",
+    "group": "lecture_priority_selected",
+    "topic": "Loops",
+    "question": "What does this loop print first: for c in 'abcd': print(c)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "a"
+      },
+      {
+        "key": "B",
+        "text": "abcd"
+      },
+      {
+        "key": "C",
+        "text": "0"
+      },
+      {
+        "key": "D",
+        "text": "It raises an error"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"a\" because iterating over a string gives one character at a time.",
+    "correctAnswer": "a",
+    "simpleExplanation": "The correct answer is \"a\" because iterating over a string gives one character at a time.",
+    "whyCorrect": "The correct answer is \"a\" because iterating over a string gives one character at a time.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-106",
+    "group": "lecture_priority_selected",
+    "topic": "Strings",
+    "question": "What is the result of: a = 'abc' 'def'?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "'abcdef'"
+      },
+      {
+        "key": "B",
+        "text": "SyntaxError"
+      },
+      {
+        "key": "C",
+        "text": "'abc def'"
+      },
+      {
+        "key": "D",
+        "text": "['abc','def']"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"'abcdef'\" because sibling string literals are concatenated automatically.",
+    "correctAnswer": "'abcdef'",
+    "simpleExplanation": "The correct answer is \"'abcdef'\" because sibling string literals are concatenated automatically.",
+    "whyCorrect": "The correct answer is \"'abcdef'\" because sibling string literals are concatenated automatically.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-107",
+    "group": "lecture_priority_selected",
+    "topic": "Strings",
+    "question": "Which statement about Python strings is true?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Strings are immutable"
+      },
+      {
+        "key": "B",
+        "text": "Strings are mutable lists of characters"
+      },
+      {
+        "key": "C",
+        "text": "Python has a separate char type"
+      },
+      {
+        "key": "D",
+        "text": "Strings cannot be iterated"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"Strings are immutable\" because strings are immutable; there is no separate character type.",
+    "correctAnswer": "Strings are immutable",
+    "simpleExplanation": "The correct answer is \"Strings are immutable\" because strings are immutable; there is no separate character type.",
+    "whyCorrect": "The correct answer is \"Strings are immutable\" because strings are immutable; there is no separate character type.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-108",
+    "group": "lecture_priority_selected",
+    "topic": "List operations",
+    "question": "After data = [1, 2, 3]; data.append(4), what is data?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "[1, 2, 3, 4]"
+      },
+      {
+        "key": "B",
+        "text": "[4, 1, 2, 3]"
+      },
+      {
+        "key": "C",
+        "text": "[1, 2, 3]"
+      },
+      {
+        "key": "D",
+        "text": "None"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"[1, 2, 3, 4]\" because append() modifies the list by adding the object at the end.",
+    "correctAnswer": "[1, 2, 3, 4]",
+    "simpleExplanation": "The correct answer is \"[1, 2, 3, 4]\" because append() modifies the list by adding the object at the end.",
+    "whyCorrect": "The correct answer is \"[1, 2, 3, 4]\" because append() modifies the list by adding the object at the end.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-109",
+    "group": "lecture_priority_selected",
+    "topic": "List slicing",
+    "question": "For data = [3, 4, 45, 26, 1], what is data[1:3]?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "[4, 45]"
+      },
+      {
+        "key": "B",
+        "text": "[4, 45, 26]"
+      },
+      {
+        "key": "C",
+        "text": "[3, 4, 45]"
+      },
+      {
+        "key": "D",
+        "text": "[45, 26]"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"[4, 45]\" because slicing includes start index 1 and excludes stop index 3.",
+    "correctAnswer": "[4, 45]",
+    "simpleExplanation": "The correct answer is \"[4, 45]\" because slicing includes start index 1 and excludes stop index 3.",
+    "whyCorrect": "The correct answer is \"[4, 45]\" because slicing includes start index 1 and excludes stop index 3.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-110",
+    "group": "lecture_priority_selected",
+    "topic": "Logging",
+    "question": "If the logging level is WARNING, which messages are normally shown?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "WARNING, ERROR, and CRITICAL"
+      },
+      {
+        "key": "B",
+        "text": "DEBUG only"
+      },
+      {
+        "key": "C",
+        "text": "DEBUG and INFO only"
+      },
+      {
+        "key": "D",
+        "text": "All messages including DEBUG"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"WARNING, ERROR, and CRITICAL\" because a logging threshold shows messages at that level and more severe ones.",
+    "correctAnswer": "WARNING, ERROR, and CRITICAL",
+    "simpleExplanation": "The correct answer is \"WARNING, ERROR, and CRITICAL\" because a logging threshold shows messages at that level and more severe ones.",
+    "whyCorrect": "The correct answer is \"WARNING, ERROR, and CRITICAL\" because a logging threshold shows messages at that level and more severe ones.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-111",
+    "group": "lecture_priority_selected",
+    "topic": "Functions",
+    "question": "Given def foo(a, b): return a+b, what happens when calling foo(2)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "TypeError: missing required argument"
+      },
+      {
+        "key": "B",
+        "text": "It returns 2"
+      },
+      {
+        "key": "C",
+        "text": "It returns None"
+      },
+      {
+        "key": "D",
+        "text": "b becomes 0 automatically"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"TypeError: missing required argument\" because both positional arguments are required because no default value is defined.",
+    "correctAnswer": "TypeError: missing required argument",
+    "simpleExplanation": "The correct answer is \"TypeError: missing required argument\" because both positional arguments are required because no default value is defined.",
+    "whyCorrect": "The correct answer is \"TypeError: missing required argument\" because both positional arguments are required because no default value is defined.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-112",
+    "group": "lecture_priority_selected",
+    "topic": "Keyword arguments",
+    "question": "Which rule about Python function calls is correct?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "After a keyword argument, subsequent arguments must also be keyword arguments"
+      },
+      {
+        "key": "B",
+        "text": "Positional arguments can always appear after keyword arguments"
+      },
+      {
+        "key": "C",
+        "text": "Keyword arguments cannot have default values"
+      },
+      {
+        "key": "D",
+        "text": "Default arguments are mandatory"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"After a keyword argument, subsequent arguments must also be keyword arguments\" because the lecture states that all following arguments after a keyword argument must also be keyword arguments.",
+    "correctAnswer": "After a keyword argument, subsequent arguments must also be keyword arguments",
+    "simpleExplanation": "The correct answer is \"After a keyword argument, subsequent arguments must also be keyword arguments\" because the lecture states that all following arguments after a keyword argument must also be keyword arguments.",
+    "whyCorrect": "The correct answer is \"After a keyword argument, subsequent arguments must also be keyword arguments\" because the lecture states that all following arguments after a keyword argument must also be keyword arguments.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-113",
+    "group": "lecture_priority_selected",
+    "topic": "append vs extend",
+    "question": "If a = [1,2,3] and a.append([4,5,6]) is executed, what is len(a)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "4"
+      },
+      {
+        "key": "B",
+        "text": "6"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "1"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"4\" because append adds the whole list [4,5,6] as one element.",
+    "correctAnswer": "4",
+    "simpleExplanation": "The correct answer is \"4\" because append adds the whole list [4,5,6] as one element.",
+    "whyCorrect": "The correct answer is \"4\" because append adds the whole list [4,5,6] as one element.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-114",
+    "group": "lecture_priority_selected",
+    "topic": "append vs extend",
+    "question": "If a = [1,2,3] and a.extend([4,5,6]) is executed, what is len(a)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "6"
+      },
+      {
+        "key": "B",
+        "text": "4"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "1"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"6\" because extend adds each element from the iterable.",
+    "correctAnswer": "6",
+    "simpleExplanation": "The correct answer is \"6\" because extend adds each element from the iterable.",
+    "whyCorrect": "The correct answer is \"6\" because extend adds each element from the iterable.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-115",
+    "group": "lecture_priority_selected",
+    "topic": "sort vs sorted",
+    "question": "What does list.sort() return?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "None"
+      },
+      {
+        "key": "B",
+        "text": "A sorted tuple"
+      },
+      {
+        "key": "C",
+        "text": "A new sorted list"
+      },
+      {
+        "key": "D",
+        "text": "The largest element"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"None\" because sort() sorts the list in place and returns None.",
+    "correctAnswer": "None",
+    "simpleExplanation": "The correct answer is \"None\" because sort() sorts the list in place and returns None.",
+    "whyCorrect": "The correct answer is \"None\" because sort() sorts the list in place and returns None.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-116",
+    "group": "lecture_priority_selected",
+    "topic": "sort vs sorted",
+    "question": "What does sorted(a) do?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Returns a new sorted list and leaves a intact"
+      },
+      {
+        "key": "B",
+        "text": "Sorts a in place and returns None"
+      },
+      {
+        "key": "C",
+        "text": "Deletes duplicates from a"
+      },
+      {
+        "key": "D",
+        "text": "Returns a tuple only"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"Returns a new sorted list and leaves a intact\" because sorted() returns a new sorted list; the original argument remains intact.",
+    "correctAnswer": "Returns a new sorted list and leaves a intact",
+    "simpleExplanation": "The correct answer is \"Returns a new sorted list and leaves a intact\" because sorted() returns a new sorted list; the original argument remains intact.",
+    "whyCorrect": "The correct answer is \"Returns a new sorted list and leaves a intact\" because sorted() returns a new sorted list; the original argument remains intact.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-117",
+    "group": "lecture_priority_selected",
+    "topic": "range",
+    "question": "What values are produced by range(15, 0, -5)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "15, 10, 5"
+      },
+      {
+        "key": "B",
+        "text": "15, 10, 5, 0"
+      },
+      {
+        "key": "C",
+        "text": "0, 5, 10, 15"
+      },
+      {
+        "key": "D",
+        "text": "It raises ValueError"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"15, 10, 5\" because with negative step, values decrease and stop before 0.",
+    "correctAnswer": "15, 10, 5",
+    "simpleExplanation": "The correct answer is \"15, 10, 5\" because with negative step, values decrease and stop before 0.",
+    "whyCorrect": "The correct answer is \"15, 10, 5\" because with negative step, values decrease and stop before 0.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-118",
+    "group": "lecture_priority_selected",
+    "topic": "Tuples",
+    "question": "Tuples in Python are:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "immutable sequences"
+      },
+      {
+        "key": "B",
+        "text": "mutable sequences"
+      },
+      {
+        "key": "C",
+        "text": "unordered mappings"
+      },
+      {
+        "key": "D",
+        "text": "only numeric lists"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"immutable sequences\" because tuples are immutable sequences.",
+    "correctAnswer": "immutable sequences",
+    "simpleExplanation": "The correct answer is \"immutable sequences\" because tuples are immutable sequences.",
+    "whyCorrect": "The correct answer is \"immutable sequences\" because tuples are immutable sequences.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-119",
+    "group": "lecture_priority_selected",
+    "topic": "Tuple creation",
+    "question": "Which expression creates a single-element tuple?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "('Brian',)"
+      },
+      {
+        "key": "B",
+        "text": "('Brian')"
+      },
+      {
+        "key": "C",
+        "text": "tuple('Brian',)"
+      },
+      {
+        "key": "D",
+        "text": "['Brian']"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"('Brian',)\" because the comma creates the single-element tuple; ('Brian') is just a string in parentheses.",
+    "correctAnswer": "('Brian',)",
+    "simpleExplanation": "The correct answer is \"('Brian',)\" because the comma creates the single-element tuple; ('Brian') is just a string in parentheses.",
+    "whyCorrect": "The correct answer is \"('Brian',)\" because the comma creates the single-element tuple; ('Brian') is just a string in parentheses.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-120",
+    "group": "lecture_priority_selected",
+    "topic": "tuple conversion",
+    "question": "What is len(tuple('123'))?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3"
+      },
+      {
+        "key": "B",
+        "text": "1"
+      },
+      {
+        "key": "C",
+        "text": "0"
+      },
+      {
+        "key": "D",
+        "text": "It raises TypeError"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"3\" because tuple('123') creates ('1','2','3').",
+    "correctAnswer": "3",
+    "simpleExplanation": "The correct answer is \"3\" because tuple('123') creates ('1','2','3').",
+    "whyCorrect": "The correct answer is \"3\" because tuple('123') creates ('1','2','3').",
+    "reviewed": true
+  },
+  {
+    "id": "REL-121",
+    "group": "lecture_priority_selected",
+    "topic": "Scopes and namespaces",
+    "question": "In Python, the LEGB rule means Python searches names in the order Local, Enclosing, Global, Built-in.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because LEGB is Local, Enclosing, Global, Built-in.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because LEGB is Local, Enclosing, Global, Built-in.",
+    "whyCorrect": "The correct answer is \"True\" because LEGB is Local, Enclosing, Global, Built-in.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-122",
+    "group": "lecture_priority_selected",
+    "topic": "Scopes and namespaces",
+    "question": "The keyword global tells Python that assignments to that name should affect the module-level name.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because global binds the name to the global/module namespace.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because global binds the name to the global/module namespace.",
+    "whyCorrect": "The correct answer is \"True\" because global binds the name to the global/module namespace.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-123",
+    "group": "lecture_priority_selected",
+    "topic": "Scopes and namespaces",
+    "question": "The keyword nonlocal is used to modify a variable in an enclosing function scope.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because nonlocal targets an enclosing non-global scope.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because nonlocal targets an enclosing non-global scope.",
+    "whyCorrect": "The correct answer is \"True\" because nonlocal targets an enclosing non-global scope.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-124",
+    "group": "lecture_priority_selected",
+    "topic": "Classes, constructors, and methods",
+    "question": "The special method used when a new object is created is always named __init__.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because __init__ initializes object attributes.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because __init__ initializes object attributes.",
+    "whyCorrect": "The correct answer is \"True\" because __init__ initializes object attributes.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-125",
+    "group": "lecture_priority_selected",
+    "topic": "Classes, constructors, and methods",
+    "question": "The first argument of an instance method is a reference to the object.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because this parameter is normally called self.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because this parameter is normally called self.",
+    "whyCorrect": "The correct answer is \"True\" because this parameter is normally called self.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-126",
+    "group": "lecture_priority_selected",
+    "topic": "Attributes and privacy",
+    "question": "Python allows adding a new attribute to an existing object after it was created.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the lecture shows w.dog = \"Fuks\" after object creation.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the lecture shows w.dog = \"Fuks\" after object creation.",
+    "whyCorrect": "The correct answer is \"True\" because the lecture shows w.dog = \"Fuks\" after object creation.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-127",
+    "group": "lecture_priority_selected",
+    "topic": "Attributes and privacy",
+    "question": "A double leading underscore triggers name mangling in Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because name mangling makes outside access harder, but not impossible.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because name mangling makes outside access harder, but not impossible.",
+    "whyCorrect": "The correct answer is \"True\" because name mangling makes outside access harder, but not impossible.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-128",
+    "group": "lecture_priority_selected",
+    "topic": "Inheritance and attributes",
+    "question": "If an attribute is stored in a class, it is a class variable shared by instances unless shadowed.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because class variables are common for all instances of the class.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because class variables are common for all instances of the class.",
+    "whyCorrect": "The correct answer is \"True\" because class variables are common for all instances of the class.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-129",
+    "group": "lecture_priority_selected",
+    "topic": "String representation",
+    "question": "__str__ should return a string.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the lecture states __str__ should return string.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the lecture states __str__ should return string.",
+    "whyCorrect": "The correct answer is \"True\" because the lecture states __str__ should return string.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-130",
+    "group": "lecture_priority_selected",
+    "topic": "Sets",
+    "question": "A set is an unordered collection of elements.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because sets do not preserve an indexable order for exam purposes.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because sets do not preserve an indexable order for exam purposes.",
+    "whyCorrect": "The correct answer is \"True\" because sets do not preserve an indexable order for exam purposes.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-131",
+    "group": "lecture_priority_selected",
+    "topic": "Sets",
+    "question": "{} creates an empty set.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because {} creates an empty dictionary; use set() for an empty set.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because {} creates an empty dictionary; use set() for an empty set.",
+    "whyCorrect": "The correct answer is \"False\" because {} creates an empty dictionary; use set() for an empty set.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-132",
+    "group": "lecture_priority_selected",
+    "topic": "Sets",
+    "question": "For a={1,2,3} and b={3,4}, a | b is the union.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because | is union.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because | is union.",
+    "whyCorrect": "The correct answer is \"True\" because | is union.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-133",
+    "group": "lecture_priority_selected",
+    "topic": "Dictionaries",
+    "question": "{} creates an empty dictionary.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because {} is an empty dictionary, not an empty set.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because {} is an empty dictionary, not an empty set.",
+    "whyCorrect": "The correct answer is \"True\" because {} is an empty dictionary, not an empty set.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-134",
+    "group": "lecture_priority_selected",
+    "topic": "Assertions",
+    "question": "What happens when an assert expression is false during normal Python execution?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Python silently ignores it."
+      },
+      {
+        "key": "B",
+        "text": "Python raises AssertionError."
+      },
+      {
+        "key": "C",
+        "text": "Python raises ValueError."
+      },
+      {
+        "key": "D",
+        "text": "The expression becomes False and execution always continues."
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"Python raises AssertionError.\" because a failed assert raises AssertionError unless assertions are disabled with optimization.",
+    "correctAnswer": "Python raises AssertionError.",
+    "simpleExplanation": "The correct answer is \"Python raises AssertionError.\" because a failed assert raises AssertionError unless assertions are disabled with optimization.",
+    "whyCorrect": "The correct answer is \"Python raises AssertionError.\" because a failed assert raises AssertionError unless assertions are disabled with optimization.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-135",
+    "group": "lecture_priority_selected",
+    "topic": "Assertions",
+    "question": "Which statement is correct about assert in Python?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "assert is intended for debugging, not for normal error handling."
+      },
+      {
+        "key": "B",
+        "text": "assert should be used to validate all user input."
+      },
+      {
+        "key": "C",
+        "text": "assert always runs even with python -O."
+      },
+      {
+        "key": "D",
+        "text": "assert catches exceptions automatically."
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"assert is intended for debugging, not for normal error handling.\" because the lecture says assert is for debugging and is not for error handling.",
+    "correctAnswer": "assert is intended for debugging, not for normal error handling.",
+    "simpleExplanation": "The correct answer is \"assert is intended for debugging, not for normal error handling.\" because the lecture says assert is for debugging and is not for error handling.",
+    "whyCorrect": "The correct answer is \"assert is intended for debugging, not for normal error handling.\" because the lecture says assert is for debugging and is not for error handling.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-136",
+    "group": "lecture_priority_selected",
+    "topic": "Assertions",
+    "question": "What can happen to assertions when Python code is run with the -O optimization option?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "They become warnings."
+      },
+      {
+        "key": "B",
+        "text": "They are ignored."
+      },
+      {
+        "key": "C",
+        "text": "They become ValueError exceptions."
+      },
+      {
+        "key": "D",
+        "text": "They are executed twice."
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"They are ignored.\" because python can ignore assertions during optimized execution with -O.",
+    "correctAnswer": "They are ignored.",
+    "simpleExplanation": "The correct answer is \"They are ignored.\" because python can ignore assertions during optimized execution with -O.",
+    "whyCorrect": "The correct answer is \"They are ignored.\" because python can ignore assertions during optimized execution with -O.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-137",
+    "group": "lecture_priority_selected",
+    "topic": "Exceptions",
+    "question": "In a try-except statement, when is the else block executed?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Always, after finally."
+      },
+      {
+        "key": "B",
+        "text": "Only if the try block completed successfully without an exception."
+      },
+      {
+        "key": "C",
+        "text": "Only if an exception was caught."
+      },
+      {
+        "key": "D",
+        "text": "Only when there is no finally block."
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"Only if the try block completed successfully without an exception.\" because the else clause runs only when the try block succeeds without triggering an exception handled by except.",
+    "correctAnswer": "Only if the try block completed successfully without an exception.",
+    "simpleExplanation": "The correct answer is \"Only if the try block completed successfully without an exception.\" because the else clause runs only when the try block succeeds without triggering an exception handled by except.",
+    "whyCorrect": "The correct answer is \"Only if the try block completed successfully without an exception.\" because the else clause runs only when the try block succeeds without triggering an exception handled by except.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-138",
+    "group": "lecture_priority_selected",
+    "topic": "Exceptions",
+    "question": "What is the main purpose of finally in try-except-finally?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "It runs only when no error happened."
+      },
+      {
+        "key": "B",
+        "text": "It is usually used for cleanup actions and always executes after try/except handling."
+      },
+      {
+        "key": "C",
+        "text": "It catches all exceptions."
+      },
+      {
+        "key": "D",
+        "text": "It replaces the else block."
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"It is usually used for cleanup actions and always executes after try/except handling.\" because finally executes regardless of success or failure and is usually used for cleanup, like closing files or disconnecting.",
+    "correctAnswer": "It is usually used for cleanup actions and always executes after try/except handling.",
+    "simpleExplanation": "The correct answer is \"It is usually used for cleanup actions and always executes after try/except handling.\" because finally executes regardless of success or failure and is usually used for cleanup, like closing files or disconnecting.",
+    "whyCorrect": "The correct answer is \"It is usually used for cleanup actions and always executes after try/except handling.\" because finally executes regardless of success or failure and is usually used for cleanup, like closing files or disconnecting.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-139",
+    "group": "lecture_priority_selected",
+    "topic": "Exceptions",
+    "question": "What is dangerous about using return inside finally?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "It is ignored by Python."
+      },
+      {
+        "key": "B",
+        "text": "It can override returns from try or except."
+      },
+      {
+        "key": "C",
+        "text": "It creates a syntax error."
+      },
+      {
+        "key": "D",
+        "text": "It automatically re-raises the exception."
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"It can override returns from try or except.\" because a return in finally is the last one, so it can replace return values from try or except.",
+    "correctAnswer": "It can override returns from try or except.",
+    "simpleExplanation": "The correct answer is \"It can override returns from try or except.\" because a return in finally is the last one, so it can replace return values from try or except.",
+    "whyCorrect": "The correct answer is \"It can override returns from try or except.\" because a return in finally is the last one, so it can replace return values from try or except.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-140",
+    "group": "lecture_priority_selected",
+    "topic": "Raising exceptions",
+    "question": "Which keyword is used to raise an exception manually in Python?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "throw"
+      },
+      {
+        "key": "B",
+        "text": "raise"
+      },
+      {
+        "key": "C",
+        "text": "except"
+      },
+      {
+        "key": "D",
+        "text": "assertion"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"raise\" because python uses raise to raise exceptions manually.",
+    "correctAnswer": "raise",
+    "simpleExplanation": "The correct answer is \"raise\" because python uses raise to raise exceptions manually.",
+    "whyCorrect": "The correct answer is \"raise\" because python uses raise to raise exceptions manually.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-141",
+    "group": "lecture_priority_selected",
+    "topic": "Exceptions vs if",
+    "question": "According to the lecture, if a condition is obvious, what should you use?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "try instead of if"
+      },
+      {
+        "key": "B",
+        "text": "if instead of try"
+      },
+      {
+        "key": "C",
+        "text": "raise from None always"
+      },
+      {
+        "key": "D",
+        "text": "bare except always"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"if instead of try\" because the lecture says if the condition is obvious, use if instead of try.",
+    "correctAnswer": "if instead of try",
+    "simpleExplanation": "The correct answer is \"if instead of try\" because the lecture says if the condition is obvious, use if instead of try.",
+    "whyCorrect": "The correct answer is \"if instead of try\" because the lecture says if the condition is obvious, use if instead of try.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-142",
+    "group": "lecture_priority_selected",
+    "topic": "Searching strings",
+    "question": "Which Python operator is best for checking whether a substring exists in a string?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "in"
+      },
+      {
+        "key": "B",
+        "text": "findall"
+      },
+      {
+        "key": "C",
+        "text": "append"
+      },
+      {
+        "key": "D",
+        "text": "raise"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"in\" because the lecture uses \"User\" in \"User experience\" to check existence.",
+    "correctAnswer": "in",
+    "simpleExplanation": "The correct answer is \"in\" because the lecture uses \"User\" in \"User experience\" to check existence.",
+    "whyCorrect": "The correct answer is \"in\" because the lecture uses \"User\" in \"User experience\" to check existence.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-143",
+    "group": "lecture_priority_selected",
+    "topic": "Searching strings",
+    "question": "What does str.find(substring) return when the substring is not found?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "None"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "-1"
+      },
+      {
+        "key": "D",
+        "text": "It raises ValueError."
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "The correct answer is \"-1\" because the lecture explicitly states that -1 means not found.",
+    "correctAnswer": "-1",
+    "simpleExplanation": "The correct answer is \"-1\" because the lecture explicitly states that -1 means not found.",
+    "whyCorrect": "The correct answer is \"-1\" because the lecture explicitly states that -1 means not found.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-144",
+    "group": "lecture_priority_selected",
+    "topic": "Replacing strings",
+    "question": "What does str.replace(old, new) do to the original string?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "It modifies the original string in place."
+      },
+      {
+        "key": "B",
+        "text": "It returns a new string and does not modify the original."
+      },
+      {
+        "key": "C",
+        "text": "It always returns None."
+      },
+      {
+        "key": "D",
+        "text": "It works only for one-character strings."
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"It returns a new string and does not modify the original.\" because strings are immutable; the lecture says replace does not modify the original string.",
+    "correctAnswer": "It returns a new string and does not modify the original.",
+    "simpleExplanation": "The correct answer is \"It returns a new string and does not modify the original.\" because strings are immutable; the lecture says replace does not modify the original string.",
+    "whyCorrect": "The correct answer is \"It returns a new string and does not modify the original.\" because strings are immutable; the lecture says replace does not modify the original string.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-145",
+    "group": "lecture_priority_selected",
+    "topic": "Regex repetitions",
+    "question": "What does A+ mean in a regular expression?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "zero or more A characters"
+      },
+      {
+        "key": "B",
+        "text": "one or more A characters"
+      },
+      {
+        "key": "C",
+        "text": "zero or one A character"
+      },
+      {
+        "key": "D",
+        "text": "exactly two A characters"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"one or more A characters\" because the plus operator means one-or-more repetitions.",
+    "correctAnswer": "one or more A characters",
+    "simpleExplanation": "The correct answer is \"one or more A characters\" because the plus operator means one-or-more repetitions.",
+    "whyCorrect": "The correct answer is \"one or more A characters\" because the plus operator means one-or-more repetitions.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-146",
+    "group": "lecture_priority_selected",
+    "topic": "Regex repetitions",
+    "question": "What does A* mean in a regular expression?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "one or more A characters"
+      },
+      {
+        "key": "B",
+        "text": "zero or more A characters"
+      },
+      {
+        "key": "C",
+        "text": "exactly one A"
+      },
+      {
+        "key": "D",
+        "text": "a literal asterisk after A"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"zero or more A characters\" because the star operator means zero-or-more repetitions.",
+    "correctAnswer": "zero or more A characters",
+    "simpleExplanation": "The correct answer is \"zero or more A characters\" because the star operator means zero-or-more repetitions.",
+    "whyCorrect": "The correct answer is \"zero or more A characters\" because the star operator means zero-or-more repetitions.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-147",
+    "group": "lecture_priority_selected",
+    "topic": "Regex shortcuts",
+    "question": "Which shortcut represents a decimal digit?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "\\w"
+      },
+      {
+        "key": "B",
+        "text": "\\d"
+      },
+      {
+        "key": "C",
+        "text": "\\s"
+      },
+      {
+        "key": "D",
+        "text": "."
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"\\d\" because \\d is the shortcut for [0-9], a decimal digit.",
+    "correctAnswer": "\\d",
+    "simpleExplanation": "The correct answer is \"\\d\" because \\d is the shortcut for [0-9], a decimal digit.",
+    "whyCorrect": "The correct answer is \"\\d\" because \\d is the shortcut for [0-9], a decimal digit.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-148",
+    "group": "lecture_priority_selected",
+    "topic": "Regex and Python strings",
+    "question": "Why are raw strings often used for regex patterns in Python?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Because Python then does not interpret backslash escapes inside the string."
+      },
+      {
+        "key": "B",
+        "text": "Because raw strings automatically compile regex."
+      },
+      {
+        "key": "C",
+        "text": "Because raw strings make regex non-greedy."
+      },
+      {
+        "key": "D",
+        "text": "Because regex cannot be written in normal strings."
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"Because Python then does not interpret backslash escapes inside the string.\" because the r prefix means Python will not interpret the string content in the usual escape-processing way.",
+    "correctAnswer": "Because Python then does not interpret backslash escapes inside the string.",
+    "simpleExplanation": "The correct answer is \"Because Python then does not interpret backslash escapes inside the string.\" because the r prefix means Python will not interpret the string content in the usual escape-processing way.",
+    "whyCorrect": "The correct answer is \"Because Python then does not interpret backslash escapes inside the string.\" because the r prefix means Python will not interpret the string content in the usual escape-processing way.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-149",
+    "group": "lecture_priority_selected",
+    "topic": "Regex match methods",
+    "question": "Which method checks whether the pattern matches at the beginning of the string?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "match"
+      },
+      {
+        "key": "B",
+        "text": "fullmatch"
+      },
+      {
+        "key": "C",
+        "text": "findall"
+      },
+      {
+        "key": "D",
+        "text": "json.load"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"match\" because p.match(...) checks for a match starting at the beginning of the string.",
+    "correctAnswer": "match",
+    "simpleExplanation": "The correct answer is \"match\" because p.match(...) checks for a match starting at the beginning of the string.",
+    "whyCorrect": "The correct answer is \"match\" because p.match(...) checks for a match starting at the beginning of the string.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-150",
+    "group": "lecture_priority_selected",
+    "topic": "Regex match methods",
+    "question": "Which method checks whether the entire string matches the pattern?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "match"
+      },
+      {
+        "key": "B",
+        "text": "fullmatch"
+      },
+      {
+        "key": "C",
+        "text": "search"
+      },
+      {
+        "key": "D",
+        "text": "finditer"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"fullmatch\" because fullmatch requires the whole string to match the pattern.",
+    "correctAnswer": "fullmatch",
+    "simpleExplanation": "The correct answer is \"fullmatch\" because fullmatch requires the whole string to match the pattern.",
+    "whyCorrect": "The correct answer is \"fullmatch\" because fullmatch requires the whole string to match the pattern.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-151",
+    "group": "lecture_priority_selected",
+    "topic": "Lambda expressions",
+    "question": "In Python, lambda x, y: x + y creates an anonymous function.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because lambda creates an unnamed function object whose body is an expression.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because lambda creates an unnamed function object whose body is an expression.",
+    "whyCorrect": "The correct answer is \"True\" because lambda creates an unnamed function object whose body is an expression.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-152",
+    "group": "lecture_priority_selected",
+    "topic": "Lambda expressions",
+    "question": "A Python lambda can contain several statements separated by indentation, just like a def function body.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because a lambda body must be a single expression, not a statement block.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because a lambda body must be a single expression, not a statement block.",
+    "whyCorrect": "The correct answer is \"False\" because a lambda body must be a single expression, not a statement block.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-153",
+    "group": "lecture_priority_selected",
+    "topic": "Program arguments",
+    "question": "sys.argv is a list containing command-line arguments.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the sys module exposes command-line arguments through sys.argv.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the sys module exposes command-line arguments through sys.argv.",
+    "whyCorrect": "The correct answer is \"True\" because the sys module exposes command-line arguments through sys.argv.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-154",
+    "group": "lecture_priority_selected",
+    "topic": "Program arguments",
+    "question": "The argparse module helps handle command-line arguments in Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because argparse is designed for parsing arguments.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because argparse is designed for parsing arguments.",
+    "whyCorrect": "The correct answer is \"True\" because argparse is designed for parsing arguments.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-155",
+    "group": "lecture_priority_selected",
+    "topic": "Program arguments",
+    "question": "In argparse, the default type of an argument value is string unless type=... is specified.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the lecture explicitly says type describes the type, string by default.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the lecture explicitly says type describes the type, string by default.",
+    "whyCorrect": "The correct answer is \"True\" because the lecture explicitly says type describes the type, string by default.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-156",
+    "group": "lecture_priority_selected",
+    "topic": "Environment variables",
+    "question": "os.environ gives access to environment variables in Python.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the os module exposes environment variables through os.environ.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the os module exposes environment variables through os.environ.",
+    "whyCorrect": "The correct answer is \"True\" because the os module exposes environment variables through os.environ.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-157",
+    "group": "lecture_priority_selected",
+    "topic": "Environment variables",
+    "question": "Setting os.environ['DATAFILE'] = 'filename.csv' changes the system environment permanently for all future applications.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because it only affects the current app and child processes started by it.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because it only affects the current app and child processes started by it.",
+    "whyCorrect": "The correct answer is \"False\" because it only affects the current app and child processes started by it.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-158",
+    "group": "lecture_priority_selected",
+    "topic": "CSV files",
+    "question": "CSV files are text files.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the lecture describes CSV files as text files editable by a text editor or spreadsheet.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the lecture describes CSV files as text files editable by a text editor or spreadsheet.",
+    "whyCorrect": "The correct answer is \"True\" because the lecture describes CSV files as text files editable by a text editor or spreadsheet.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-159",
+    "group": "lecture_priority_selected",
+    "topic": "CSV files",
+    "question": "csv.DictReader is usually useful when the first row contains column headers.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because dictReader maps values to column names.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because dictReader maps values to column names.",
+    "whyCorrect": "The correct answer is \"True\" because dictReader maps values to column names.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-160",
+    "group": "lecture_priority_selected",
+    "topic": "CSV files",
+    "question": "csv.Sniffer().sniff(dataFile.read(1024)) can be used to guess the CSV dialect.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the lecture shows this pattern.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the lecture shows this pattern.",
+    "whyCorrect": "The correct answer is \"True\" because the lecture shows this pattern.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-161",
+    "group": "lecture_priority_selected",
+    "topic": "Excel files with openpyxl",
+    "question": "The lecture uses openpyxl as the library for working with Excel files.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because openpyxl is described as the most popular library for Excel files.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because openpyxl is described as the most popular library for Excel files.",
+    "whyCorrect": "The correct answer is \"True\" because openpyxl is described as the most popular library for Excel files.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-162",
+    "group": "lecture_priority_selected",
+    "topic": "Excel files with openpyxl",
+    "question": "In openpyxl, row and column indexes in sheet.cell() are 0-based.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because excel/openpyxl row and column numbers are 1-based in this API.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because excel/openpyxl row and column numbers are 1-based in this API.",
+    "whyCorrect": "The correct answer is \"False\" because excel/openpyxl row and column numbers are 1-based in this API.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-163",
+    "group": "lecture_priority_selected",
+    "topic": "HTTP protocol",
+    "question": "HTTP is a stateless client-server protocol used to transfer data on the web.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "I don't know"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because each HTTP request is independent and the server does not automatically remember prior requests.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because each HTTP request is independent and the server does not automatically remember prior requests.",
+    "whyCorrect": "The correct answer is \"True\" because each HTTP request is independent and the server does not automatically remember prior requests.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-164",
+    "group": "lecture_priority_selected",
+    "topic": "HTTP request types",
+    "question": "Which HTTP method is normally used to retrieve data?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "GET"
+      },
+      {
+        "key": "B",
+        "text": "POST"
+      },
+      {
+        "key": "C",
+        "text": "PUT only"
+      },
+      {
+        "key": "D",
+        "text": "DELETE only"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"GET\" because GET retrieves data.",
+    "correctAnswer": "GET",
+    "simpleExplanation": "The correct answer is \"GET\" because GET retrieves data.",
+    "whyCorrect": "The correct answer is \"GET\" because GET retrieves data.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-165",
+    "group": "lecture_priority_selected",
+    "topic": "HTTP request types",
+    "question": "Which HTTP method is described as not idempotent because it may create a resource each time?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "GET"
+      },
+      {
+        "key": "B",
+        "text": "POST"
+      },
+      {
+        "key": "C",
+        "text": "HEAD"
+      },
+      {
+        "key": "D",
+        "text": "OPTIONS"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"POST\" because POST submits data and can create a new resource on each call.",
+    "correctAnswer": "POST",
+    "simpleExplanation": "The correct answer is \"POST\" because POST submits data and can create a new resource on each call.",
+    "whyCorrect": "The correct answer is \"POST\" because POST submits data and can create a new resource on each call.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-166",
+    "group": "lecture_priority_selected",
+    "topic": "HTTP status codes",
+    "question": "A web server receives a request for a page that does not exist. Which status code is expected?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "200 OK"
+      },
+      {
+        "key": "B",
+        "text": "401 Authentication required"
+      },
+      {
+        "key": "C",
+        "text": "404 Not Found"
+      },
+      {
+        "key": "D",
+        "text": "500 Server-side error"
+      }
+    ],
+    "correctKey": "C",
+    "explanation": "The correct answer is \"404 Not Found\" because 404 Not Found means the requested resource does not exist.",
+    "correctAnswer": "404 Not Found",
+    "simpleExplanation": "The correct answer is \"404 Not Found\" because 404 Not Found means the requested resource does not exist.",
+    "whyCorrect": "The correct answer is \"404 Not Found\" because 404 Not Found means the requested resource does not exist.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-167",
+    "group": "lecture_priority_selected",
+    "topic": "requests response content",
+    "question": "Which method parses a JSON response body directly into a Python object?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "r.json()"
+      },
+      {
+        "key": "B",
+        "text": "r.text()"
+      },
+      {
+        "key": "C",
+        "text": "r.content()"
+      },
+      {
+        "key": "D",
+        "text": "r.headers()"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"r.json()\" because r.json() parses JSON into Python lists/dicts/etc.",
+    "correctAnswer": "r.json()",
+    "simpleExplanation": "The correct answer is \"r.json()\" because r.json() parses JSON into Python lists/dicts/etc.",
+    "whyCorrect": "The correct answer is \"r.json()\" because r.json() parses JSON into Python lists/dicts/etc.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-168",
+    "group": "lecture_priority_selected",
+    "topic": "requests exceptions",
+    "question": "Which requests method should be called to raise an exception for bad HTTP status codes?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "r.raise_for_status()"
+      },
+      {
+        "key": "B",
+        "text": "r.status_code()"
+      },
+      {
+        "key": "C",
+        "text": "r.content.raise()"
+      },
+      {
+        "key": "D",
+        "text": "requests.check()"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"r.raise_for_status()\" because raise_for_status() raises on 4xx/5xx responses.",
+    "correctAnswer": "r.raise_for_status()",
+    "simpleExplanation": "The correct answer is \"r.raise_for_status()\" because raise_for_status() raises on 4xx/5xx responses.",
+    "whyCorrect": "The correct answer is \"r.raise_for_status()\" because raise_for_status() raises on 4xx/5xx responses.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-169",
+    "group": "lecture_priority_selected",
+    "topic": "Large downloads",
+    "question": "When downloading a large file with requests, what is the purpose of stream=True?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Fetch in chunks instead of loading all content into memory"
+      },
+      {
+        "key": "B",
+        "text": "Convert bytes into HTML"
+      },
+      {
+        "key": "C",
+        "text": "Force JSON parsing"
+      },
+      {
+        "key": "D",
+        "text": "Ignore HTTP errors"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"Fetch in chunks instead of loading all content into memory\" because stream=True allows chunked download.",
+    "correctAnswer": "Fetch in chunks instead of loading all content into memory",
+    "simpleExplanation": "The correct answer is \"Fetch in chunks instead of loading all content into memory\" because stream=True allows chunked download.",
+    "whyCorrect": "The correct answer is \"Fetch in chunks instead of loading all content into memory\" because stream=True allows chunked download.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-170",
+    "group": "lecture_priority_selected",
+    "topic": "BeautifulSoup",
+    "question": "What does content.select(\"p\") return?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "A list of matching elements"
+      },
+      {
+        "key": "B",
+        "text": "A single string only"
+      },
+      {
+        "key": "C",
+        "text": "A network response"
+      },
+      {
+        "key": "D",
+        "text": "A CSV row"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"A list of matching elements\" because beautifulSoup select() returns a list.",
+    "correctAnswer": "A list of matching elements",
+    "simpleExplanation": "The correct answer is \"A list of matching elements\" because beautifulSoup select() returns a list.",
+    "whyCorrect": "The correct answer is \"A list of matching elements\" because beautifulSoup select() returns a list.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-171",
+    "group": "lecture_priority_selected",
+    "topic": "REST API",
+    "question": "What kind of data do REST APIs often return according to the lecture?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Structured data such as JSON"
+      },
+      {
+        "key": "B",
+        "text": "Only raw images"
+      },
+      {
+        "key": "C",
+        "text": "Only DOCX files"
+      },
+      {
+        "key": "D",
+        "text": "Only Python source code"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"Structured data such as JSON\" because REST APIs usually return structured data, typically JSON.",
+    "correctAnswer": "Structured data such as JSON",
+    "simpleExplanation": "The correct answer is \"Structured data such as JSON\" because REST APIs usually return structured data, typically JSON.",
+    "whyCorrect": "The correct answer is \"Structured data such as JSON\" because REST APIs usually return structured data, typically JSON.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-172",
+    "group": "lecture_priority_selected",
+    "topic": "API authentication",
+    "question": "Where is the API token passed in the lecture example?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "In the Authorization HTTP header"
+      },
+      {
+        "key": "B",
+        "text": "Inside a CSV field"
+      },
+      {
+        "key": "C",
+        "text": "In an SMTP body only"
+      },
+      {
+        "key": "D",
+        "text": "In the BeautifulSoup parser name"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"In the Authorization HTTP header\" because the example passes Authorization: token ... in headers.",
+    "correctAnswer": "In the Authorization HTTP header",
+    "simpleExplanation": "The correct answer is \"In the Authorization HTTP header\" because the example passes Authorization: token ... in headers.",
+    "whyCorrect": "The correct answer is \"In the Authorization HTTP header\" because the example passes Authorization: token ... in headers.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-173",
+    "group": "lecture_priority_selected",
+    "topic": "Floating point arithmetic",
+    "question": "What is the result of .1 + .1 + .1 == .3 in Python?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      },
+      {
+        "key": "C",
+        "text": "SyntaxError"
+      },
+      {
+        "key": "D",
+        "text": "TypeError"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"False\" because binary floating-point arithmetic cannot represent 0.1 exactly, so the equality check is false.",
+    "correctAnswer": "False",
+    "simpleExplanation": "The correct answer is \"False\" because binary floating-point arithmetic cannot represent 0.1 exactly, so the equality check is false.",
+    "whyCorrect": "The correct answer is \"False\" because binary floating-point arithmetic cannot represent 0.1 exactly, so the equality check is false.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-174",
+    "group": "lecture_priority_selected",
+    "topic": "Floating point arithmetic",
+    "question": "Which assertion is the safest way to compare .1 + .1 + .1 with .3 using a tolerance?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "assert .1 + .1 + .1 is .3"
+      },
+      {
+        "key": "B",
+        "text": "assert abs((.1 + .1 + .1) - .3) < 1e-12"
+      },
+      {
+        "key": "C",
+        "text": "assert str(.1 + .1 + .1) == str(.3)"
+      },
+      {
+        "key": "D",
+        "text": "assert int(.1 + .1 + .1) == int(.3)"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"assert abs((.1 + .1 + .1) - .3) < 1e-12\" because a tolerance allows for tiny representation errors in binary floating-point arithmetic.",
+    "correctAnswer": "assert abs((.1 + .1 + .1) - .3) < 1e-12",
+    "simpleExplanation": "The correct answer is \"assert abs((.1 + .1 + .1) - .3) < 1e-12\" because a tolerance allows for tiny representation errors in binary floating-point arithmetic.",
+    "whyCorrect": "The correct answer is \"assert abs((.1 + .1 + .1) - .3) < 1e-12\" because a tolerance allows for tiny representation errors in binary floating-point arithmetic.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-175",
+    "group": "lecture_priority_selected",
+    "topic": "pytest.approx",
+    "question": "What is pytest.approx() used for?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Approximating execution time"
+      },
+      {
+        "key": "B",
+        "text": "Comparing values such as floats with tolerance"
+      },
+      {
+        "key": "C",
+        "text": "Generating fake input files"
+      },
+      {
+        "key": "D",
+        "text": "Skipping slow tests"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"Comparing values such as floats with tolerance\" because pytest.approx() is a convenience helper for tolerant numeric comparisons.",
+    "correctAnswer": "Comparing values such as floats with tolerance",
+    "simpleExplanation": "The correct answer is \"Comparing values such as floats with tolerance\" because pytest.approx() is a convenience helper for tolerant numeric comparisons.",
+    "whyCorrect": "The correct answer is \"Comparing values such as floats with tolerance\" because pytest.approx() is a convenience helper for tolerant numeric comparisons.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-176",
+    "group": "lecture_priority_selected",
+    "topic": "Decimal",
+    "question": "Which expression gives exact decimal arithmetic for tenths?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Decimal(0.1)"
+      },
+      {
+        "key": "B",
+        "text": "Decimal(\"0.1\")"
+      },
+      {
+        "key": "C",
+        "text": "float(\"0.1\")"
+      },
+      {
+        "key": "D",
+        "text": "int(0.1)"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"Decimal(\"0.1\")\" because decimal should receive string values to avoid inheriting a binary float approximation.",
+    "correctAnswer": "Decimal(\"0.1\")",
+    "simpleExplanation": "The correct answer is \"Decimal(\"0.1\")\" because decimal should receive string values to avoid inheriting a binary float approximation.",
+    "whyCorrect": "The correct answer is \"Decimal(\"0.1\")\" because decimal should receive string values to avoid inheriting a binary float approximation.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-177",
+    "group": "lecture_priority_selected",
+    "topic": "Testing approaches",
+    "question": "What is static testing?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Running code with known inputs"
+      },
+      {
+        "key": "B",
+        "text": "Analyzing code without running it"
+      },
+      {
+        "key": "C",
+        "text": "Watching logs in production only"
+      },
+      {
+        "key": "D",
+        "text": "Sending real emails"
+      }
+    ],
+    "correctKey": "B",
+    "explanation": "The correct answer is \"Analyzing code without running it\" because static testing analyses code without executing it, for example with pylint or type checkers.",
+    "correctAnswer": "Analyzing code without running it",
+    "simpleExplanation": "The correct answer is \"Analyzing code without running it\" because static testing analyses code without executing it, for example with pylint or type checkers.",
+    "whyCorrect": "The correct answer is \"Analyzing code without running it\" because static testing analyses code without executing it, for example with pylint or type checkers.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-178",
+    "group": "lecture_priority_selected",
+    "topic": "Testing approaches",
+    "question": "What is dynamic testing?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Running code with known inputs and checking expected outputs"
+      },
+      {
+        "key": "B",
+        "text": "Only checking indentation"
+      },
+      {
+        "key": "C",
+        "text": "Only reading logs"
+      },
+      {
+        "key": "D",
+        "text": "Renaming test files"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"Running code with known inputs and checking expected outputs\" because dynamic tests execute code and assert expected results.",
+    "correctAnswer": "Running code with known inputs and checking expected outputs",
+    "simpleExplanation": "The correct answer is \"Running code with known inputs and checking expected outputs\" because dynamic tests execute code and assert expected results.",
+    "whyCorrect": "The correct answer is \"Running code with known inputs and checking expected outputs\" because dynamic tests execute code and assert expected results.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-179",
+    "group": "lecture_priority_selected",
+    "topic": "Testing levels",
+    "question": "What does a unit test focus on?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "One function or class in isolation"
+      },
+      {
+        "key": "B",
+        "text": "A whole company workflow"
+      },
+      {
+        "key": "C",
+        "text": "A full database cluster only"
+      },
+      {
+        "key": "D",
+        "text": "A user contract negotiation"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"One function or class in isolation\" because unit tests isolate a single function or class.",
+    "correctAnswer": "One function or class in isolation",
+    "simpleExplanation": "The correct answer is \"One function or class in isolation\" because unit tests isolate a single function or class.",
+    "whyCorrect": "The correct answer is \"One function or class in isolation\" because unit tests isolate a single function or class.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-180",
+    "group": "lecture_priority_selected",
+    "topic": "pytest basics",
+    "question": "What is pytest?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "An industry-standard Python test runner"
+      },
+      {
+        "key": "B",
+        "text": "A web browser"
+      },
+      {
+        "key": "C",
+        "text": "A database server"
+      },
+      {
+        "key": "D",
+        "text": "A DOCX parser"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"An industry-standard Python test runner\" because pytest is presented as an industry-standard test runner for Python.",
+    "correctAnswer": "An industry-standard Python test runner",
+    "simpleExplanation": "The correct answer is \"An industry-standard Python test runner\" because pytest is presented as an industry-standard test runner for Python.",
+    "whyCorrect": "The correct answer is \"An industry-standard Python test runner\" because pytest is presented as an industry-standard test runner for Python.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-181",
+    "group": "lecture_priority_selected",
+    "topic": "Test discovery",
+    "question": "Which file name pattern is discovered by pytest?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "test_app.py"
+      },
+      {
+        "key": "B",
+        "text": "app.test"
+      },
+      {
+        "key": "C",
+        "text": "tests.docx"
+      },
+      {
+        "key": "D",
+        "text": "check-app.md"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"test_app.py\" because pytest scans for test_*.py and *_test.py files.",
+    "correctAnswer": "test_app.py",
+    "simpleExplanation": "The correct answer is \"test_app.py\" because pytest scans for test_*.py and *_test.py files.",
+    "whyCorrect": "The correct answer is \"test_app.py\" because pytest scans for test_*.py and *_test.py files.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-182",
+    "group": "lecture_priority_selected",
+    "topic": "Testing exceptions",
+    "question": "Which pytest feature checks that an exception is raised?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "pytest.raises"
+      },
+      {
+        "key": "B",
+        "text": "pytest.exception_is"
+      },
+      {
+        "key": "C",
+        "text": "pytest.error"
+      },
+      {
+        "key": "D",
+        "text": "pytest.catch_all"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"pytest.raises\" because pytest.raises is used as a context manager to verify expected exceptions.",
+    "correctAnswer": "pytest.raises",
+    "simpleExplanation": "The correct answer is \"pytest.raises\" because pytest.raises is used as a context manager to verify expected exceptions.",
+    "whyCorrect": "The correct answer is \"pytest.raises\" because pytest.raises is used as a context manager to verify expected exceptions.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-183",
+    "group": "lecture_priority_selected",
+    "topic": "Parametrization",
+    "question": "What does @pytest.mark.parametrize allow?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Running the same test logic with multiple input sets"
+      },
+      {
+        "key": "B",
+        "text": "Installing pytest automatically"
+      },
+      {
+        "key": "C",
+        "text": "Disabling all tests"
+      },
+      {
+        "key": "D",
+        "text": "Converting tests into CSV"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"Running the same test logic with multiple input sets\" because parametrization generates independent test cases from one test function.",
+    "correctAnswer": "Running the same test logic with multiple input sets",
+    "simpleExplanation": "The correct answer is \"Running the same test logic with multiple input sets\" because parametrization generates independent test cases from one test function.",
+    "whyCorrect": "The correct answer is \"Running the same test logic with multiple input sets\" because parametrization generates independent test cases from one test function.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-184",
+    "group": "lecture_priority_selected",
+    "topic": "TDD",
+    "question": "What does TDD stand for?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Test-Driven Development"
+      },
+      {
+        "key": "B",
+        "text": "Typed Data Dictionary"
+      },
+      {
+        "key": "C",
+        "text": "Temporary Debug Directory"
+      },
+      {
+        "key": "D",
+        "text": "Text Document Design"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"Test-Driven Development\" because TDD is Test-Driven Development.",
+    "correctAnswer": "Test-Driven Development",
+    "simpleExplanation": "The correct answer is \"Test-Driven Development\" because TDD is Test-Driven Development.",
+    "whyCorrect": "The correct answer is \"Test-Driven Development\" because TDD is Test-Driven Development.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-185",
+    "group": "lecture_priority_selected",
+    "topic": "DOCX format",
+    "question": "A DOCX document contains paragraphs, and each paragraph can contain one or more Run objects.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"True\" because the lecture describes documents as paragraphs, and paragraphs as runs.",
+    "correctAnswer": "True",
+    "simpleExplanation": "The correct answer is \"True\" because the lecture describes documents as paragraphs, and paragraphs as runs.",
+    "whyCorrect": "The correct answer is \"True\" because the lecture describes documents as paragraphs, and paragraphs as runs.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-186",
+    "group": "lecture_priority_selected",
+    "topic": "Reading DOCX",
+    "question": "Given doc = Document(\"mydoc.docx\"), what does len(doc.paragraphs) return?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "The number of paragraph objects in the document"
+      },
+      {
+        "key": "B",
+        "text": "The number of pages in the document"
+      },
+      {
+        "key": "C",
+        "text": "The number of styles in the document"
+      },
+      {
+        "key": "D",
+        "text": "The number of words in the first paragraph"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"The number of paragraph objects in the document\" because doc.paragraphs is the list of paragraph objects.",
+    "correctAnswer": "The number of paragraph objects in the document",
+    "simpleExplanation": "The correct answer is \"The number of paragraph objects in the document\" because doc.paragraphs is the list of paragraph objects.",
+    "whyCorrect": "The correct answer is \"The number of paragraph objects in the document\" because doc.paragraphs is the list of paragraph objects.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-187",
+    "group": "lecture_priority_selected",
+    "topic": "Writing DOCX",
+    "question": "Which method saves a python-docx document to a file?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "doc.save(\"myfirstdoc.docx\")"
+      },
+      {
+        "key": "B",
+        "text": "doc.write(\"myfirstdoc.docx\")"
+      },
+      {
+        "key": "C",
+        "text": "save(doc, \"myfirstdoc.docx\")"
+      },
+      {
+        "key": "D",
+        "text": "doc.export(\"myfirstdoc.docx\")"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"doc.save(\"myfirstdoc.docx\")\" because the lecture uses doc.save(filename).",
+    "correctAnswer": "doc.save(\"myfirstdoc.docx\")",
+    "simpleExplanation": "The correct answer is \"doc.save(\"myfirstdoc.docx\")\" because the lecture uses doc.save(filename).",
+    "whyCorrect": "The correct answer is \"doc.save(\"myfirstdoc.docx\")\" because the lecture uses doc.save(filename).",
+    "reviewed": true
+  },
+  {
+    "id": "REL-188",
+    "group": "lecture_priority_selected",
+    "topic": "Pillow prerequisites",
+    "question": "Which command installs the image manipulation package used in the lecture?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "pip install pillow"
+      },
+      {
+        "key": "B",
+        "text": "pip install imageio"
+      },
+      {
+        "key": "C",
+        "text": "pip install pil-core"
+      },
+      {
+        "key": "D",
+        "text": "pip install matplotlib"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"pip install pillow\" because the lecture uses Pillow for image manipulation.",
+    "correctAnswer": "pip install pillow",
+    "simpleExplanation": "The correct answer is \"pip install pillow\" because the lecture uses Pillow for image manipulation.",
+    "whyCorrect": "The correct answer is \"pip install pillow\" because the lecture uses Pillow for image manipulation.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-189",
+    "group": "lecture_priority_selected",
+    "topic": "Pillow files",
+    "question": "Which function opens an image file with Pillow?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Image.open(\"example.gif\")"
+      },
+      {
+        "key": "B",
+        "text": "Image.load(\"example.gif\")"
+      },
+      {
+        "key": "C",
+        "text": "PIL.open_image(\"example.gif\")"
+      },
+      {
+        "key": "D",
+        "text": "open.Image(\"example.gif\")"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"Image.open(\"example.gif\")\" because the lecture uses Image.open(filename).",
+    "correctAnswer": "Image.open(\"example.gif\")",
+    "simpleExplanation": "The correct answer is \"Image.open(\"example.gif\")\" because the lecture uses Image.open(filename).",
+    "whyCorrect": "The correct answer is \"Image.open(\"example.gif\")\" because the lecture uses Image.open(filename).",
+    "reviewed": true
+  },
+  {
+    "id": "REL-190",
+    "group": "lecture_priority_selected",
+    "topic": "Pillow crop",
+    "question": "What does img.crop((100,100,400,200)) use as its argument?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "A box tuple with left, upper, right, lower coordinates"
+      },
+      {
+        "key": "B",
+        "text": "Only width and height"
+      },
+      {
+        "key": "C",
+        "text": "A color tuple"
+      },
+      {
+        "key": "D",
+        "text": "A list of pixels"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"A box tuple with left, upper, right, lower coordinates\" because pillow crop uses a rectangular box tuple.",
+    "correctAnswer": "A box tuple with left, upper, right, lower coordinates",
+    "simpleExplanation": "The correct answer is \"A box tuple with left, upper, right, lower coordinates\" because pillow crop uses a rectangular box tuple.",
+    "whyCorrect": "The correct answer is \"A box tuple with left, upper, right, lower coordinates\" because pillow crop uses a rectangular box tuple.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-191",
+    "group": "lecture_priority_selected",
+    "topic": "Pillow resizing",
+    "question": "Which method changes the pixel dimensions of a Pillow image and returns a new image?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "resize()"
+      },
+      {
+        "key": "B",
+        "text": "scale_in_place()"
+      },
+      {
+        "key": "C",
+        "text": "reshape()"
+      },
+      {
+        "key": "D",
+        "text": "set_size()"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"resize()\" because resize returns a new image.",
+    "correctAnswer": "resize()",
+    "simpleExplanation": "The correct answer is \"resize()\" because resize returns a new image.",
+    "whyCorrect": "The correct answer is \"resize()\" because resize returns a new image.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-192",
+    "group": "lecture_priority_selected",
+    "topic": "Matplotlib basics",
+    "question": "Which import alias is used in the lecture for pyplot?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "import matplotlib.pyplot as plt"
+      },
+      {
+        "key": "B",
+        "text": "import matplotlib as pyplot"
+      },
+      {
+        "key": "C",
+        "text": "from matplotlib import plt as pyplot"
+      },
+      {
+        "key": "D",
+        "text": "import pyplot.matplotlib as plt"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"import matplotlib.pyplot as plt\" because the lecture imports pyplot as plt.",
+    "correctAnswer": "import matplotlib.pyplot as plt",
+    "simpleExplanation": "The correct answer is \"import matplotlib.pyplot as plt\" because the lecture imports pyplot as plt.",
+    "whyCorrect": "The correct answer is \"import matplotlib.pyplot as plt\" because the lecture imports pyplot as plt.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-193",
+    "group": "lecture_priority_selected",
+    "topic": "SQLite basics",
+    "question": "Which description best matches SQLite in Python?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "A serverless relational database engine stored in a single file"
+      },
+      {
+        "key": "B",
+        "text": "A remote-only database that always needs a separate server"
+      },
+      {
+        "key": "C",
+        "text": "A Python package that must always be installed with pip"
+      },
+      {
+        "key": "D",
+        "text": "A spreadsheet format for Excel files"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"A serverless relational database engine stored in a single file\" because SQLite is serverless, self-contained, relational, and stored in a single file.",
+    "correctAnswer": "A serverless relational database engine stored in a single file",
+    "simpleExplanation": "The correct answer is \"A serverless relational database engine stored in a single file\" because SQLite is serverless, self-contained, relational, and stored in a single file.",
+    "whyCorrect": "The correct answer is \"A serverless relational database engine stored in a single file\" because SQLite is serverless, self-contained, relational, and stored in a single file.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-194",
+    "group": "lecture_priority_selected",
+    "topic": "Transactions",
+    "question": "A script executes three INSERT statements and crashes before con.commit(). What is saved?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Zero rows; uncommitted changes are discarded"
+      },
+      {
+        "key": "B",
+        "text": "All three rows; SQLite always autocommits"
+      },
+      {
+        "key": "C",
+        "text": "Only the first row"
+      },
+      {
+        "key": "D",
+        "text": "Only rows with INTEGER PRIMARY KEY"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"Zero rows; uncommitted changes are discarded\" because without commit, the transaction is rolled back when the connection closes.",
+    "correctAnswer": "Zero rows; uncommitted changes are discarded",
+    "simpleExplanation": "The correct answer is \"Zero rows; uncommitted changes are discarded\" because without commit, the transaction is rolled back when the connection closes.",
+    "whyCorrect": "The correct answer is \"Zero rows; uncommitted changes are discarded\" because without commit, the transaction is rolled back when the connection closes.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-195",
+    "group": "lecture_priority_selected",
+    "topic": "Cursor",
+    "question": "What is a cursor in sqlite3?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "An object used to send SQL statements to the database"
+      },
+      {
+        "key": "B",
+        "text": "A pointer to the mouse position"
+      },
+      {
+        "key": "C",
+        "text": "A special Python list of tables"
+      },
+      {
+        "key": "D",
+        "text": "A file encoding setting"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"An object used to send SQL statements to the database\" because the lecture defines Cursor as an object used to send SQL statements to the database.",
+    "correctAnswer": "An object used to send SQL statements to the database",
+    "simpleExplanation": "The correct answer is \"An object used to send SQL statements to the database\" because the lecture defines Cursor as an object used to send SQL statements to the database.",
+    "whyCorrect": "The correct answer is \"An object used to send SQL statements to the database\" because the lecture defines Cursor as an object used to send SQL statements to the database.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-196",
+    "group": "lecture_priority_selected",
+    "topic": "Primary key",
+    "question": "Which declaration creates an auto-incrementing rowid alias in SQLite?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "id INTEGER PRIMARY KEY"
+      },
+      {
+        "key": "B",
+        "text": "id INT PRIMARY KEY"
+      },
+      {
+        "key": "C",
+        "text": "id TEXT PRIMARY KEY"
+      },
+      {
+        "key": "D",
+        "text": "id NUMBER PRIMARY KEY"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"id INTEGER PRIMARY KEY\" because the exact keyword INTEGER PRIMARY KEY creates the rowid alias.",
+    "correctAnswer": "id INTEGER PRIMARY KEY",
+    "simpleExplanation": "The correct answer is \"id INTEGER PRIMARY KEY\" because the exact keyword INTEGER PRIMARY KEY creates the rowid alias.",
+    "whyCorrect": "The correct answer is \"id INTEGER PRIMARY KEY\" because the exact keyword INTEGER PRIMARY KEY creates the rowid alias.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-197",
+    "group": "lecture_priority_selected",
+    "topic": "SQL injection prevention",
+    "question": "Which code style is safest for user data in INSERT or WHERE clauses?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Use ? placeholders and pass parameters separately"
+      },
+      {
+        "key": "B",
+        "text": "Use f-strings to build SQL directly"
+      },
+      {
+        "key": "C",
+        "text": "Concatenate strings with +"
+      },
+      {
+        "key": "D",
+        "text": "Use assert before SQL"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"Use ? placeholders and pass parameters separately\" because parameterized statements avoid SQL injection attacks.",
+    "correctAnswer": "Use ? placeholders and pass parameters separately",
+    "simpleExplanation": "The correct answer is \"Use ? placeholders and pass parameters separately\" because parameterized statements avoid SQL injection attacks.",
+    "whyCorrect": "The correct answer is \"Use ? placeholders and pass parameters separately\" because parameterized statements avoid SQL injection attacks.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-198",
+    "group": "lecture_priority_selected",
+    "topic": "UPDATE without WHERE",
+    "question": "What happens if an UPDATE statement has no WHERE clause?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "It may modify every row"
+      },
+      {
+        "key": "B",
+        "text": "It raises SyntaxError automatically"
+      },
+      {
+        "key": "C",
+        "text": "It modifies no rows"
+      },
+      {
+        "key": "D",
+        "text": "It only changes the first row"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"It may modify every row\" because the lecture warns that UPDATE without WHERE modifies every row.",
+    "correctAnswer": "It may modify every row",
+    "simpleExplanation": "The correct answer is \"It may modify every row\" because the lecture warns that UPDATE without WHERE modifies every row.",
+    "whyCorrect": "The correct answer is \"It may modify every row\" because the lecture warns that UPDATE without WHERE modifies every row.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-199",
+    "group": "lecture_priority_selected",
+    "topic": "LEFT JOIN",
+    "question": "What does LEFT JOIN preserve?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "All rows from the left table, even if there is no match"
+      },
+      {
+        "key": "B",
+        "text": "Only rows with matches in both tables"
+      },
+      {
+        "key": "C",
+        "text": "Only rows from the right table"
+      },
+      {
+        "key": "D",
+        "text": "Only duplicate rows"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"All rows from the left table, even if there is no match\" because LEFT JOIN keeps all rows from the left table and uses NULL for missing right-side values.",
+    "correctAnswer": "All rows from the left table, even if there is no match",
+    "simpleExplanation": "The correct answer is \"All rows from the left table, even if there is no match\" because LEFT JOIN keeps all rows from the left table and uses NULL for missing right-side values.",
+    "whyCorrect": "The correct answer is \"All rows from the left table, even if there is no match\" because LEFT JOIN keeps all rows from the left table and uses NULL for missing right-side values.",
+    "reviewed": true
+  },
+  {
+    "id": "REL-200",
+    "group": "lecture_priority_selected",
+    "topic": "row_factory",
+    "question": "How do you enable named column access for rows?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "con.row_factory = sqlite3.Row"
+      },
+      {
+        "key": "B",
+        "text": "con.named_rows = True"
+      },
+      {
+        "key": "C",
+        "text": "cur.row_type = dict"
+      },
+      {
+        "key": "D",
+        "text": "sqlite3.enable_json_rows()"
+      }
+    ],
+    "correctKey": "A",
+    "explanation": "The correct answer is \"con.row_factory = sqlite3.Row\" because setting con.row_factory to sqlite3.Row enables named access.",
+    "correctAnswer": "con.row_factory = sqlite3.Row",
+    "simpleExplanation": "The correct answer is \"con.row_factory = sqlite3.Row\" because setting con.row_factory to sqlite3.Row enables named access.",
+    "whyCorrect": "The correct answer is \"con.row_factory = sqlite3.Row\" because setting con.row_factory to sqlite3.Row enables named access.",
+    "reviewed": true
+  }
+]

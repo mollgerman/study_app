@@ -22,8 +22,13 @@ class LocalStore {
       };
       await this.save();
     }
-    if (!this.db.questions?.length || this.db.questions.some((question) => !question.options?.length || !question.correctAnswer)) {
-      this.db.questions = loadSeedQuestions();
+    const seedQuestions = loadSeedQuestions();
+    if (
+      !this.db.questions?.length ||
+      this.db.questions.length !== seedQuestions.length ||
+      this.db.questions.some((question) => !question.options?.length || !question.correctAnswer)
+    ) {
+      this.db.questions = seedQuestions;
       await this.save();
     }
   }

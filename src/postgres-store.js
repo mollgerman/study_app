@@ -60,8 +60,7 @@ class PostgresStore {
         primary key (session_id, question_id)
       );
     `);
-    const { rows } = await this.pool.query("select count(*)::int as count from questions");
-    if (!rows[0].count) await this.seedQuestions();
+    await this.seedQuestions();
   }
 
   async seedQuestions() {
@@ -74,7 +73,18 @@ class PostgresStore {
           `insert into questions
             (id, course_id, source_type, phase, topic, type, question, options, correct_answer, explanation, source_file, source_ref)
            values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)
-           on conflict (id) do nothing`,
+           on conflict (id) do update set
+             course_id = excluded.course_id,
+             source_type = excluded.source_type,
+             phase = excluded.phase,
+             topic = excluded.topic,
+             type = excluded.type,
+             question = excluded.question,
+             options = excluded.options,
+             correct_answer = excluded.correct_answer,
+             explanation = excluded.explanation,
+             source_file = excluded.source_file,
+             source_ref = excluded.source_ref`,
           [
             question.id,
             question.courseId,

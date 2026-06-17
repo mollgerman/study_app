@@ -237,7 +237,9 @@ async function handleApi(req, res, store) {
     const topic = body.topic ? String(body.topic) : null;
     let questions = [];
 
-    if (mode === "past_exam") {
+    if (mode === "ultimate") {
+      questions = await store.listQuestions({ courseId, sourceType: "priority" });
+    } else if (mode === "past_exam") {
       questions = await store.listQuestions({ courseId, sourceType: "past_exam" });
     } else if (mode === "missed") {
       questions = await store.listMissedQuestions(current.id, courseId);

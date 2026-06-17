@@ -3,6 +3,7 @@ const path = require("node:path");
 
 const ROOT = path.join(__dirname, "..");
 const QUESTION_BANK = path.join(ROOT, "sl_exam_master_question_bank.json");
+const PRIORITY_BANK = path.join(ROOT, "sl_exam_200_priority_app_import_explained.json");
 
 function optionList(question) {
   if (question.options && typeof question.options === "object") {
@@ -18,6 +19,20 @@ function optionList(question) {
     }));
   }
   if (question.choices && typeof question.choices === "object") {
+    if (Array.isArray(question.choices)) {
+      return question.choices.map((choice) => {
+        if (choice && typeof choice === "object") {
+          return {
+            key: String(choice.key),
+            text: String(choice.text)
+          };
+        }
+        return {
+          key: String(choice),
+          text: String(choice)
+        };
+      });
+    }
     return Object.entries(question.choices).map(([key, text]) => ({
       key,
       text: String(text)
@@ -38,6 +53,9 @@ function correctAnswer(question) {
   }
   if (question.correct_choice !== undefined && question.correct_choice !== null) {
     return String(question.correct_choice);
+  }
+  if (question.correctKey !== undefined && question.correctKey !== null) {
+    return String(question.correctKey);
   }
   if (question.answer !== undefined && question.answer !== null) {
     return String(question.answer);
@@ -67,7 +85,7 @@ function questionId(question, index) {
 
 function loadSeedQuestions() {
   const bank = JSON.parse(fs.readFileSync(QUESTION_BANK, "utf8"));
-  return bank.questions.map((question, index) => ({
+  const questions = bank.questions.map((question, index) => ({
     id: questionId(question, index),
     courseId: "SL",
     sourceType: sourceType(question),
@@ -81,6 +99,28 @@ function loadSeedQuestions() {
     sourceFile: question.source_file ? String(question.source_file) : null,
     sourceRef: question.quiz_question_no ? `Quiz question ${question.quiz_question_no}` : null
   }));
+
+  if (fs.existsSync(PRIORITY_BANK)) {
+    const priorityQuestions = JSON.parse(fs.readFileSync(PRIORITY_BANK, "utf8"));
+    questions.push(
+      ...priorityQuestions.map((question, index) => ({
+        id: questionId(question, index),
+        courseId: "SL",
+        sourceType: "priority",
+        phase: String(question.group || "Ultimate"),
+        topic: String(question.topic || "Priority review"),
+        type: "single_choice",
+        question: String(question.question || ""),
+        options: optionList(question),
+        correctAnswer: correctAnswer(question),
+        explanation: String(question.explanation || question.whyCorrect || question.simpleExplanation || "Review the rule behind this answer."),
+        sourceFile: "sl_exam_200_priority_app_import_explained.json",
+        sourceRef: question.group ? String(question.group) : null
+      }))
+    );
+  }
+
+  return questions;
 }
 
 module.exports = { loadSeedQuestions };
