@@ -1,0 +1,1587 @@
+{
+  "name": "SL Exam Phase 5 - Internet resources question source",
+  "description": "Single-choice Python exam questions generated from Lecture 09: HTTP, requests, HTML/BeautifulSoup, REST APIs, authentication headers, and email with smtplib. The focus is Python use, not another programming language.",
+  "phase": 5,
+  "source_files": [
+    "SL_W04IST_SI4034_lecture_09-internet.pdf"
+  ],
+  "question_count": 107,
+  "topics": [
+    {
+      "name": "HTTP protocol",
+      "keypoints": [
+        "HTTP is a stateless client-server protocol",
+        "GET retrieves data and is idempotent",
+        "POST submits data in the body and is not idempotent",
+        "404 means resource not found, 200 success, 401 authentication required, 500 server error"
+      ]
+    },
+    {
+      "name": "requests library",
+      "keypoints": [
+        "requests.get/post/put/delete perform HTTP methods",
+        "params encodes query string parameters",
+        "data sends body form data",
+        "raise_for_status raises on 4xx/5xx",
+        "r.text is decoded text, r.content raw bytes, r.json parses JSON"
+      ]
+    },
+    {
+      "name": "HTML and BeautifulSoup",
+      "keypoints": [
+        "HTML combines content with structural tags",
+        "DOM is a tree representation",
+        "BeautifulSoup builds a navigable object from raw HTML",
+        "CSS selectors can select by tag, id, class, descendant, and direct child",
+        "get_text extracts visible text, get(\"href\") extracts attributes"
+      ]
+    },
+    {
+      "name": "Web scraping caveats",
+      "keypoints": [
+        "Page structure can change without notice",
+        "Sites can block scraping",
+        "Poor semantic HTML makes selection unreliable",
+        "Check robots.txt and terms of service"
+      ]
+    },
+    {
+      "name": "REST APIs",
+      "keypoints": [
+        "APIs exchange data/actions between software systems",
+        "REST APIs usually return JSON",
+        "HTTP methods map to CRUD: POST create, GET read, PUT update, DELETE delete",
+        "URL paths identify resources",
+        "Tokens are commonly passed in Authorization headers"
+      ]
+    },
+    {
+      "name": "Email with smtplib",
+      "keypoints": [
+        "SMTP sends email",
+        "Use TLS: port 587 STARTTLS or 465 implicit TLS",
+        "Avoid plaintext port 25",
+        "Never hard-code credentials; use environment variables, getpass, or ignored config",
+        "Email requires From, To, Subject headers and blank line before body",
+        "sendmail recipients must be a list and returns failed-recipient dict"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "P5-Q001",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP protocol",
+      "type": "single_choice",
+      "question": "What does HTTP stand for?",
+      "options": {
+        "A": "Hypertext Transfer Protocol",
+        "B": "High Transfer Python",
+        "C": "Host Text Python",
+        "D": "Hyperlink Terminal Process"
+      },
+      "correct_answer": "A",
+      "explanation": "HTTP means Hypertext Transfer Protocol."
+    },
+    {
+      "id": "P5-Q002",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP protocol",
+      "type": "true_false",
+      "question": "HTTP is a stateless client-server protocol used to transfer data on the web.",
+      "correct_answer": "True",
+      "explanation": "Each HTTP request is independent and the server does not automatically remember prior requests."
+    },
+    {
+      "id": "P5-Q003",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP protocol",
+      "type": "true_false",
+      "question": "In the HTTP request-response cycle, the server sends a request and the client returns a response.",
+      "correct_answer": "False",
+      "explanation": "The client sends the request; the server returns the response."
+    },
+    {
+      "id": "P5-Q004",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP protocol",
+      "type": "true_false",
+      "question": "In HTTP, stateless means that every request is independent.",
+      "correct_answer": "True",
+      "explanation": "The server treats each request separately unless extra mechanisms such as sessions or tokens are used."
+    },
+    {
+      "id": "P5-Q005",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP protocol",
+      "type": "single_choice",
+      "question": "Which HTTP version is described in the lecture as text-based?",
+      "options": {
+        "A": "HTTP/1.1",
+        "B": "HTTP/2",
+        "C": "HTTP/3",
+        "D": "SMTP"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture notes HTTP/1.1 as text-based, while HTTP/2 and HTTP/3 use binary framing."
+    },
+    {
+      "id": "P5-Q006",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP protocol",
+      "type": "true_false",
+      "question": "HTTP/2 and HTTP/3 use binary framing according to the lecture.",
+      "correct_answer": "True",
+      "explanation": "The slides distinguish HTTP/1.1 as text-based and HTTP/2/3 as binary framed."
+    },
+    {
+      "id": "P5-Q007",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP request types",
+      "type": "single_choice",
+      "question": "Which HTTP method is normally used to retrieve data?",
+      "options": {
+        "A": "GET",
+        "B": "POST",
+        "C": "PUT only",
+        "D": "DELETE only"
+      },
+      "correct_answer": "A",
+      "explanation": "GET retrieves data."
+    },
+    {
+      "id": "P5-Q008",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP request types",
+      "type": "single_choice",
+      "question": "Which HTTP method is described as not idempotent because it may create a resource each time?",
+      "options": {
+        "A": "GET",
+        "B": "POST",
+        "C": "HEAD",
+        "D": "OPTIONS"
+      },
+      "correct_answer": "B",
+      "explanation": "POST submits data and can create a new resource on each call."
+    },
+    {
+      "id": "P5-Q009",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP request types",
+      "type": "true_false",
+      "question": "GET arguments are commonly encoded in the URL query string.",
+      "correct_answer": "True",
+      "explanation": "Example: /users?name=Tom."
+    },
+    {
+      "id": "P5-Q010",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP request types",
+      "type": "true_false",
+      "question": "POST arguments are commonly sent in the request body.",
+      "correct_answer": "True",
+      "explanation": "The lecture shows name and password in the POST body."
+    },
+    {
+      "id": "P5-Q011",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP request types",
+      "type": "true_false",
+      "question": "A GET request should normally be safe to repeat because it is idempotent.",
+      "correct_answer": "True",
+      "explanation": "GET is described as idempotent, safe to repeat."
+    },
+    {
+      "id": "P5-Q012",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP request types",
+      "type": "true_false",
+      "question": "A POST request is always safe to repeat because it never changes server state.",
+      "correct_answer": "False",
+      "explanation": "POST may create resources or change state, so repeating it can have effects."
+    },
+    {
+      "id": "P5-Q013",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP status codes",
+      "type": "single_choice",
+      "question": "A web server receives a request for a page that does not exist. Which status code is expected?",
+      "options": {
+        "A": "200 OK",
+        "B": "401 Authentication required",
+        "C": "404 Not Found",
+        "D": "500 Server-side error"
+      },
+      "correct_answer": "C",
+      "explanation": "404 Not Found means the requested resource does not exist."
+    },
+    {
+      "id": "P5-Q014",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP status codes",
+      "type": "single_choice",
+      "question": "Which status code family causes requests.raise_for_status() to raise an HTTPError?",
+      "options": {
+        "A": "1xx and 2xx",
+        "B": "2xx only",
+        "C": "3xx only",
+        "D": "4xx and 5xx"
+      },
+      "correct_answer": "D",
+      "explanation": "raise_for_status() raises for client and server errors: 4xx and 5xx."
+    },
+    {
+      "id": "P5-Q015",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP status codes",
+      "type": "single_choice",
+      "question": "Which status code means success in the lecture examples?",
+      "options": {
+        "A": "200 OK",
+        "B": "404 Not Found",
+        "C": "500 Server-side error",
+        "D": "401 Authentication required"
+      },
+      "correct_answer": "A",
+      "explanation": "200 OK represents a successful response."
+    },
+    {
+      "id": "P5-Q016",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP status codes",
+      "type": "single_choice",
+      "question": "Which status code is associated with authentication required?",
+      "options": {
+        "A": "200",
+        "B": "401",
+        "C": "404",
+        "D": "500"
+      },
+      "correct_answer": "B",
+      "explanation": "401 means authentication is required."
+    },
+    {
+      "id": "P5-Q017",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTTP status codes",
+      "type": "single_choice",
+      "question": "Which status code represents a server-side error?",
+      "options": {
+        "A": "200",
+        "B": "401",
+        "C": "404",
+        "D": "500"
+      },
+      "correct_answer": "D",
+      "explanation": "500 is a server-side error."
+    },
+    {
+      "id": "P5-Q018",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "requests library",
+      "type": "single_choice",
+      "question": "Which command installs the requests library?",
+      "options": {
+        "A": "pip install requests",
+        "B": "pip run requests",
+        "C": "python install http",
+        "D": "pip install bs4 only"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture uses pip install requests."
+    },
+    {
+      "id": "P5-Q019",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "requests library",
+      "type": "single_choice",
+      "question": "Which Python call sends a GET request with URL parameters?",
+      "options": {
+        "A": "requests.get(url, params={'name':'Tom'})",
+        "B": "requests.post(url, stream=False)",
+        "C": "requests.json(url)",
+        "D": "bs4.BeautifulSoup(url)"
+      },
+      "correct_answer": "A",
+      "explanation": "The params argument is used by requests.get to encode query parameters."
+    },
+    {
+      "id": "P5-Q020",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "requests library",
+      "type": "single_choice",
+      "question": "Which Python call sends a POST request with form data in the request body?",
+      "options": {
+        "A": "requests.post(url, data={'name':'Tom'})",
+        "B": "requests.get(url, params=None)",
+        "C": "r.raise_for_status(data)",
+        "D": "content.select('form')"
+      },
+      "correct_answer": "A",
+      "explanation": "requests.post(..., data=...) sends data in the request body."
+    },
+    {
+      "id": "P5-Q021",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "requests library",
+      "type": "true_false",
+      "question": "The requests library provides functions such as get(), post(), put(), and delete().",
+      "correct_answer": "True",
+      "explanation": "These HTTP method helpers are listed in the lecture."
+    },
+    {
+      "id": "P5-Q022",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "requests response content",
+      "type": "single_choice",
+      "question": "In requests, which attribute gives decoded text content?",
+      "options": {
+        "A": "r.text",
+        "B": "r.content",
+        "C": "r.status_code",
+        "D": "r.headers only"
+      },
+      "correct_answer": "A",
+      "explanation": "r.text is decoded text."
+    },
+    {
+      "id": "P5-Q023",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "requests response content",
+      "type": "single_choice",
+      "question": "In requests, which attribute gives raw bytes?",
+      "options": {
+        "A": "r.text",
+        "B": "r.content",
+        "C": "r.json",
+        "D": "r.params"
+      },
+      "correct_answer": "B",
+      "explanation": "r.content returns bytes, useful for binary files."
+    },
+    {
+      "id": "P5-Q024",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "requests response content",
+      "type": "single_choice",
+      "question": "Which method parses a JSON response body directly into a Python object?",
+      "options": {
+        "A": "r.json()",
+        "B": "r.text()",
+        "C": "r.content()",
+        "D": "r.headers()"
+      },
+      "correct_answer": "A",
+      "explanation": "r.json() parses JSON into Python lists/dicts/etc."
+    },
+    {
+      "id": "P5-Q025",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "requests response content",
+      "type": "true_false",
+      "question": "r.text is appropriate for HTML or plain text, while r.content is appropriate for binary data such as images or PDFs.",
+      "correct_answer": "True",
+      "explanation": "The lecture separates decoded text from raw bytes."
+    },
+    {
+      "id": "P5-Q026",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "requests response content",
+      "type": "true_false",
+      "question": "r.headers can be used to inspect the Content-Type header.",
+      "correct_answer": "True",
+      "explanation": "The lecture uses r.headers[\"Content-Type\"]."
+    },
+    {
+      "id": "P5-Q027",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "requests exceptions",
+      "type": "single_choice",
+      "question": "Which requests method should be called to raise an exception for bad HTTP status codes?",
+      "options": {
+        "A": "r.raise_for_status()",
+        "B": "r.status_code()",
+        "C": "r.content.raise()",
+        "D": "requests.check()"
+      },
+      "correct_answer": "A",
+      "explanation": "raise_for_status() raises on 4xx/5xx responses."
+    },
+    {
+      "id": "P5-Q028",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "requests exceptions",
+      "type": "single_choice",
+      "question": "Which exception indicates that the server did not respond in time?",
+      "options": {
+        "A": "Timeout",
+        "B": "ConnectionError",
+        "C": "HTTPError",
+        "D": "SyntaxError"
+      },
+      "correct_answer": "A",
+      "explanation": "Timeout is the requests exception for no timely response."
+    },
+    {
+      "id": "P5-Q029",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "requests exceptions",
+      "type": "single_choice",
+      "question": "Which exception indicates a network-level failure?",
+      "options": {
+        "A": "ConnectionError",
+        "B": "ValueError",
+        "C": "IndexError",
+        "D": "AssertionError"
+      },
+      "correct_answer": "A",
+      "explanation": "requests.ConnectionError represents network-level failures."
+    },
+    {
+      "id": "P5-Q030",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "requests exceptions",
+      "type": "single_choice",
+      "question": "Which exception indicates a bad HTTP status code after raise_for_status()?",
+      "options": {
+        "A": "HTTPError",
+        "B": "Timeout",
+        "C": "ConnectionError",
+        "D": "TypeError"
+      },
+      "correct_answer": "A",
+      "explanation": "HTTPError is raised for bad 4xx/5xx status codes."
+    },
+    {
+      "id": "P5-Q031",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "requests exceptions",
+      "type": "true_false",
+      "question": "HTTPError, Timeout, and ConnectionError all inherit from RequestException.",
+      "correct_answer": "True",
+      "explanation": "The lecture says these request exceptions inherit from RequestException."
+    },
+    {
+      "id": "P5-Q032",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Large downloads",
+      "type": "single_choice",
+      "question": "When downloading a large file with requests, what is the purpose of stream=True?",
+      "options": {
+        "A": "Fetch in chunks instead of loading all content into memory",
+        "B": "Convert bytes into HTML",
+        "C": "Force JSON parsing",
+        "D": "Ignore HTTP errors"
+      },
+      "correct_answer": "A",
+      "explanation": "stream=True allows chunked download."
+    },
+    {
+      "id": "P5-Q033",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Large downloads",
+      "type": "single_choice",
+      "question": "Which file mode is appropriate for writing downloaded binary content?",
+      "options": {
+        "A": "wb",
+        "B": "w",
+        "C": "rt",
+        "D": "a+"
+      },
+      "correct_answer": "A",
+      "explanation": "Binary write mode avoids text-encoding errors."
+    },
+    {
+      "id": "P5-Q034",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Large downloads",
+      "type": "single_choice",
+      "question": "Which requests method is used to iterate over downloaded chunks?",
+      "options": {
+        "A": "r.iter_content(chunk_size=...)",
+        "B": "r.json()",
+        "C": "r.select()",
+        "D": "r.write()"
+      },
+      "correct_answer": "A",
+      "explanation": "iter_content() yields chunks for streaming downloads."
+    },
+    {
+      "id": "P5-Q035",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Large downloads",
+      "type": "true_false",
+      "question": "For binary downloads, using text mode can create encoding-related problems.",
+      "correct_answer": "True",
+      "explanation": "The lecture recommends wb for binary writes."
+    },
+    {
+      "id": "P5-Q036",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTML basics",
+      "type": "single_choice",
+      "question": "What does HTML stand for?",
+      "options": {
+        "A": "Hypertext Markup Language",
+        "B": "Hyper Transfer Mail Language",
+        "C": "High Type Machine Language",
+        "D": "Host Text Module Logic"
+      },
+      "correct_answer": "A",
+      "explanation": "HTML is Hypertext Markup Language."
+    },
+    {
+      "id": "P5-Q037",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTML basics",
+      "type": "true_false",
+      "question": "HTML is a markup language that combines content with structural tags.",
+      "correct_answer": "True",
+      "explanation": "The lecture defines HTML as markup with content and tags."
+    },
+    {
+      "id": "P5-Q038",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTML basics",
+      "type": "single_choice",
+      "question": "Which technology is mainly responsible for visual presentation and is kept separate from HTML semantics?",
+      "options": {
+        "A": "CSS",
+        "B": "SMTP",
+        "C": "JSON",
+        "D": "sqlite3"
+      },
+      "correct_answer": "A",
+      "explanation": "CSS handles visual style/presentation."
+    },
+    {
+      "id": "P5-Q039",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "HTML basics",
+      "type": "true_false",
+      "question": "HTML semantics refers to meaning represented by tags.",
+      "correct_answer": "True",
+      "explanation": "The lecture contrasts semantics with presentation."
+    },
+    {
+      "id": "P5-Q040",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "DOM",
+      "type": "single_choice",
+      "question": "What is the DOM?",
+      "options": {
+        "A": "A tree representation of an HTML page",
+        "B": "A Python package manager",
+        "C": "An SMTP server",
+        "D": "A CSV dialect"
+      },
+      "correct_answer": "A",
+      "explanation": "DOM stands for Document Object Model, a tree representation of the page."
+    },
+    {
+      "id": "P5-Q041",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "DOM",
+      "type": "true_false",
+      "question": "Programs can navigate and modify the DOM tree.",
+      "correct_answer": "True",
+      "explanation": "The lecture defines DOM as a tree that programs can navigate and modify."
+    },
+    {
+      "id": "P5-Q042",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "BeautifulSoup",
+      "type": "single_choice",
+      "question": "Why does the lecture recommend BeautifulSoup instead of manual HTML parsing?",
+      "options": {
+        "A": "Manual HTML parsing is error-prone",
+        "B": "BeautifulSoup sends email",
+        "C": "BeautifulSoup opens SQLite databases",
+        "D": "Manual parsing is impossible in Python"
+      },
+      "correct_answer": "A",
+      "explanation": "BeautifulSoup builds a DOM object from raw HTML and avoids fragile manual parsing."
+    },
+    {
+      "id": "P5-Q043",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "BeautifulSoup",
+      "type": "single_choice",
+      "question": "Which package does the lecture install for BeautifulSoup?",
+      "options": {
+        "A": "bs4",
+        "B": "requests-html-only",
+        "C": "smtp4",
+        "D": "jsonapi"
+      },
+      "correct_answer": "A",
+      "explanation": "The installation command is pip install bs4."
+    },
+    {
+      "id": "P5-Q044",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "BeautifulSoup",
+      "type": "single_choice",
+      "question": "Which parser name is used in the lecture example?",
+      "options": {
+        "A": "html.parser",
+        "B": "json.parser",
+        "C": "csv.reader",
+        "D": "smtp.parser"
+      },
+      "correct_answer": "A",
+      "explanation": "The example uses bs4.BeautifulSoup(page.text, \"html.parser\")."
+    },
+    {
+      "id": "P5-Q045",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "BeautifulSoup",
+      "type": "true_false",
+      "question": "BeautifulSoup can use the built-in html.parser and also faster parsers such as lxml.",
+      "correct_answer": "True",
+      "explanation": "The lecture lists html.parser and lxml."
+    },
+    {
+      "id": "P5-Q046",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "BeautifulSoup",
+      "type": "single_choice",
+      "question": "In the lecture example, what should be called before parsing the downloaded page?",
+      "options": {
+        "A": "page.raise_for_status()",
+        "B": "page.sendmail()",
+        "C": "page.crop()",
+        "D": "page.commit()"
+      },
+      "correct_answer": "A",
+      "explanation": "The example checks the HTTP response before building the soup."
+    },
+    {
+      "id": "P5-Q047",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "BeautifulSoup",
+      "type": "single_choice",
+      "question": "What does content.select(\"p\") return?",
+      "options": {
+        "A": "A list of matching elements",
+        "B": "A single string only",
+        "C": "A network response",
+        "D": "A CSV row"
+      },
+      "correct_answer": "A",
+      "explanation": "BeautifulSoup select() returns a list."
+    },
+    {
+      "id": "P5-Q048",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "CSS selectors",
+      "type": "single_choice",
+      "question": "Which CSS selector matches all div elements?",
+      "options": {
+        "A": "div",
+        "B": "#div",
+        "C": ".div",
+        "D": "div > #"
+      },
+      "correct_answer": "A",
+      "explanation": "The selector div matches all <div> elements."
+    },
+    {
+      "id": "P5-Q049",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "CSS selectors",
+      "type": "single_choice",
+      "question": "Which CSS selector matches the element with id=\"content\"?",
+      "options": {
+        "A": "#content",
+        "B": ".content",
+        "C": "content",
+        "D": "div content only"
+      },
+      "correct_answer": "A",
+      "explanation": "#content selects an element by id."
+    },
+    {
+      "id": "P5-Q050",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "CSS selectors",
+      "type": "single_choice",
+      "question": "Which CSS selector matches elements with class topheader?",
+      "options": {
+        "A": ".topheader",
+        "B": "#topheader",
+        "C": "topheader",
+        "D": "div#"
+      },
+      "correct_answer": "A",
+      "explanation": ".topheader selects by class."
+    },
+    {
+      "id": "P5-Q051",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "CSS selectors",
+      "type": "single_choice",
+      "question": "What does the CSS selector div span mean?",
+      "options": {
+        "A": "A span anywhere inside a div",
+        "B": "A span directly inside body only",
+        "C": "A div with id span",
+        "D": "All div and all span elements separately"
+      },
+      "correct_answer": "A",
+      "explanation": "A space means descendant selector."
+    },
+    {
+      "id": "P5-Q052",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "CSS selectors",
+      "type": "single_choice",
+      "question": "What does the CSS selector div > span mean?",
+      "options": {
+        "A": "A span directly inside a div",
+        "B": "A span anywhere in the document",
+        "C": "A div directly inside a span",
+        "D": "A div with class span"
+      },
+      "correct_answer": "A",
+      "explanation": "> means direct child."
+    },
+    {
+      "id": "P5-Q053",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Extracting HTML data",
+      "type": "single_choice",
+      "question": "Given an <a> element, which method extracts its visible text?",
+      "options": {
+        "A": "el.get_text()",
+        "B": "el.get(\"href\")",
+        "C": "el.raise_for_status()",
+        "D": "el.json()"
+      },
+      "correct_answer": "A",
+      "explanation": "get_text() extracts the element text."
+    },
+    {
+      "id": "P5-Q054",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Extracting HTML data",
+      "type": "single_choice",
+      "question": "Given an <a> element, which method gets the href attribute?",
+      "options": {
+        "A": "el.get(\"href\")",
+        "B": "el.get_text()",
+        "C": "el.content",
+        "D": "el.status_code"
+      },
+      "correct_answer": "A",
+      "explanation": "get(\"href\") retrieves the href attribute value."
+    },
+    {
+      "id": "P5-Q055",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Extracting HTML data",
+      "type": "true_false",
+      "question": "content.head and content.title are examples of direct attribute access on a BeautifulSoup object.",
+      "correct_answer": "True",
+      "explanation": "The lecture lists content.head and content.title."
+    },
+    {
+      "id": "P5-Q056",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Web scraping caveats",
+      "type": "single_choice",
+      "question": "Which risk is mentioned for web scraping?",
+      "options": {
+        "A": "The page structure can change without notice",
+        "B": "Python cannot write CSV files",
+        "C": "GET cannot retrieve HTML",
+        "D": "BeautifulSoup cannot parse any HTML"
+      },
+      "correct_answer": "A",
+      "explanation": "HTML structure changes can break selectors."
+    },
+    {
+      "id": "P5-Q057",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Web scraping caveats",
+      "type": "single_choice",
+      "question": "What should you check before scraping a website?",
+      "options": {
+        "A": "robots.txt and the site terms of service",
+        "B": "The SMTP port only",
+        "C": "The SQLite rowid only",
+        "D": "The Python shebang only"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture says to check robots.txt and the site terms."
+    },
+    {
+      "id": "P5-Q058",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Web scraping caveats",
+      "type": "true_false",
+      "question": "Many sites actively block scraping.",
+      "correct_answer": "True",
+      "explanation": "The lecture mentions sites such as Google and LinkedIn as examples."
+    },
+    {
+      "id": "P5-Q059",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Web scraping caveats",
+      "type": "true_false",
+      "question": "Poor semantic HTML can make reliable selection harder.",
+      "correct_answer": "True",
+      "explanation": "The lecture lists this as a scraping caveat."
+    },
+    {
+      "id": "P5-Q060",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Web API",
+      "type": "single_choice",
+      "question": "What does API stand for?",
+      "options": {
+        "A": "Application Programming Interface",
+        "B": "Automatic Python Import",
+        "C": "Application Parsing Internet",
+        "D": "Advanced Protocol Iterator"
+      },
+      "correct_answer": "A",
+      "explanation": "API means Application Programming Interface."
+    },
+    {
+      "id": "P5-Q061",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Web API",
+      "type": "true_false",
+      "question": "A web API is a defined interface that lets software systems exchange data and trigger actions.",
+      "correct_answer": "True",
+      "explanation": "This is the lecture definition."
+    },
+    {
+      "id": "P5-Q062",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "REST API",
+      "type": "single_choice",
+      "question": "What kind of data do REST APIs often return according to the lecture?",
+      "options": {
+        "A": "Structured data such as JSON",
+        "B": "Only raw images",
+        "C": "Only DOCX files",
+        "D": "Only Python source code"
+      },
+      "correct_answer": "A",
+      "explanation": "REST APIs usually return structured data, typically JSON."
+    },
+    {
+      "id": "P5-Q063",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "REST API",
+      "type": "true_false",
+      "question": "A REST API response is normally parsed with BeautifulSoup because it is HTML.",
+      "correct_answer": "False",
+      "explanation": "APIs return structured data such as JSON; HTML parsing is for web pages."
+    },
+    {
+      "id": "P5-Q064",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "REST CRUD",
+      "type": "single_choice",
+      "question": "Which HTTP method maps to Create in the lecture CRUD table?",
+      "options": {
+        "A": "POST",
+        "B": "GET",
+        "C": "PUT",
+        "D": "DELETE"
+      },
+      "correct_answer": "A",
+      "explanation": "POST is used to create."
+    },
+    {
+      "id": "P5-Q065",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "REST CRUD",
+      "type": "single_choice",
+      "question": "Which HTTP method maps to Read in the lecture CRUD table?",
+      "options": {
+        "A": "GET",
+        "B": "POST",
+        "C": "PUT",
+        "D": "DELETE"
+      },
+      "correct_answer": "A",
+      "explanation": "GET is used to read data."
+    },
+    {
+      "id": "P5-Q066",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "REST CRUD",
+      "type": "single_choice",
+      "question": "Which HTTP method maps to Update in the lecture CRUD table?",
+      "options": {
+        "A": "PUT",
+        "B": "GET",
+        "C": "POST",
+        "D": "DELETE"
+      },
+      "correct_answer": "A",
+      "explanation": "PUT is used to update."
+    },
+    {
+      "id": "P5-Q067",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "REST CRUD",
+      "type": "single_choice",
+      "question": "Which HTTP method maps to Delete in the lecture CRUD table?",
+      "options": {
+        "A": "DELETE",
+        "B": "GET",
+        "C": "POST",
+        "D": "PUT"
+      },
+      "correct_answer": "A",
+      "explanation": "DELETE is used to remove data."
+    },
+    {
+      "id": "P5-Q068",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "REST URL design",
+      "type": "single_choice",
+      "question": "In REST URL design, what does GET /students usually mean?",
+      "options": {
+        "A": "Get all students",
+        "B": "Delete all students",
+        "C": "Create one student",
+        "D": "Send email to students"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture example uses GET /students for all students."
+    },
+    {
+      "id": "P5-Q069",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "REST URL design",
+      "type": "single_choice",
+      "question": "In REST URL design, what does GET /students/34 usually mean?",
+      "options": {
+        "A": "Get the student with ID 34",
+        "B": "Create student 34",
+        "C": "Delete all students except 34",
+        "D": "Change the server port to 34"
+      },
+      "correct_answer": "A",
+      "explanation": "The URL identifies the specific resource by ID."
+    },
+    {
+      "id": "P5-Q070",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "REST URL design",
+      "type": "single_choice",
+      "question": "In REST URL design, what does DELETE /students/34 usually mean?",
+      "options": {
+        "A": "Delete student 34",
+        "B": "Create student 34",
+        "C": "Get all students",
+        "D": "Parse JSON"
+      },
+      "correct_answer": "A",
+      "explanation": "DELETE on the resource URL removes that resource."
+    },
+    {
+      "id": "P5-Q071",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Passing data to API",
+      "type": "single_choice",
+      "question": "When sending JSON to an API, which HTTP header identifies the body type?",
+      "options": {
+        "A": "Content-Type: application/json",
+        "B": "Accept-Language: Python",
+        "C": "Authorization: html.parser",
+        "D": "Content-Length: BeautifulSoup"
+      },
+      "correct_answer": "A",
+      "explanation": "Content-Type: application/json says the body is JSON."
+    },
+    {
+      "id": "P5-Q072",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Passing data to API",
+      "type": "true_false",
+      "question": "The response from an API can also be JSON and can be parsed with r.json().",
+      "correct_answer": "True",
+      "explanation": "The lecture says to use r.json() to parse JSON responses."
+    },
+    {
+      "id": "P5-Q073",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "API authentication",
+      "type": "single_choice",
+      "question": "Why do APIs often require authentication?",
+      "options": {
+        "A": "To prove identity and prevent abuse",
+        "B": "To make HTML parsing faster",
+        "C": "To convert CSS to JSON",
+        "D": "To force use of port 25"
+      },
+      "correct_answer": "A",
+      "explanation": "Authentication proves identity and helps prevent abuse."
+    },
+    {
+      "id": "P5-Q074",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "API authentication",
+      "type": "single_choice",
+      "question": "Which authentication method is described as issued per user/application and can be scoped?",
+      "options": {
+        "A": "Access token",
+        "B": "HTML title",
+        "C": "CSV dialect",
+        "D": "DOM selector"
+      },
+      "correct_answer": "A",
+      "explanation": "Access tokens can be issued per user/application and scoped."
+    },
+    {
+      "id": "P5-Q075",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "API authentication",
+      "type": "single_choice",
+      "question": "Where is the API token passed in the lecture example?",
+      "options": {
+        "A": "In the Authorization HTTP header",
+        "B": "Inside a CSV field",
+        "C": "In an SMTP body only",
+        "D": "In the BeautifulSoup parser name"
+      },
+      "correct_answer": "A",
+      "explanation": "The example passes Authorization: token ... in headers."
+    },
+    {
+      "id": "P5-Q076",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "API authentication",
+      "type": "single_choice",
+      "question": "In the GitHub Issues example, what type is issues after issues = r.json()?",
+      "options": {
+        "A": "A list of issue dictionaries",
+        "B": "A string containing raw HTML only",
+        "C": "An SMTP object",
+        "D": "A file handle"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture notes issues is a list of issue dicts."
+    },
+    {
+      "id": "P5-Q077",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "API authentication",
+      "type": "single_choice",
+      "question": "In requests.get(url, headers={...}, params={\"state\":\"open\"}), where does params go?",
+      "options": {
+        "A": "Into the URL query string",
+        "B": "Into the SMTP password",
+        "C": "Into the HTML DOM directly",
+        "D": "Into a local SQLite table automatically"
+      },
+      "correct_answer": "A",
+      "explanation": "params are encoded as URL query parameters."
+    },
+    {
+      "id": "P5-Q078",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Email and SMTP",
+      "type": "single_choice",
+      "question": "What does SMTP stand for?",
+      "options": {
+        "A": "Simple Mail Transfer Protocol",
+        "B": "Structured Markup Text Parser",
+        "C": "Server Message Testing Python",
+        "D": "Simple Method Transfer Program"
+      },
+      "correct_answer": "A",
+      "explanation": "SMTP means Simple Mail Transfer Protocol."
+    },
+    {
+      "id": "P5-Q079",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Email and SMTP",
+      "type": "true_false",
+      "question": "SMTP is used to send email.",
+      "correct_answer": "True",
+      "explanation": "The lecture states SMTP is used to send mail."
+    },
+    {
+      "id": "P5-Q080",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Email and SMTP",
+      "type": "true_false",
+      "question": "Almost all email servers today require authentication for sending mail programmatically.",
+      "correct_answer": "True",
+      "explanation": "The lecture explicitly says almost all servers require authentication today."
+    },
+    {
+      "id": "P5-Q081",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Email and SMTP",
+      "type": "single_choice",
+      "question": "Which port is associated with STARTTLS explicit TLS in the lecture?",
+      "options": {
+        "A": "587",
+        "B": "465",
+        "C": "25",
+        "D": "80"
+      },
+      "correct_answer": "A",
+      "explanation": "Port 587 is STARTTLS explicit TLS."
+    },
+    {
+      "id": "P5-Q082",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Email and SMTP",
+      "type": "single_choice",
+      "question": "Which port is associated with implicit TLS / SSL in the lecture?",
+      "options": {
+        "A": "465",
+        "B": "587",
+        "C": "25",
+        "D": "443 only"
+      },
+      "correct_answer": "A",
+      "explanation": "Port 465 is implicit TLS (SSL)."
+    },
+    {
+      "id": "P5-Q083",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Email and SMTP",
+      "type": "single_choice",
+      "question": "Which SMTP port is described as plaintext and should be avoided?",
+      "options": {
+        "A": "25",
+        "B": "465",
+        "C": "587",
+        "D": "443"
+      },
+      "correct_answer": "A",
+      "explanation": "Port 25 is plaintext in the lecture table and should be avoided."
+    },
+    {
+      "id": "P5-Q084",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Google App Password",
+      "type": "single_choice",
+      "question": "For Google programmatic email access, what does the lecture say is required?",
+      "options": {
+        "A": "An App Password",
+        "B": "A BeautifulSoup parser",
+        "C": "A CSV Sniffer",
+        "D": "A SQLite row factory"
+      },
+      "correct_answer": "A",
+      "explanation": "Google requires an App Password for programmatic access."
+    },
+    {
+      "id": "P5-Q085",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Google App Password",
+      "type": "true_false",
+      "question": "A Google App Password is more secure than sharing your real password with the script.",
+      "correct_answer": "True",
+      "explanation": "The lecture says it is more secure than sharing your real password."
+    },
+    {
+      "id": "P5-Q086",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Google App Password",
+      "type": "true_false",
+      "question": "Two-factor authentication must be enabled before creating a Google App Password.",
+      "correct_answer": "True",
+      "explanation": "The lecture states this requirement."
+    },
+    {
+      "id": "P5-Q087",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "smtplib connection",
+      "type": "single_choice",
+      "question": "Which module is used to send email in the lecture?",
+      "options": {
+        "A": "smtplib",
+        "B": "bs4",
+        "C": "sqlite3",
+        "D": "openpyxl"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture uses smtplib."
+    },
+    {
+      "id": "P5-Q088",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "smtplib connection",
+      "type": "single_choice",
+      "question": "Which class is used for STARTTLS on port 587 in the lecture?",
+      "options": {
+        "A": "smtplib.SMTP",
+        "B": "smtplib.SMTP_SSL",
+        "C": "requests.get",
+        "D": "BeautifulSoup"
+      },
+      "correct_answer": "A",
+      "explanation": "STARTTLS begins with smtplib.SMTP on port 587, then starttls()."
+    },
+    {
+      "id": "P5-Q089",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "smtplib connection",
+      "type": "single_choice",
+      "question": "Which method starts TLS after connecting with smtplib.SMTP on port 587?",
+      "options": {
+        "A": "smtp.starttls()",
+        "B": "smtp.sendmail()",
+        "C": "smtp.json()",
+        "D": "smtp.select()"
+      },
+      "correct_answer": "A",
+      "explanation": "smtp.starttls() upgrades the connection to TLS."
+    },
+    {
+      "id": "P5-Q090",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "smtplib connection",
+      "type": "single_choice",
+      "question": "Which class is used for implicit TLS on port 465?",
+      "options": {
+        "A": "smtplib.SMTP_SSL",
+        "B": "smtplib.SMTP",
+        "C": "requests.post",
+        "D": "csv.writer"
+      },
+      "correct_answer": "A",
+      "explanation": "SMTP_SSL is used for implicit TLS."
+    },
+    {
+      "id": "P5-Q091",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "smtplib connection",
+      "type": "true_false",
+      "question": "The lecture examples call smtp.ehlo() after connecting.",
+      "correct_answer": "True",
+      "explanation": "Both SMTP and SMTP_SSL examples call ehlo()."
+    },
+    {
+      "id": "P5-Q092",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Email credentials",
+      "type": "single_choice",
+      "question": "What should you avoid when logging into SMTP from Python?",
+      "options": {
+        "A": "Hard-coding credentials in source code",
+        "B": "Using an environment variable",
+        "C": "Using getpass.getpass()",
+        "D": "Using a config file ignored by version control"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture says never hard-code credentials."
+    },
+    {
+      "id": "P5-Q093",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Email credentials",
+      "type": "single_choice",
+      "question": "Which is a safe alternative for storing the SMTP password according to the lecture?",
+      "options": {
+        "A": "os.environ[\"SMTP_PASS\"]",
+        "B": "A literal password in the .py file",
+        "C": "The subject header",
+        "D": "The href attribute"
+      },
+      "correct_answer": "A",
+      "explanation": "The example logs in using os.environ[\"SMTP_PASS\"]."
+    },
+    {
+      "id": "P5-Q094",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Email credentials",
+      "type": "single_choice",
+      "question": "Which module/function can prompt for a password at runtime?",
+      "options": {
+        "A": "getpass.getpass()",
+        "B": "bs4.getpass()",
+        "C": "requests.password()",
+        "D": "smtp.json()"
+      },
+      "correct_answer": "A",
+      "explanation": "getpass.getpass() is named as a safe alternative."
+    },
+    {
+      "id": "P5-Q095",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Email message format",
+      "type": "single_choice",
+      "question": "Which headers are required in the lecture message example?",
+      "options": {
+        "A": "From, To, Subject",
+        "B": "Only Content-Type",
+        "C": "Only Authorization",
+        "D": "Host, Cookie, Accept"
+      },
+      "correct_answer": "A",
+      "explanation": "The message example includes required From, To, and Subject headers."
+    },
+    {
+      "id": "P5-Q096",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Email message format",
+      "type": "true_false",
+      "question": "In a raw email message string, headers and body are separated by a blank line.",
+      "correct_answer": "True",
+      "explanation": "The lecture explicitly says headers and body are separated by a blank line."
+    },
+    {
+      "id": "P5-Q097",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Sending email",
+      "type": "single_choice",
+      "question": "Which smtplib method sends the email?",
+      "options": {
+        "A": "smtp.sendmail(sender, recipients, message)",
+        "B": "smtp.get(url)",
+        "C": "smtp.raise_for_status()",
+        "D": "smtp.select(\"mail\")"
+      },
+      "correct_answer": "A",
+      "explanation": "sendmail sends the message."
+    },
+    {
+      "id": "P5-Q098",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Sending email",
+      "type": "single_choice",
+      "question": "In smtp.sendmail(sender, recipients, message), what type should recipients be?",
+      "options": {
+        "A": "A list, even for a single address",
+        "B": "Always one plain string only",
+        "C": "A BeautifulSoup element",
+        "D": "A CSV DictReader"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture says recipients must be a list even for one address."
+    },
+    {
+      "id": "P5-Q099",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Sending email",
+      "type": "single_choice",
+      "question": "What does smtp.sendmail() return according to the lecture?",
+      "options": {
+        "A": "A dictionary of failed recipients",
+        "B": "Always True",
+        "C": "The full sent message",
+        "D": "A JSON list of delivered messages"
+      },
+      "correct_answer": "A",
+      "explanation": "sendmail returns a dict of failed recipients; empty dict means all delivered."
+    },
+    {
+      "id": "P5-Q100",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Sending email",
+      "type": "true_false",
+      "question": "An empty dictionary returned by smtp.sendmail() means all recipients were delivered successfully.",
+      "correct_answer": "True",
+      "explanation": "The lecture states empty dict = all delivered."
+    },
+    {
+      "id": "P5-Q101",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Sending email",
+      "type": "single_choice",
+      "question": "Which method disconnects from the SMTP server in the lecture example?",
+      "options": {
+        "A": "smtp.quit()",
+        "B": "smtp.close_db()",
+        "C": "smtp.raise_for_status()",
+        "D": "smtp.get_text()"
+      },
+      "correct_answer": "A",
+      "explanation": "smtp.quit() disconnects from the SMTP server."
+    },
+    {
+      "id": "P5-Q102",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Sending email",
+      "type": "true_false",
+      "question": "Mail servers can enforce hourly or daily sending limits.",
+      "correct_answer": "True",
+      "explanation": "The lecture warns about sending limits."
+    },
+    {
+      "id": "P5-Q103",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Internet script workflow",
+      "type": "single_choice",
+      "question": "A Python script downloads a news page, extracts headlines and links, and saves them to CSV. Which module order best matches the lecture approach?",
+      "options": {
+        "A": "requests -> BeautifulSoup/bs4 -> csv",
+        "B": "smtplib -> sqlite3 -> PIL",
+        "C": "csv -> SMTP -> requests only",
+        "D": "BeautifulSoup -> smtp.login -> Decimal"
+      },
+      "correct_answer": "A",
+      "explanation": "Use requests to download, BeautifulSoup to parse, and csv to save structured rows."
+    },
+    {
+      "id": "P5-Q104",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Internet script workflow",
+      "type": "true_false",
+      "question": "If a news site changes its HTML class names, a scraper using old CSS selectors may silently stop finding the right elements.",
+      "correct_answer": "True",
+      "explanation": "The lecture warns that HTML structure changes break scraping."
+    },
+    {
+      "id": "P5-Q105",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Internet script workflow",
+      "type": "single_choice",
+      "question": "Which is the best Python method to get JSON from an API response before saving selected fields?",
+      "options": {
+        "A": "r.json()",
+        "B": "r.get_text()",
+        "C": "BeautifulSoup(r.content)",
+        "D": "smtp.sendmail()"
+      },
+      "correct_answer": "A",
+      "explanation": "APIs return JSON; r.json() gives Python objects."
+    },
+    {
+      "id": "P5-Q106",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Internet script workflow",
+      "type": "single_choice",
+      "question": "For an authenticated API request using requests, where should the access token normally be placed?",
+      "options": {
+        "A": "headers={\"Authorization\": ...}",
+        "B": "Inside print() only",
+        "C": "Inside BeautifulSoup parser argument",
+        "D": "Inside the file mode \"wb\""
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture example passes the token in the Authorization header."
+    },
+    {
+      "id": "P5-Q107",
+      "phase": 5,
+      "source_file": "SL_W04IST_SI4034_lecture_09-internet.pdf",
+      "topic": "Internet script workflow",
+      "type": "true_false",
+      "question": "When writing a script that contacts the Internet, checking status codes and handling request exceptions helps avoid silent data errors.",
+      "correct_answer": "True",
+      "explanation": "The lecture motivates HTTP knowledge and raise_for_status() to prevent broken scripts."
+    }
+  ],
+  "created": "2026-06-17T11:48:03.714813+00:00"
+}

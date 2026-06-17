@@ -1,0 +1,2201 @@
+{
+  "name": "SL Exam Phase 6 - Testing Python Code question source",
+  "description": "Single-choice Python exam questions generated from Lecture 10 Testing Python Code.",
+  "phase": 6,
+  "source_files": [
+    "SL_W04IST_SI4034_lecture_10-testing.pdf"
+  ],
+  "question_count": 132,
+  "topics": [
+    {
+      "topic": "Floating-point arithmetic",
+      "keypoints": [
+        ".1 + .1 + .1 == .3 is False",
+        "Binary floats approximate many decimal fractions",
+        "Use tolerance or pytest.approx for float tests"
+      ]
+    },
+    {
+      "topic": "Exact numeric alternatives",
+      "keypoints": [
+        "Use Decimal with strings for exact decimal arithmetic",
+        "Decimal(float) inherits float approximation",
+        "Use Fraction for exact rational arithmetic"
+      ]
+    },
+    {
+      "topic": "Testing goals and strategies",
+      "keypoints": [
+        "Prevent regressions",
+        "Validate correctness",
+        "Document behavior",
+        "Static/dynamic/passive testing",
+        "Unit/integration/acceptance levels"
+      ]
+    },
+    {
+      "topic": "pytest basics",
+      "keypoints": [
+        "Install with pip install pytest",
+        "Use assert",
+        "Discovery: test_*.py and *_test.py",
+        "Functions/methods starting with test"
+      ]
+    },
+    {
+      "topic": "Running and organizing tests",
+      "keypoints": [
+        "pytest, pytest -q, pytest -v, run one file",
+        "Class grouping starts with Test",
+        "Keep tests separate from production code"
+      ]
+    },
+    {
+      "topic": "pytest exceptions and parametrization",
+      "keypoints": [
+        "pytest.raises verifies expected exceptions",
+        "@pytest.mark.parametrize creates multiple cases from one test"
+      ]
+    },
+    {
+      "topic": "Fixtures",
+      "keypoints": [
+        "@pytest.fixture",
+        "Pass fixture by parameter name",
+        "tmp_path for temporary pathlib.Path directory",
+        "yield enables teardown"
+      ]
+    },
+    {
+      "topic": "Mocking",
+      "keypoints": [
+        "Use unittest.mock.patch",
+        "Replace external dependencies",
+        "No real HTTP call when requests.get is patched"
+      ]
+    },
+    {
+      "topic": "TDD",
+      "keypoints": [
+        "Red-Green-Refactor",
+        "Write tests before code",
+        "Refactor without changing behavior"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "P6-Q001",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Floating point arithmetic",
+      "type": "single_choice",
+      "question": "What is the result of .1 + .1 + .1 == .3 in Python?",
+      "options": {
+        "A": "True",
+        "B": "False",
+        "C": "SyntaxError",
+        "D": "TypeError"
+      },
+      "correct_answer": "B",
+      "explanation": "Binary floating-point arithmetic cannot represent 0.1 exactly, so the equality check is false."
+    },
+    {
+      "id": "P6-Q002",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Floating point arithmetic",
+      "type": "single_choice",
+      "question": "Why can direct equality comparisons between floats be dangerous in tests?",
+      "options": {
+        "A": "Because floats are immutable",
+        "B": "Because some decimal fractions are approximated in binary",
+        "C": "Because pytest cannot compare floats",
+        "D": "Because floats are strings internally"
+      },
+      "correct_answer": "B",
+      "explanation": "Many decimal fractions have no finite binary representation, so small rounding errors appear."
+    },
+    {
+      "id": "P6-Q003",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Floating point arithmetic",
+      "type": "single_choice",
+      "question": "Which assertion is the safest way to compare .1 + .1 + .1 with .3 using a tolerance?",
+      "options": {
+        "A": "assert .1 + .1 + .1 is .3",
+        "B": "assert abs((.1 + .1 + .1) - .3) < 1e-12",
+        "C": "assert str(.1 + .1 + .1) == str(.3)",
+        "D": "assert int(.1 + .1 + .1) == int(.3)"
+      },
+      "correct_answer": "B",
+      "explanation": "A tolerance allows for tiny representation errors in binary floating-point arithmetic."
+    },
+    {
+      "id": "P6-Q004",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "pytest.approx",
+      "type": "single_choice",
+      "question": "What is pytest.approx() used for?",
+      "options": {
+        "A": "Approximating execution time",
+        "B": "Comparing values such as floats with tolerance",
+        "C": "Generating fake input files",
+        "D": "Skipping slow tests"
+      },
+      "correct_answer": "B",
+      "explanation": "pytest.approx() is a convenience helper for tolerant numeric comparisons."
+    },
+    {
+      "id": "P6-Q005",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Decimal",
+      "type": "single_choice",
+      "question": "Which expression gives exact decimal arithmetic for tenths?",
+      "options": {
+        "A": "Decimal(0.1)",
+        "B": "Decimal(\"0.1\")",
+        "C": "float(\"0.1\")",
+        "D": "int(0.1)"
+      },
+      "correct_answer": "B",
+      "explanation": "Decimal should receive string values to avoid inheriting a binary float approximation."
+    },
+    {
+      "id": "P6-Q006",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Decimal",
+      "type": "single_choice",
+      "question": "Why is Decimal(3.14) less exact than Decimal(\"3.14\")?",
+      "options": {
+        "A": "Decimal cannot store decimals",
+        "B": "Decimal(3.14) receives an already approximated float",
+        "C": "Strings are always faster than floats",
+        "D": "Decimal ignores string inputs"
+      },
+      "correct_answer": "B",
+      "explanation": "The float 3.14 is already approximated before Decimal sees it."
+    },
+    {
+      "id": "P6-Q007",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Decimal",
+      "type": "single_choice",
+      "question": "What is the result of sum([Decimal(\"0.1\")] * 6) == Decimal(\"0.6\")?",
+      "options": {
+        "A": "True",
+        "B": "False",
+        "C": "TypeError",
+        "D": "None"
+      },
+      "correct_answer": "A",
+      "explanation": "Decimal values created from strings represent the decimal values exactly."
+    },
+    {
+      "id": "P6-Q008",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Floating point arithmetic",
+      "type": "single_choice",
+      "question": "What is the result of sum([0.1] * 6) == 0.6 in standard Python floats?",
+      "options": {
+        "A": "Always True",
+        "B": "False because of floating point approximation",
+        "C": "SyntaxError",
+        "D": "It depends on pytest"
+      },
+      "correct_answer": "B",
+      "explanation": "The lecture example shows this as false because 0.1 cannot be represented exactly as a binary float."
+    },
+    {
+      "id": "P6-Q009",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fraction",
+      "type": "single_choice",
+      "question": "Which module is used for exact rational arithmetic?",
+      "options": {
+        "A": "decimal only",
+        "B": "fractions",
+        "C": "random",
+        "D": "statistics only"
+      },
+      "correct_answer": "B",
+      "explanation": "The fractions module provides Fraction for exact rational numbers."
+    },
+    {
+      "id": "P6-Q010",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fraction",
+      "type": "single_choice",
+      "question": "Which expression creates the exact rational value 1/10?",
+      "options": {
+        "A": "Fraction(0.1)",
+        "B": "Fraction(Decimal(\"0.1\"))",
+        "C": "float(1/10)",
+        "D": "round(0.1)"
+      },
+      "correct_answer": "B",
+      "explanation": "Fraction(Decimal(\"0.1\")) avoids the binary float approximation."
+    },
+    {
+      "id": "P6-Q011",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fraction",
+      "type": "single_choice",
+      "question": "What does Fraction(0.1) represent?",
+      "options": {
+        "A": "Exactly 1/10",
+        "B": "The exact rational value of the already approximated float 0.1",
+        "C": "Always 0",
+        "D": "A decimal string"
+      },
+      "correct_answer": "B",
+      "explanation": "Fraction(0.1) captures the binary float approximation, not the intended decimal 1/10."
+    },
+    {
+      "id": "P6-Q012",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Floating point arithmetic",
+      "type": "single_choice",
+      "question": "Which base do computers normally use for floating-point arithmetic in the lecture?",
+      "options": {
+        "A": "Base 2",
+        "B": "Base 3",
+        "C": "Base 8 only",
+        "D": "Base 10 only"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture states that computers use binary arithmetic, base 2."
+    },
+    {
+      "id": "P6-Q013",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Floating point arithmetic",
+      "type": "single_choice",
+      "question": "Which decimal fraction is used as the lecture example of a value with no finite binary representation?",
+      "options": {
+        "A": "1/10",
+        "B": "1/2",
+        "C": "1/4",
+        "D": "2/4"
+      },
+      "correct_answer": "A",
+      "explanation": "0.1, or 1/10, cannot be represented exactly with finite binary digits."
+    },
+    {
+      "id": "P6-Q014",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Floating point arithmetic",
+      "type": "single_choice",
+      "question": "What does format(.1, \".30f\") demonstrate?",
+      "options": {
+        "A": "That .1 is stored exactly as 0.1",
+        "B": "That .1 has a visible binary approximation error when printed with many digits",
+        "C": "That strings cannot format floats",
+        "D": "That Python converts floats to Decimal"
+      },
+      "correct_answer": "B",
+      "explanation": "Printing many decimal places shows 0.10000000000000000555..., revealing approximation."
+    },
+    {
+      "id": "P6-Q015",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing numeric code",
+      "type": "single_choice",
+      "question": "For financial calculations in Python tests, which module is preferred for exact decimal arithmetic?",
+      "options": {
+        "A": "decimal",
+        "B": "requests",
+        "C": "smtplib",
+        "D": "pytest only"
+      },
+      "correct_answer": "A",
+      "explanation": "The decimal module is recommended for exact decimal arithmetic such as financial values."
+    },
+    {
+      "id": "P6-Q016",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Goals of testing",
+      "type": "single_choice",
+      "question": "Which is a goal of testing?",
+      "options": {
+        "A": "Prevent regressions",
+        "B": "Remove all exceptions from Python",
+        "C": "Make code run without Python",
+        "D": "Avoid specifications"
+      },
+      "correct_answer": "A",
+      "explanation": "Testing helps prevent regressions when existing functionality is changed."
+    },
+    {
+      "id": "P6-Q017",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Goals of testing",
+      "type": "single_choice",
+      "question": "What does “validate correctness” mean in testing?",
+      "options": {
+        "A": "Tests show that code does what the specification says",
+        "B": "Tests rewrite the source code automatically",
+        "C": "Tests replace documentation completely",
+        "D": "Tests guarantee no bugs in the universe"
+      },
+      "correct_answer": "A",
+      "explanation": "Correctness means the behavior matches the expected specification."
+    },
+    {
+      "id": "P6-Q018",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Goals of testing",
+      "type": "single_choice",
+      "question": "How can tests document behavior?",
+      "options": {
+        "A": "They show intended usage of functions",
+        "B": "They hide function behavior",
+        "C": "They delete code comments",
+        "D": "They convert code to PDF"
+      },
+      "correct_answer": "A",
+      "explanation": "Good tests are examples of how functions should behave."
+    },
+    {
+      "id": "P6-Q019",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing approaches",
+      "type": "single_choice",
+      "question": "What is static testing?",
+      "options": {
+        "A": "Running code with known inputs",
+        "B": "Analyzing code without running it",
+        "C": "Watching logs in production only",
+        "D": "Sending real emails"
+      },
+      "correct_answer": "B",
+      "explanation": "Static testing analyses code without executing it, for example with pylint or type checkers."
+    },
+    {
+      "id": "P6-Q020",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing approaches",
+      "type": "single_choice",
+      "question": "What is dynamic testing?",
+      "options": {
+        "A": "Running code with known inputs and checking expected outputs",
+        "B": "Only checking indentation",
+        "C": "Only reading logs",
+        "D": "Renaming test files"
+      },
+      "correct_answer": "A",
+      "explanation": "Dynamic tests execute code and assert expected results."
+    },
+    {
+      "id": "P6-Q021",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing approaches",
+      "type": "single_choice",
+      "question": "What is passive testing in the lecture?",
+      "options": {
+        "A": "Observe a running system, e.g. logging or tracing",
+        "B": "Run pytest with -q",
+        "C": "Delete failing tests",
+        "D": "Use Decimal"
+      },
+      "correct_answer": "A",
+      "explanation": "Passive testing observes system behavior without actively asserting every input/output pair."
+    },
+    {
+      "id": "P6-Q022",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing approaches",
+      "type": "single_choice",
+      "question": "IDE underlines are an example of what kind of checks?",
+      "options": {
+        "A": "Static checks in real time",
+        "B": "Dynamic acceptance tests",
+        "C": "Mocking",
+        "D": "TDD refactoring"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture describes IDE underlines as static checks happening in real time."
+    },
+    {
+      "id": "P6-Q023",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing levels",
+      "type": "single_choice",
+      "question": "What does a unit test focus on?",
+      "options": {
+        "A": "One function or class in isolation",
+        "B": "A whole company workflow",
+        "C": "A full database cluster only",
+        "D": "A user contract negotiation"
+      },
+      "correct_answer": "A",
+      "explanation": "Unit tests isolate a single function or class."
+    },
+    {
+      "id": "P6-Q024",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing levels",
+      "type": "single_choice",
+      "question": "What does integration testing check?",
+      "options": {
+        "A": "That components work correctly together",
+        "B": "That one isolated function has no imports",
+        "C": "That code has no spaces",
+        "D": "That pytest is installed"
+      },
+      "correct_answer": "A",
+      "explanation": "Integration tests check interaction between components."
+    },
+    {
+      "id": "P6-Q025",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing levels",
+      "type": "single_choice",
+      "question": "What does acceptance testing check?",
+      "options": {
+        "A": "That a system meets user requirements",
+        "B": "That each variable has a type hint",
+        "C": "That no function returns None",
+        "D": "That all tests use mocks"
+      },
+      "correct_answer": "A",
+      "explanation": "Acceptance tests are about user-level requirements."
+    },
+    {
+      "id": "P6-Q026",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test design strategies",
+      "type": "single_choice",
+      "question": "What is white-box testing?",
+      "options": {
+        "A": "Tests reflect internal implementation structure",
+        "B": "Only inputs and outputs matter",
+        "C": "Tests are written without knowing any code",
+        "D": "Tests compare only colors"
+      },
+      "correct_answer": "A",
+      "explanation": "White-box tests use knowledge of internal implementation."
+    },
+    {
+      "id": "P6-Q027",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test design strategies",
+      "type": "single_choice",
+      "question": "What is black-box testing?",
+      "options": {
+        "A": "Only inputs and outputs matter",
+        "B": "Internal implementation must be tested line by line",
+        "C": "Tests are disabled",
+        "D": "Mock objects are forbidden"
+      },
+      "correct_answer": "A",
+      "explanation": "Black-box testing treats implementation details as irrelevant and focuses on behavior."
+    },
+    {
+      "id": "P6-Q028",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test design strategies",
+      "type": "single_choice",
+      "question": "What is grey-box testing?",
+      "options": {
+        "A": "Partial internal knowledge combined with input/output behavior",
+        "B": "No test strategy",
+        "C": "Only manual testing",
+        "D": "Testing CSS colors"
+      },
+      "correct_answer": "A",
+      "explanation": "Grey-box testing combines some knowledge of internals with functional testing."
+    },
+    {
+      "id": "P6-Q029",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "What to test",
+      "type": "single_choice",
+      "question": "Which category should you focus on when designing tests?",
+      "options": {
+        "A": "Typical cases",
+        "B": "Only impossible cases",
+        "C": "Only syntax errors",
+        "D": "Only comments"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture says to focus on typical, edge, and error cases."
+    },
+    {
+      "id": "P6-Q030",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "What to test",
+      "type": "single_choice",
+      "question": "Which is an edge case?",
+      "options": {
+        "A": "Empty input",
+        "B": "A normal expected value only",
+        "C": "A perfect mid-range value",
+        "D": "A comment"
+      },
+      "correct_answer": "A",
+      "explanation": "Boundaries, empty inputs, zero, and None are examples of edge cases."
+    },
+    {
+      "id": "P6-Q031",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "What to test",
+      "type": "single_choice",
+      "question": "Which is an error case?",
+      "options": {
+        "A": "Invalid input that should raise an expected exception",
+        "B": "A normal input with a normal output",
+        "C": "A passing import statement",
+        "D": "A correct docstring"
+      },
+      "correct_answer": "A",
+      "explanation": "Error cases verify behavior for invalid inputs and expected exceptions."
+    },
+    {
+      "id": "P6-Q032",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "What to test",
+      "type": "single_choice",
+      "question": "Can we test every possible input?",
+      "options": {
+        "A": "No",
+        "B": "Yes, always",
+        "C": "Only with pytest -v",
+        "D": "Only with Decimal"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture states we cannot test every possible input, not even all edge cases."
+    },
+    {
+      "id": "P6-Q033",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "pytest basics",
+      "type": "single_choice",
+      "question": "What is pytest?",
+      "options": {
+        "A": "An industry-standard Python test runner",
+        "B": "A web browser",
+        "C": "A database server",
+        "D": "A DOCX parser"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest is presented as an industry-standard test runner for Python."
+    },
+    {
+      "id": "P6-Q034",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "pytest basics",
+      "type": "single_choice",
+      "question": "How do you install pytest?",
+      "options": {
+        "A": "pip install pytest",
+        "B": "pip install requests only",
+        "C": "python pytest.py install",
+        "D": "import pytest install"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture shows pip install pytest."
+    },
+    {
+      "id": "P6-Q035",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "pytest basics",
+      "type": "single_choice",
+      "question": "Compared with unittest, pytest is described as:",
+      "options": {
+        "A": "Simpler, with no class boilerplate required",
+        "B": "Unable to use assert",
+        "C": "Only for Java",
+        "D": "Only for GUI testing"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest is described as simpler than unittest because class boilerplate is not required."
+    },
+    {
+      "id": "P6-Q036",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "pytest basics",
+      "type": "single_choice",
+      "question": "Which built-in Python testing framework is mentioned as another option?",
+      "options": {
+        "A": "unittest",
+        "B": "requests",
+        "C": "pillow",
+        "D": "sqlite3"
+      },
+      "correct_answer": "A",
+      "explanation": "unittest is Python’s built-in testing framework."
+    },
+    {
+      "id": "P6-Q037",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "pytest basics",
+      "type": "single_choice",
+      "question": "Which command runs all discoverable pytest tests from the current directory recursively?",
+      "options": {
+        "A": "pytest",
+        "B": "python -m json",
+        "C": "pip pytest",
+        "D": "pytest --delete"
+      },
+      "correct_answer": "A",
+      "explanation": "Running pytest without arguments discovers and runs tests recursively from the current directory."
+    },
+    {
+      "id": "P6-Q038",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "pytest basics",
+      "type": "single_choice",
+      "question": "What does pytest -q do?",
+      "options": {
+        "A": "Runs with quiet output",
+        "B": "Runs with query output",
+        "C": "Deletes tests",
+        "D": "Starts an SMTP server"
+      },
+      "correct_answer": "A",
+      "explanation": "The -q option gives quieter output."
+    },
+    {
+      "id": "P6-Q039",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "pytest basics",
+      "type": "single_choice",
+      "question": "What does pytest -v do?",
+      "options": {
+        "A": "Verbose output, showing each test name",
+        "B": "Virtual environment creation",
+        "C": "Validates HTML",
+        "D": "Disables assertions"
+      },
+      "correct_answer": "A",
+      "explanation": "-v is verbose mode and shows more detailed test names."
+    },
+    {
+      "id": "P6-Q040",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "pytest basics",
+      "type": "single_choice",
+      "question": "How can you run one test file only?",
+      "options": {
+        "A": "pytest myapp/test_app.py",
+        "B": "pytest --all-only",
+        "C": "python run every file",
+        "D": "pip install test_app.py"
+      },
+      "correct_answer": "A",
+      "explanation": "Passing a file path to pytest runs tests from that file only."
+    },
+    {
+      "id": "P6-Q041",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "VS Code testing",
+      "type": "single_choice",
+      "question": "In VS Code, what command palette action configures tests?",
+      "options": {
+        "A": "Python: Configure Tests",
+        "B": "Python: Delete Tests",
+        "C": "HTML: Configure Tests",
+        "D": "CSV: Run Tests"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture shows using Python: Configure Tests from the command palette."
+    },
+    {
+      "id": "P6-Q042",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "VS Code testing",
+      "type": "single_choice",
+      "question": "Which framework should be chosen in the VS Code testing setup from the lecture?",
+      "options": {
+        "A": "pytest",
+        "B": "SMTP",
+        "C": "BeautifulSoup",
+        "D": "SQLite"
+      },
+      "correct_answer": "A",
+      "explanation": "The activation steps say to choose pytest framework."
+    },
+    {
+      "id": "P6-Q043",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "First pytest test",
+      "type": "single_choice",
+      "question": "Which keyword is used in a simple pytest test to verify an expected result?",
+      "options": {
+        "A": "assert",
+        "B": "check",
+        "C": "expect only",
+        "D": "ensure only"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest tests commonly use Python assert statements."
+    },
+    {
+      "id": "P6-Q044",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "First pytest test",
+      "type": "single_choice",
+      "question": "Given def add(a,b): return a+b, which assertion tests add(2,3)?",
+      "options": {
+        "A": "assert add(2, 3) == 5",
+        "B": "assert add(2, 3) = 5",
+        "C": "add(2,3) assert 5",
+        "D": "assert 5 == add = (2,3)"
+      },
+      "correct_answer": "A",
+      "explanation": "The valid assertion compares the return value to 5 using ==."
+    },
+    {
+      "id": "P6-Q045",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test discovery",
+      "type": "single_choice",
+      "question": "Which file name pattern is discovered by pytest?",
+      "options": {
+        "A": "test_app.py",
+        "B": "app.test",
+        "C": "tests.docx",
+        "D": "check-app.md"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest scans for test_*.py and *_test.py files."
+    },
+    {
+      "id": "P6-Q046",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test discovery",
+      "type": "single_choice",
+      "question": "Which second file name pattern is discovered by pytest?",
+      "options": {
+        "A": "app_test.py",
+        "B": "app.pytest.md",
+        "C": "app.testing.txt",
+        "D": "test-app.java"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest also scans for *_test.py files."
+    },
+    {
+      "id": "P6-Q047",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test discovery",
+      "type": "single_choice",
+      "question": "Which functions does pytest collect as tests?",
+      "options": {
+        "A": "Functions starting with test",
+        "B": "Functions ending with main",
+        "C": "Every function in every file",
+        "D": "Only functions named run"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest collects functions whose names start with test."
+    },
+    {
+      "id": "P6-Q048",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test discovery",
+      "type": "single_choice",
+      "question": "Inside classes, which methods are collected by pytest?",
+      "options": {
+        "A": "Methods starting with test inside classes prefixed with Test",
+        "B": "All methods in all classes",
+        "C": "Only __init__ methods",
+        "D": "Methods starting with run"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest collects methods starting with test in classes whose names start with Test."
+    },
+    {
+      "id": "P6-Q049",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test discovery",
+      "type": "single_choice",
+      "question": "For pytest class grouping, what must the class name start with?",
+      "options": {
+        "A": "Test",
+        "B": "test_",
+        "C": "Check",
+        "D": "Class"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest test classes should be prefixed with Test."
+    },
+    {
+      "id": "P6-Q050",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test discovery",
+      "type": "single_choice",
+      "question": "For pytest test classes in the lecture, is inheritance required?",
+      "options": {
+        "A": "No",
+        "B": "Yes, from unittest.TestCase only",
+        "C": "Yes, from pytest.TestCase",
+        "D": "Yes, from object explicitly"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest grouping classes do not require inheritance."
+    },
+    {
+      "id": "P6-Q051",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test discovery",
+      "type": "single_choice",
+      "question": "For pytest test classes in the lecture, what should you avoid defining?",
+      "options": {
+        "A": "__init__ method",
+        "B": "test methods",
+        "C": "assert statements",
+        "D": "class name starting with Test"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture says no __init__ method is needed."
+    },
+    {
+      "id": "P6-Q052",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing exceptions",
+      "type": "single_choice",
+      "question": "Which pytest feature checks that an exception is raised?",
+      "options": {
+        "A": "pytest.raises",
+        "B": "pytest.exception_is",
+        "C": "pytest.error",
+        "D": "pytest.catch_all"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest.raises is used as a context manager to verify expected exceptions."
+    },
+    {
+      "id": "P6-Q053",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing exceptions",
+      "type": "single_choice",
+      "question": "What happens if code inside with pytest.raises(TypeError) does not raise TypeError?",
+      "options": {
+        "A": "The test fails",
+        "B": "The test always passes",
+        "C": "pytest installs TypeError",
+        "D": "The exception is ignored"
+      },
+      "correct_answer": "A",
+      "explanation": "The test fails if the expected exception is not raised."
+    },
+    {
+      "id": "P6-Q054",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing exceptions",
+      "type": "single_choice",
+      "question": "Which example correctly tests that add(\"a\", 2) raises TypeError?",
+      "options": {
+        "A": "with pytest.raises(TypeError): add(\"a\", 2)",
+        "B": "pytest.raises = TypeError(add(\"a\", 2))",
+        "C": "raise pytest(TypeError)",
+        "D": "assert raises TypeError add(\"a\", 2)"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest.raises is used as a context manager around the call that should fail."
+    },
+    {
+      "id": "P6-Q055",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Parametrization",
+      "type": "single_choice",
+      "question": "What does @pytest.mark.parametrize allow?",
+      "options": {
+        "A": "Running the same test logic with multiple input sets",
+        "B": "Installing pytest automatically",
+        "C": "Disabling all tests",
+        "D": "Converting tests into CSV"
+      },
+      "correct_answer": "A",
+      "explanation": "Parametrization generates independent test cases from one test function."
+    },
+    {
+      "id": "P6-Q056",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Parametrization",
+      "type": "single_choice",
+      "question": "In @pytest.mark.parametrize(\"a, b, expected\", [...]), what do the names describe?",
+      "options": {
+        "A": "Parameters passed to the test function",
+        "B": "Environment variables",
+        "C": "Class attributes",
+        "D": "Package names"
+      },
+      "correct_answer": "A",
+      "explanation": "The names match the arguments of the test function."
+    },
+    {
+      "id": "P6-Q057",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Parametrization",
+      "type": "single_choice",
+      "question": "If @pytest.mark.parametrize contains three tuples, how many independent cases are generated?",
+      "options": {
+        "A": "Three",
+        "B": "One",
+        "C": "Zero",
+        "D": "It depends on print()"
+      },
+      "correct_answer": "A",
+      "explanation": "Each tuple of arguments becomes one independent test case."
+    },
+    {
+      "id": "P6-Q058",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Parametrization",
+      "type": "single_choice",
+      "question": "Which call pattern is correct for a parametrized test?",
+      "options": {
+        "A": "def test_add(a, b, expected): assert add(a,b) == expected",
+        "B": "def test_add(): assert a+b==expected without parameters",
+        "C": "@pytest.parametrize only, no test function",
+        "D": "def add_test expected, a, b"
+      },
+      "correct_answer": "A",
+      "explanation": "The test function accepts the same names declared in parametrize."
+    },
+    {
+      "id": "P6-Q059",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixtures",
+      "type": "single_choice",
+      "question": "What is a pytest fixture?",
+      "options": {
+        "A": "A function that sets up and optionally tears down an environment for tests",
+        "B": "A type of database row",
+        "C": "A syntax for list slicing",
+        "D": "A command-line argument parser"
+      },
+      "correct_answer": "A",
+      "explanation": "Fixtures prepare test resources and can clean them up afterward."
+    },
+    {
+      "id": "P6-Q060",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixtures",
+      "type": "single_choice",
+      "question": "Which decorator marks a pytest fixture?",
+      "options": {
+        "A": "@pytest.fixture",
+        "B": "@pytest.test",
+        "C": "@fixture.pytest",
+        "D": "@mock.fixture"
+      },
+      "correct_answer": "A",
+      "explanation": "@pytest.fixture marks a function as a fixture."
+    },
+    {
+      "id": "P6-Q061",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixtures",
+      "type": "single_choice",
+      "question": "How does a test receive a fixture?",
+      "options": {
+        "A": "By declaring a parameter with the fixture name",
+        "B": "By importing every fixture manually inside the test body only",
+        "C": "By using global variables only",
+        "D": "By naming the test file fixture.py"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest injects a fixture when the test function has a parameter with the fixture name."
+    },
+    {
+      "id": "P6-Q062",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixtures",
+      "type": "single_choice",
+      "question": "In the lecture SMTP fixture, what does the fixture return or yield?",
+      "options": {
+        "A": "An smtplib.SMTP connection object",
+        "B": "A Decimal object",
+        "C": "A CSV reader",
+        "D": "A pytest command"
+      },
+      "correct_answer": "A",
+      "explanation": "The smtp fixture creates an smtplib.SMTP connection for the test."
+    },
+    {
+      "id": "P6-Q063",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixtures",
+      "type": "single_choice",
+      "question": "What is tmp_path?",
+      "options": {
+        "A": "A built-in pytest fixture that provides a pathlib.Path temporary directory per test",
+        "B": "A permanent project folder",
+        "C": "A string constant in requests",
+        "D": "A SQLite cursor"
+      },
+      "correct_answer": "A",
+      "explanation": "tmp_path gives a temporary directory as a pathlib.Path object."
+    },
+    {
+      "id": "P6-Q064",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixtures",
+      "type": "single_choice",
+      "question": "What older pytest fixture did tmp_path replace?",
+      "options": {
+        "A": "tmpdir",
+        "B": "tempfile_old",
+        "C": "tmp_file",
+        "D": "old_path"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture says tmp_path replaced the older tmpdir fixture in pytest 3.9+."
+    },
+    {
+      "id": "P6-Q065",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixtures",
+      "type": "single_choice",
+      "question": "What does tmp_path / \"log.txt\" create?",
+      "options": {
+        "A": "A Path object for a file named log.txt inside the temporary directory",
+        "B": "A string division error",
+        "C": "A real HTTP request",
+        "D": "A pytest marker"
+      },
+      "correct_answer": "A",
+      "explanation": "pathlib.Path overloads / to build child paths."
+    },
+    {
+      "id": "P6-Q066",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixtures",
+      "type": "single_choice",
+      "question": "In a fixture, what does return do?",
+      "options": {
+        "A": "Ends the fixture function immediately",
+        "B": "Suspends and later resumes the fixture",
+        "C": "Runs teardown after the test",
+        "D": "Creates three tests"
+      },
+      "correct_answer": "A",
+      "explanation": "return ends the function and does not resume after the test."
+    },
+    {
+      "id": "P6-Q067",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixtures",
+      "type": "single_choice",
+      "question": "In a fixture, what does yield do?",
+      "options": {
+        "A": "Provides the value to the test, then resumes after the test for teardown",
+        "B": "Stops pytest discovery",
+        "C": "Skips the test permanently",
+        "D": "Creates a Decimal"
+      },
+      "correct_answer": "A",
+      "explanation": "yield suspends the fixture while the test runs, then resumes for cleanup."
+    },
+    {
+      "id": "P6-Q068",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixtures",
+      "type": "single_choice",
+      "question": "When does teardown code after yield run?",
+      "options": {
+        "A": "After the test, even on test failure",
+        "B": "Before fixture setup",
+        "C": "Only if all tests pass",
+        "D": "Never"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture notes teardown after yield runs even if the test fails."
+    },
+    {
+      "id": "P6-Q069",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixtures",
+      "type": "single_choice",
+      "question": "Which line is teardown in the yielded SMTP fixture?",
+      "options": {
+        "A": "conn.close() after yield",
+        "B": "import smtplib",
+        "C": "@pytest.fixture",
+        "D": "def smtp():"
+      },
+      "correct_answer": "A",
+      "explanation": "The cleanup after the yielded connection closes it."
+    },
+    {
+      "id": "P6-Q070",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixtures",
+      "type": "single_choice",
+      "question": "Why use fixtures instead of duplicating setup code in every test?",
+      "options": {
+        "A": "They centralize setup and provide clean resources per test",
+        "B": "They make tests impossible to run",
+        "C": "They avoid assert statements",
+        "D": "They convert tests to production code"
+      },
+      "correct_answer": "A",
+      "explanation": "Fixtures reduce duplication and manage setup/teardown."
+    },
+    {
+      "id": "P6-Q071",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Mocking",
+      "type": "single_choice",
+      "question": "What is a mock object?",
+      "options": {
+        "A": "An object that replaces a real dependency during testing with controlled behavior",
+        "B": "A real server that must be online",
+        "C": "A test report file",
+        "D": "A floating-point number"
+      },
+      "correct_answer": "A",
+      "explanation": "Mocks isolate code from external dependencies by providing controlled responses."
+    },
+    {
+      "id": "P6-Q072",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Mocking",
+      "type": "single_choice",
+      "question": "Which Python library provides patch in the lecture example?",
+      "options": {
+        "A": "unittest.mock",
+        "B": "requests.patch only",
+        "C": "pytest.patcher",
+        "D": "mockito only"
+      },
+      "correct_answer": "A",
+      "explanation": "patch is imported from unittest.mock, which is built in."
+    },
+    {
+      "id": "P6-Q073",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Mocking",
+      "type": "single_choice",
+      "question": "What does @patch(\"requests.get\") do in the example?",
+      "options": {
+        "A": "Replaces requests.get with a mock during the test",
+        "B": "Performs a real HTTP GET",
+        "C": "Installs requests",
+        "D": "Deletes the requests module"
+      },
+      "correct_answer": "A",
+      "explanation": "patch temporarily replaces the target function with a mock object."
+    },
+    {
+      "id": "P6-Q074",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Mocking",
+      "type": "single_choice",
+      "question": "In the mock example, what does mock_get.return_value.status_code = 200 configure?",
+      "options": {
+        "A": "The fake response status code returned by requests.get",
+        "B": "The real server status code",
+        "C": "pytest verbosity",
+        "D": "Decimal precision"
+      },
+      "correct_answer": "A",
+      "explanation": "The mock is configured so calling requests.get returns an object whose status_code is 200."
+    },
+    {
+      "id": "P6-Q075",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Mocking",
+      "type": "single_choice",
+      "question": "Why mock HTTP requests in unit tests?",
+      "options": {
+        "A": "Tests run offline, fast, and independently from external services",
+        "B": "Mocks make tests slower",
+        "C": "Mocks send real email",
+        "D": "Mocks disable Python imports"
+      },
+      "correct_answer": "A",
+      "explanation": "Mocking avoids real network calls and makes tests deterministic."
+    },
+    {
+      "id": "P6-Q076",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Mocking",
+      "type": "single_choice",
+      "question": "What real dependency is isolated in the fetch_status example?",
+      "options": {
+        "A": "requests.get",
+        "B": "print",
+        "C": "Decimal",
+        "D": "pytest.approx"
+      },
+      "correct_answer": "A",
+      "explanation": "The function fetch_status depends on requests.get, which is mocked in the test."
+    },
+    {
+      "id": "P6-Q077",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Mocking",
+      "type": "single_choice",
+      "question": "If requests.get is patched, is a real HTTP request made in the lecture example?",
+      "options": {
+        "A": "No",
+        "B": "Yes, always",
+        "C": "Only if pytest -v is used",
+        "D": "Only when Decimal is imported"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture explicitly says no real HTTP request is made."
+    },
+    {
+      "id": "P6-Q078",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test organization",
+      "type": "single_choice",
+      "question": "Where should tests generally be kept?",
+      "options": {
+        "A": "Separate from production code",
+        "B": "Inside comments only",
+        "C": "In the Python interpreter binary",
+        "D": "Only in .env files"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture recommends separating tests from production code."
+    },
+    {
+      "id": "P6-Q079",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test organization",
+      "type": "single_choice",
+      "question": "Which project layout is shown as one approach?",
+      "options": {
+        "A": "myproject/app.py and myproject/tests/test_app.py",
+        "B": "myproject/app.docx only",
+        "C": "tests inside Python standard library",
+        "D": "one CSV file only"
+      },
+      "correct_answer": "A",
+      "explanation": "One approach is a module with its own tests/ folder and test files."
+    },
+    {
+      "id": "P6-Q080",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test organization",
+      "type": "single_choice",
+      "question": "What is the second test organization approach?",
+      "options": {
+        "A": "A parallel tests/ tree that mirrors the full project structure",
+        "B": "All tests in README only",
+        "C": "Tests stored in environment variables",
+        "D": "Tests only in compiled files"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture shows a separate tests/ tree mirroring the project."
+    },
+    {
+      "id": "P6-Q081",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Separate test files",
+      "type": "single_choice",
+      "question": "If app.py defines add(), how does tests/test_app.py import it in the lecture example?",
+      "options": {
+        "A": "import app",
+        "B": "import add from pytest",
+        "C": "from tests import app.py as file",
+        "D": "open(\"app.py\") only"
+      },
+      "correct_answer": "A",
+      "explanation": "The example imports the module under test by name: import app."
+    },
+    {
+      "id": "P6-Q082",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Separate test files",
+      "type": "single_choice",
+      "question": "Why keep test files out of production packages?",
+      "options": {
+        "A": "To separate testing code from application code",
+        "B": "Because pytest cannot read tests/",
+        "C": "Because assert works only in production packages",
+        "D": "Because imports become impossible"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture recommends keeping test files separate from production code."
+    },
+    {
+      "id": "P6-Q083",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Separate test files",
+      "type": "single_choice",
+      "question": "What naming convention makes tests/test_app.py discoverable?",
+      "options": {
+        "A": "It starts with test_ and ends with .py",
+        "B": "It starts with app_",
+        "C": "It has no extension",
+        "D": "It is named production.py"
+      },
+      "correct_answer": "A",
+      "explanation": "test_app.py matches pytest’s test_*.py discovery rule."
+    },
+    {
+      "id": "P6-Q084",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD",
+      "type": "single_choice",
+      "question": "What does TDD stand for?",
+      "options": {
+        "A": "Test-Driven Development",
+        "B": "Typed Data Dictionary",
+        "C": "Temporary Debug Directory",
+        "D": "Text Document Design"
+      },
+      "correct_answer": "A",
+      "explanation": "TDD is Test-Driven Development."
+    },
+    {
+      "id": "P6-Q085",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD",
+      "type": "single_choice",
+      "question": "What is the correct TDD cycle?",
+      "options": {
+        "A": "Red-Green-Refactor",
+        "B": "Green-Red-Delete",
+        "C": "Refactor-Red-Ignore",
+        "D": "Mock-Delete-Ship"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture presents TDD as Red, Green, Refactor."
+    },
+    {
+      "id": "P6-Q086",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD",
+      "type": "single_choice",
+      "question": "What happens in the Red step?",
+      "options": {
+        "A": "Write a failing test for the next small feature",
+        "B": "Delete all tests",
+        "C": "Write all final code first",
+        "D": "Refactor without tests"
+      },
+      "correct_answer": "A",
+      "explanation": "Red means writing a test first and seeing it fail."
+    },
+    {
+      "id": "P6-Q087",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD",
+      "type": "single_choice",
+      "question": "What happens in the Green step?",
+      "options": {
+        "A": "Write the minimum code to make the test pass",
+        "B": "Rewrite the whole application",
+        "C": "Remove the failing test",
+        "D": "Improve code style only"
+      },
+      "correct_answer": "A",
+      "explanation": "Green focuses on the simplest implementation that passes the test."
+    },
+    {
+      "id": "P6-Q088",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD",
+      "type": "single_choice",
+      "question": "What happens in the Refactor step?",
+      "options": {
+        "A": "Improve the code without changing behavior",
+        "B": "Change behavior without tests",
+        "C": "Add random features",
+        "D": "Delete the production code"
+      },
+      "correct_answer": "A",
+      "explanation": "Refactoring improves structure while preserving passing behavior."
+    },
+    {
+      "id": "P6-Q089",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD",
+      "type": "single_choice",
+      "question": "In TDD, when should tests be written?",
+      "options": {
+        "A": "Before code",
+        "B": "Only after deployment",
+        "C": "Never",
+        "D": "Only after refactor"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture says write tests before code, not after."
+    },
+    {
+      "id": "P6-Q090",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD",
+      "type": "single_choice",
+      "question": "When should you stop in the TDD cycle according to the lecture?",
+      "options": {
+        "A": "When all required tests pass",
+        "B": "When one test fails",
+        "C": "Before running tests",
+        "D": "After deleting mocks"
+      },
+      "correct_answer": "A",
+      "explanation": "Stop when the required tests pass."
+    },
+    {
+      "id": "P6-Q091",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD count_words",
+      "type": "single_choice",
+      "question": "In the count_words example, what is the first Red test?",
+      "options": {
+        "A": "assert count_words(\"hello\") == 1",
+        "B": "assert count_words(1) == \"hello\"",
+        "C": "assert \"hello\" == 0",
+        "D": "assert split == 1"
+      },
+      "correct_answer": "A",
+      "explanation": "The first test expects one word for the string hello."
+    },
+    {
+      "id": "P6-Q092",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD count_words",
+      "type": "single_choice",
+      "question": "In the count_words Green step, what minimum implementation is shown?",
+      "options": {
+        "A": "return len(text.split())",
+        "B": "return 0",
+        "C": "return text",
+        "D": "raise ValueError"
+      },
+      "correct_answer": "A",
+      "explanation": "The minimum solution uses split() and len() to count words."
+    },
+    {
+      "id": "P6-Q093",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD count_words",
+      "type": "single_choice",
+      "question": "What should count_words(\"\") return in the extended tests?",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "None",
+        "D": "TypeError always"
+      },
+      "correct_answer": "A",
+      "explanation": "An empty string contains zero words."
+    },
+    {
+      "id": "P6-Q094",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD count_words",
+      "type": "single_choice",
+      "question": "What should count_words(\"hello   world\") return according to the multiple spaces test idea?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "0",
+        "D": "The original string"
+      },
+      "correct_answer": "A",
+      "explanation": "str.split() without arguments treats repeated whitespace as separators and returns two words."
+    },
+    {
+      "id": "P6-Q095",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD admin challenge",
+      "type": "single_choice",
+      "question": "For a new requirement to filter HTTP 4xx lines, what is the first safe TDD step?",
+      "options": {
+        "A": "Write a failing test for filter_errors(log)",
+        "B": "Refactor unrelated code first",
+        "C": "Deploy immediately",
+        "D": "Delete existing tests"
+      },
+      "correct_answer": "A",
+      "explanation": "The Red step is writing a failing test for the new requirement."
+    },
+    {
+      "id": "P6-Q096",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD admin challenge",
+      "type": "single_choice",
+      "question": "After writing a failing test for filter_errors(log), what comes next?",
+      "options": {
+        "A": "Add the simplest filter_errors() that passes",
+        "B": "Remove pytest",
+        "C": "Mock Decimal",
+        "D": "Change requirements"
+      },
+      "correct_answer": "A",
+      "explanation": "The Green step is minimal code that passes the test."
+    },
+    {
+      "id": "P6-Q097",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD admin challenge",
+      "type": "single_choice",
+      "question": "Which edge case should be added for a log parser filter?",
+      "options": {
+        "A": "Empty log",
+        "B": "Only a comment in source code",
+        "C": "A missing pytest installation only",
+        "D": "A DOCX style"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture mentions edge-case tests such as empty log and mixed codes."
+    },
+    {
+      "id": "P6-Q098",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD admin challenge",
+      "type": "single_choice",
+      "question": "When should refactoring happen in the log parser TDD challenge?",
+      "options": {
+        "A": "Once all tests pass",
+        "B": "Before any tests exist",
+        "C": "Only if tests fail forever",
+        "D": "Never"
+      },
+      "correct_answer": "A",
+      "explanation": "TDD refactors after tests are green."
+    },
+    {
+      "id": "P6-Q099",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Pytest code behavior",
+      "type": "single_choice",
+      "question": "Which test name will pytest collect?",
+      "options": {
+        "A": "def test_add(): ...",
+        "B": "def add_test(): ...",
+        "C": "def check_add(): ...",
+        "D": "def add(): ..."
+      },
+      "correct_answer": "A",
+      "explanation": "pytest collects functions starting with test."
+    },
+    {
+      "id": "P6-Q100",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Pytest code behavior",
+      "type": "single_choice",
+      "question": "Which class name will pytest collect tests from?",
+      "options": {
+        "A": "class TestCalculator:",
+        "B": "class CalculatorTestOnlyMaybe:",
+        "C": "class Calculator:",
+        "D": "class testingCalculator:"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest collects methods from classes prefixed with Test."
+    },
+    {
+      "id": "P6-Q101",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Pytest code behavior",
+      "type": "single_choice",
+      "question": "Which method inside class TestCalc will pytest collect?",
+      "options": {
+        "A": "def test_add(self):",
+        "B": "def add(self):",
+        "C": "def check(self):",
+        "D": "def __init__(self):"
+      },
+      "correct_answer": "A",
+      "explanation": "Test methods must start with test."
+    },
+    {
+      "id": "P6-Q102",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Pytest code behavior",
+      "type": "single_choice",
+      "question": "What is wrong with assert add(2, 2) = 4?",
+      "options": {
+        "A": "= is assignment; equality comparison needs ==",
+        "B": "assert cannot compare integers",
+        "C": "add cannot be tested",
+        "D": "pytest needs semicolons"
+      },
+      "correct_answer": "A",
+      "explanation": "Assertions comparing values use ==, not assignment =."
+    },
+    {
+      "id": "P6-Q103",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Pytest code behavior",
+      "type": "single_choice",
+      "question": "What will assert add(2, 2) == 5 do if add returns 4?",
+      "options": {
+        "A": "Fail the test",
+        "B": "Pass silently",
+        "C": "Install pytest",
+        "D": "Return 5"
+      },
+      "correct_answer": "A",
+      "explanation": "A false assert expression fails the test."
+    },
+    {
+      "id": "P6-Q104",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test design",
+      "type": "single_choice",
+      "question": "Which is the best unit-test target?",
+      "options": {
+        "A": "A pure function that calculates a value",
+        "B": "The whole internet",
+        "C": "Every user in production",
+        "D": "A laptop keyboard"
+      },
+      "correct_answer": "A",
+      "explanation": "Unit tests are best for isolated functions/classes."
+    },
+    {
+      "id": "P6-Q105",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test design",
+      "type": "single_choice",
+      "question": "Which test is more likely an integration test?",
+      "options": {
+        "A": "Checking that a parser and database writer work together",
+        "B": "Checking add(2,2)==4 only",
+        "C": "Checking a single string split only",
+        "D": "Checking Decimal(\"0.1\") only"
+      },
+      "correct_answer": "A",
+      "explanation": "Integration tests verify multiple components working together."
+    },
+    {
+      "id": "P6-Q106",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test design",
+      "type": "single_choice",
+      "question": "Which test is more likely an acceptance test?",
+      "options": {
+        "A": "Checking that the final system behavior satisfies a user requirement",
+        "B": "Checking one private helper only",
+        "C": "Checking one branch inside a function only",
+        "D": "Checking pytest -q output"
+      },
+      "correct_answer": "A",
+      "explanation": "Acceptance tests are user-requirement oriented."
+    },
+    {
+      "id": "P6-Q107",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Mocking code behavior",
+      "type": "single_choice",
+      "question": "If fetch_status returns requests.get(url).status_code and the patched mock returns status_code 404, what should fetch_status(\"x\") return?",
+      "options": {
+        "A": "404",
+        "B": "200 always",
+        "C": "None",
+        "D": "A real HTTP response object"
+      },
+      "correct_answer": "A",
+      "explanation": "The function returns whatever status_code is configured on the mocked return value."
+    },
+    {
+      "id": "P6-Q108",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Mocking code behavior",
+      "type": "single_choice",
+      "question": "What should you mock when testing code that sends email?",
+      "options": {
+        "A": "The SMTP connection or send method",
+        "B": "The integer type",
+        "C": "The assert keyword",
+        "D": "The test file name"
+      },
+      "correct_answer": "A",
+      "explanation": "External services like email servers should be mocked to keep tests isolated."
+    },
+    {
+      "id": "P6-Q109",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixture code behavior",
+      "type": "single_choice",
+      "question": "A fixture creates a temporary file using tmp_path. Should tests depend on a permanent real file path?",
+      "options": {
+        "A": "No",
+        "B": "Yes, always",
+        "C": "Only for floats",
+        "D": "Only for parametrize"
+      },
+      "correct_answer": "A",
+      "explanation": "tmp_path lets tests use isolated temporary paths instead of permanent real files."
+    },
+    {
+      "id": "P6-Q110",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixture code behavior",
+      "type": "single_choice",
+      "question": "What happens to a fixture value when it is listed as a test parameter?",
+      "options": {
+        "A": "pytest calls the fixture and passes its result into the test",
+        "B": "Python treats it as a string literal",
+        "C": "The test is skipped",
+        "D": "It becomes a command-line argument"
+      },
+      "correct_answer": "A",
+      "explanation": "Fixture injection is based on test parameter names."
+    },
+    {
+      "id": "P6-Q111",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Parametrization behavior",
+      "type": "single_choice",
+      "question": "Why is parametrization useful?",
+      "options": {
+        "A": "It avoids repeating the same test logic for many input/output sets",
+        "B": "It disables test discovery",
+        "C": "It replaces all fixtures",
+        "D": "It requires a database"
+      },
+      "correct_answer": "A",
+      "explanation": "Parametrization keeps repeated test logic in one test function."
+    },
+    {
+      "id": "P6-Q112",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Parametrization behavior",
+      "type": "single_choice",
+      "question": "For @pytest.mark.parametrize(\"value\", [1, 2, 3]), how many times is the test called?",
+      "options": {
+        "A": "3",
+        "B": "1",
+        "C": "0",
+        "D": "It depends on tmp_path"
+      },
+      "correct_answer": "A",
+      "explanation": "Each value creates a separate test invocation."
+    },
+    {
+      "id": "P6-Q113",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Precision testing",
+      "type": "single_choice",
+      "question": "Which is bad practice for floats?",
+      "options": {
+        "A": "assert result == expected for approximate floating-point operations",
+        "B": "assert result == pytest.approx(expected)",
+        "C": "assert abs(result - expected) < tolerance",
+        "D": "Use Decimal for exact decimal money values"
+      },
+      "correct_answer": "A",
+      "explanation": "Direct equality is fragile for results involving binary floating-point approximations."
+    },
+    {
+      "id": "P6-Q114",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Precision testing",
+      "type": "single_choice",
+      "question": "Which is good practice for exact money-like decimal values?",
+      "options": {
+        "A": "Use Decimal with strings",
+        "B": "Use float equality always",
+        "C": "Use random rounding only",
+        "D": "Store all money as comments"
+      },
+      "correct_answer": "A",
+      "explanation": "Decimal(\"...\") gives exact decimal representation."
+    },
+    {
+      "id": "P6-Q115",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test organization",
+      "type": "single_choice",
+      "question": "Which import style matches the lecture for separate test files?",
+      "options": {
+        "A": "import app, then call app.add(2, 2)",
+        "B": "copy all production code into tests",
+        "C": "never import production modules",
+        "D": "import tests as app only"
+      },
+      "correct_answer": "A",
+      "explanation": "The test file imports the module under test and calls its function through the module name."
+    },
+    {
+      "id": "P6-Q116",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD principle",
+      "type": "single_choice",
+      "question": "Why should the first TDD test fail?",
+      "options": {
+        "A": "To prove the test actually detects the missing feature",
+        "B": "Because all tests must always fail",
+        "C": "Because pytest cannot pass first tests",
+        "D": "Because refactoring requires failing tests"
+      },
+      "correct_answer": "A",
+      "explanation": "A failing Red test shows the feature is not implemented yet and the test is meaningful."
+    },
+    {
+      "id": "P6-Q117",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD principle",
+      "type": "single_choice",
+      "question": "What should be preserved during refactoring?",
+      "options": {
+        "A": "Behavior",
+        "B": "Failing tests",
+        "C": "Syntax errors",
+        "D": "External API outages"
+      },
+      "correct_answer": "A",
+      "explanation": "Refactoring changes structure, not externally visible behavior."
+    },
+    {
+      "id": "P6-Q118",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing philosophy",
+      "type": "single_choice",
+      "question": "Which statement is most aligned with the lecture?",
+      "options": {
+        "A": "Tests catch regressions quickly",
+        "B": "Tests guarantee no bug can exist",
+        "C": "Tests are useful only after production failure",
+        "D": "Tests are only for GUI apps"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture says tests catch regressions in seconds instead of after deployment."
+    },
+    {
+      "id": "P6-Q119",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing philosophy",
+      "type": "single_choice",
+      "question": "What problem can happen without tests when an API changes?",
+      "options": {
+        "A": "A parser may silently return wrong results",
+        "B": "Python stops supporting strings",
+        "C": "pytest becomes mandatory",
+        "D": "Files cannot be opened"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture motivates tests by mentioning API/parser changes that silently break results."
+    },
+    {
+      "id": "P6-Q120",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing philosophy",
+      "type": "single_choice",
+      "question": "Which statement about tests and documentation is true?",
+      "options": {
+        "A": "Tests can document expected behavior",
+        "B": "Tests replace all course slides",
+        "C": "Tests hide usage examples",
+        "D": "Tests are not executable"
+      },
+      "correct_answer": "A",
+      "explanation": "Tests show how functions are intended to be used."
+    },
+    {
+      "id": "P6-Q121",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing approaches",
+      "type": "single_choice",
+      "question": "Which tool belongs to static testing?",
+      "options": {
+        "A": "pylint",
+        "B": "pytest running a function",
+        "C": "logging a live process only",
+        "D": "smtplib sending email"
+      },
+      "correct_answer": "A",
+      "explanation": "pylint analyzes code without running it."
+    },
+    {
+      "id": "P6-Q122",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing approaches",
+      "type": "single_choice",
+      "question": "Which tool belongs to dynamic testing?",
+      "options": {
+        "A": "pytest",
+        "B": "pylint only",
+        "C": "type checker only",
+        "D": "IDE underline only"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest runs code with inputs and expected assertions."
+    },
+    {
+      "id": "P6-Q123",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing approaches",
+      "type": "single_choice",
+      "question": "Which belongs to passive observation?",
+      "options": {
+        "A": "Logging",
+        "B": "assert add(2,2)==4",
+        "C": "pytest.raises",
+        "D": "parametrize"
+      },
+      "correct_answer": "A",
+      "explanation": "Logging/tracing observes running behavior."
+    },
+    {
+      "id": "P6-Q124",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "pytest basics",
+      "type": "single_choice",
+      "question": "What must a pytest assertion expression evaluate to for the test to pass?",
+      "options": {
+        "A": "True",
+        "B": "False",
+        "C": "None only",
+        "D": "A string only"
+      },
+      "correct_answer": "A",
+      "explanation": "assert passes when the expression is truthy."
+    },
+    {
+      "id": "P6-Q125",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing exceptions",
+      "type": "single_choice",
+      "question": "Which exception type should be named in pytest.raises?",
+      "options": {
+        "A": "The expected exception type",
+        "B": "Always Exception for every test",
+        "C": "Always KeyboardInterrupt",
+        "D": "The function name"
+      },
+      "correct_answer": "A",
+      "explanation": "pytest.raises should specify the exception you expect."
+    },
+    {
+      "id": "P6-Q126",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Mocking",
+      "type": "single_choice",
+      "question": "What is the main benefit of controlled mock responses?",
+      "options": {
+        "A": "Deterministic tests",
+        "B": "More network dependency",
+        "C": "Random failures",
+        "D": "Manual copy-paste"
+      },
+      "correct_answer": "A",
+      "explanation": "Mocks return controlled data, making tests predictable."
+    },
+    {
+      "id": "P6-Q127",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Fixtures",
+      "type": "single_choice",
+      "question": "What is one reason to use yield in a fixture instead of return?",
+      "options": {
+        "A": "To run cleanup code after the test",
+        "B": "To avoid creating a value",
+        "C": "To make pytest ignore the fixture",
+        "D": "To create syntax errors"
+      },
+      "correct_answer": "A",
+      "explanation": "yield allows teardown code after the test finishes."
+    },
+    {
+      "id": "P6-Q128",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "TDD count_words",
+      "type": "single_choice",
+      "question": "Why does len(text.split()) work for \"hello   world\"?",
+      "options": {
+        "A": "split() without arguments collapses whitespace separators",
+        "B": "split() counts characters",
+        "C": "split() returns the original string",
+        "D": "split() always returns one item"
+      },
+      "correct_answer": "A",
+      "explanation": "Python string split without arguments separates on runs of whitespace."
+    },
+    {
+      "id": "P6-Q129",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test discovery",
+      "type": "single_choice",
+      "question": "What happens if a file is named app_tests.txt?",
+      "options": {
+        "A": "pytest will not discover it as a Python test file by default",
+        "B": "pytest always discovers it",
+        "C": "It becomes a fixture",
+        "D": "It is run as a database"
+      },
+      "correct_answer": "A",
+      "explanation": "Default pytest discovery looks for Python files matching test_*.py or *_test.py."
+    },
+    {
+      "id": "P6-Q130",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Testing levels",
+      "type": "single_choice",
+      "question": "Which level is today’s focus in lecture 10?",
+      "options": {
+        "A": "Unit testing",
+        "B": "Acceptance only",
+        "C": "Production monitoring only",
+        "D": "Manual UI testing only"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture states unit testing is today’s focus."
+    },
+    {
+      "id": "P6-Q131",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test design",
+      "type": "single_choice",
+      "question": "Which is a typical case for a function add(a,b)?",
+      "options": {
+        "A": "add(2, 3)",
+        "B": "add(None, database, browser)",
+        "C": "No input at all always",
+        "D": "A corrupted compiled file"
+      },
+      "correct_answer": "A",
+      "explanation": "Typical cases are normal expected usage."
+    },
+    {
+      "id": "P6-Q132",
+      "phase": 6,
+      "source_file": "SL_W04IST_SI4034_lecture_10-testing.pdf",
+      "topic": "Test design",
+      "type": "single_choice",
+      "question": "Which is an error case for add(a,b) if it accepts only numbers?",
+      "options": {
+        "A": "add(\"a\", 2) raises TypeError",
+        "B": "add(2,3)==5",
+        "C": "add(0,0)==0",
+        "D": "add(-1,1)==0"
+      },
+      "correct_answer": "A",
+      "explanation": "Invalid input raising an expected exception is an error case."
+    }
+  ],
+  "created": "2026-06-17T11:54:51Z"
+}

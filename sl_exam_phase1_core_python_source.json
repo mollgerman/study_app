@@ -1,0 +1,1170 @@
+{
+  "name": "SL Exam Phase 1 Python Core Source",
+  "description": "Topic map and exam-like single-choice question bank generated from lectures 01-03. Python semantics only.",
+  "created": "2026-06-17",
+  "phase": "01",
+  "lectures": [
+    "SL_W04IST_SI4034_lecture_01.pdf",
+    "SL_W04IST_SI4034_lecture_02.pdf",
+    "SL_W04IST_SI4034_lecture_03.pdf"
+  ],
+  "question_count": 62,
+  "topics": [
+    {
+      "lecture": "01",
+      "title": "Introduction into Python",
+      "keypoints": [
+        "Python files use .py extension; run with py app.py or a selected version such as py --3.14 app.py.",
+        "Python uses indentation instead of braces; 4 spaces are recommended.",
+        "pycodestyle checks PEP8 compliance; install it with pip install pycodestyle.",
+        "PEP means Python Enhancement Proposal; PEP20 contains principles such as readability counts.",
+        "Python is dynamically typed: variable names can refer to objects of different types during execution.",
+        "Python is strongly typed: '2' + 2 raises TypeError; explicit conversion is needed.",
+        "print() is a function in Python 3; input() reads a line from standard input and returns a string.",
+        "Basic types include int, bool, float, complex; strings are sequence types.",
+        "if/else controls conditional execution; def defines a function; return gives back a result; pass creates an empty body.",
+        "for iterates over values; range produces a sequence of integers; strings can be iterated character by character.",
+        "Everything in Python is an object, with identity, type, and value."
+      ],
+      "exam_traps": [
+        "Do not answer using Java/C#/JavaScript rules; use Python semantics only.",
+        "Python 3 forbids Python 2 print statement syntax: print 'Hello'.",
+        "Dynamic typing does not mean weak typing.",
+        "input() returns text, even if the user types digits.",
+        "range(10) stops before 10."
+      ],
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_01.pdf"
+      ]
+    },
+    {
+      "lecture": "02",
+      "title": "My first simple program",
+      "keypoints": [
+        "Standard input and output are streams; applications can be sources, sinks, or filters.",
+        "< redirects input, > redirects output replacing the file, >> appends output, and | pipes one program into another.",
+        "print() writes to standard output; input() reads one line from standard input.",
+        "sys.stdin and fileinput.input() can read streams line by line.",
+        "Strings are str objects; single quotes, double quotes, and triple quotes create string literals.",
+        "Adjacent string literals are concatenated: 'abc' 'def' becomes 'abcdef'.",
+        "Strings are immutable and Python has no separate character type; a character is a string of length 1.",
+        "str(x) converts non-string objects to strings.",
+        "f-strings and str.format() format text.",
+        "strip(), join(), and split() are common string methods.",
+        "Strings are iterable; iterating over 'abc' produces 'a', 'b', 'c'.",
+        "Lists are ordered, mutable, iterable compound data types.",
+        "append() adds one element; remove() removes by value; + creates a new list.",
+        "List slicing uses start inclusive, stop exclusive; negative indexes count from the end.",
+        "A debugger runs code step by step and lets you inspect values; breakpoints stop execution.",
+        "Logging is better than print debugging for persistent diagnostic messages.",
+        "Logging levels: DEBUG, INFO, WARNING, ERROR, CRITICAL; WARNING is the default threshold."
+      ],
+      "exam_traps": [
+        "A list containing one string ['abcd'] iterates once; the string 'abcd' iterates four times.",
+        "> replaces an output file, while >> appends.",
+        "data + [x] creates a new list; append modifies the existing list.",
+        "data[1:3] excludes index 3.",
+        "WARNING level does not show DEBUG messages."
+      ],
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_02.pdf"
+      ]
+    },
+    {
+      "lecture": "03",
+      "title": "Lists and tuples",
+      "keypoints": [
+        "uv can initialize a project, add dependencies, sync dependencies, and run a Python file.",
+        "uv keeps project configuration in pyproject.toml and installed dependency state in uv.lock.",
+        "Positional arguments without default values must be provided.",
+        "Keyword/default arguments can be omitted and can be called by name in any order.",
+        "After a keyword argument in a call, following arguments must also be keyword arguments.",
+        "Python type hints are annotations; they can be ignored at runtime.",
+        "mypy performs static code verification; missing types are ignored by default.",
+        "Lists are mutable sequences; append adds one object, insert inserts before index, extend appends elements from an iterable.",
+        "del removes by index or slice; pop removes and returns; remove deletes the first matching value.",
+        "list.sort() sorts in place and returns None; sorted() returns a new list and leaves the original intact.",
+        "range is an immutable sequence type used mostly in for loops.",
+        "range(start, stop, step) excludes stop; range(15,0,-5) gives 15, 10, 5.",
+        "List comprehensions build lists compactly, e.g. [x*x for x in range(10)].",
+        "Tuples are immutable sequences.",
+        "A single-element tuple requires a comma, e.g. ('Brian',) or 'Brian',.",
+        "tuple([1,2,3]) gives (1,2,3); tuple('123') gives ('1','2','3'); tuple(1,2,3) is invalid.",
+        "Tuples are compared element by element; lambda can be used as a key for selected-element sorting.",
+        "A tuple has no sort() method; sorted(tuple_obj) returns a new list."
+      ],
+      "exam_traps": [
+        "append([4,5,6]) adds one list object; extend([4,5,6]) adds three elements.",
+        "list.sort() returns None.",
+        "sorted() does not modify the original list or tuple.",
+        "('Brian') is a string; ('Brian',) is a tuple.",
+        "Type hints do not enforce runtime types by themselves."
+      ],
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_03.pdf"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "P1-001",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "Python files",
+      "difficulty": "easy",
+      "question": "Which extension is normally used for Python source files?",
+      "choices": {
+        "A": ".py",
+        "B": ".java",
+        "C": ".exe",
+        "D": ".txt"
+      },
+      "correct_choice": "A",
+      "answer": ".py",
+      "explanation": "Python source files conventionally use the .py extension."
+    },
+    {
+      "id": "P1-002",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "Running Python code",
+      "difficulty": "easy",
+      "question": "Which command is a valid way to run a Python file named app.py on Windows using the Python launcher?",
+      "choices": {
+        "A": "py app.py",
+        "B": "run app.py",
+        "C": "python.compile app.py",
+        "D": "execute app.py"
+      },
+      "correct_choice": "A",
+      "answer": "py app.py",
+      "explanation": "The slides show py app.py as a normal way to run a Python app."
+    },
+    {
+      "id": "P1-003",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "Code layout",
+      "difficulty": "easy",
+      "question": "What does Python use to define blocks of code?",
+      "choices": {
+        "A": "Indentation",
+        "B": "Curly braces only",
+        "C": "begin/end keywords",
+        "D": "Semicolons only"
+      },
+      "correct_choice": "A",
+      "answer": "Indentation",
+      "explanation": "Python uses indentation instead of brackets/braces for blocks."
+    },
+    {
+      "id": "P1-004",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "Code layout",
+      "difficulty": "easy",
+      "question": "How many spaces did the lecture recommend for indentation?",
+      "choices": {
+        "A": "2 spaces",
+        "B": "4 spaces",
+        "C": "8 spaces",
+        "D": "Tabs only"
+      },
+      "correct_choice": "B",
+      "answer": "4 spaces",
+      "explanation": "The lecture encouraged using 4 spaces."
+    },
+    {
+      "id": "P1-005",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "PEP8",
+      "difficulty": "easy",
+      "question": "Which tool checks Python code for compliance with PEP8 style?",
+      "choices": {
+        "A": "pycodestyle",
+        "B": "pytest",
+        "C": "pydoc",
+        "D": "pipstyle"
+      },
+      "correct_choice": "A",
+      "answer": "pycodestyle",
+      "explanation": "pycodestyle checks PEP8 compliance; it was formerly known as pep8."
+    },
+    {
+      "id": "P1-006",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "PEP",
+      "difficulty": "easy",
+      "question": "What does PEP stand for in Python?",
+      "choices": {
+        "A": "Python Enhancement Proposal",
+        "B": "Python Execution Process",
+        "C": "Program Error Protocol",
+        "D": "Package Extension Path"
+      },
+      "correct_choice": "A",
+      "answer": "Python Enhancement Proposal",
+      "explanation": "PEP means Python Enhancement Proposal."
+    },
+    {
+      "id": "P1-007",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "Typing",
+      "difficulty": "medium",
+      "question": "Python is dynamically typed. What does this mean?",
+      "choices": {
+        "A": "A variable name can later refer to an object of a different type",
+        "B": "Python automatically converts every type in every expression",
+        "C": "Python has no types",
+        "D": "Variables must declare their type before use"
+      },
+      "correct_choice": "A",
+      "answer": "A variable name can later refer to an object of a different type",
+      "explanation": "Dynamic typing means the name can refer to objects of different types during execution."
+    },
+    {
+      "id": "P1-008",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "Strong typing",
+      "difficulty": "medium",
+      "question": "What happens in Python 3 when evaluating 2 + '2'?",
+      "choices": {
+        "A": "It returns 4",
+        "B": "It returns '22'",
+        "C": "It raises TypeError",
+        "D": "It returns None"
+      },
+      "correct_choice": "C",
+      "answer": "It raises TypeError",
+      "explanation": "Python is strongly typed; int and str are not implicitly added together."
+    },
+    {
+      "id": "P1-009",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "Input",
+      "difficulty": "medium",
+      "question": "What type does input() return in Python?",
+      "choices": {
+        "A": "Always str",
+        "B": "Always int",
+        "C": "A type automatically detected from user input",
+        "D": "Always bytes"
+      },
+      "correct_choice": "A",
+      "answer": "Always str",
+      "explanation": "input() reads a line of text; numeric conversion must be explicit."
+    },
+    {
+      "id": "P1-010",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "Print",
+      "difficulty": "easy",
+      "question": "Which statement about print in Python 3 is correct?",
+      "choices": {
+        "A": "print is a function",
+        "B": "print is a keyword statement like in Python 2",
+        "C": "print cannot use f-strings",
+        "D": "print returns the printed string"
+      },
+      "correct_choice": "A",
+      "answer": "print is a function",
+      "explanation": "In Python 3, print() is a function."
+    },
+    {
+      "id": "P1-011",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "Functions",
+      "difficulty": "easy",
+      "question": "Which keyword defines a function in Python?",
+      "choices": {
+        "A": "def",
+        "B": "function",
+        "C": "func",
+        "D": "method"
+      },
+      "correct_choice": "A",
+      "answer": "def",
+      "explanation": "Function definitions start with def."
+    },
+    {
+      "id": "P1-012",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "Functions",
+      "difficulty": "easy",
+      "question": "Which keyword returns a result from a Python function?",
+      "choices": {
+        "A": "return",
+        "B": "yieldback",
+        "C": "send",
+        "D": "result"
+      },
+      "correct_choice": "A",
+      "answer": "return",
+      "explanation": "return returns a value from a function."
+    },
+    {
+      "id": "P1-013",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "Empty blocks",
+      "difficulty": "easy",
+      "question": "Which keyword can be used as an empty function body?",
+      "choices": {
+        "A": "pass",
+        "B": "empty",
+        "C": "skip",
+        "D": "none"
+      },
+      "correct_choice": "A",
+      "answer": "pass",
+      "explanation": "pass is a no-operation statement used where a body is required."
+    },
+    {
+      "id": "P1-014",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "Loops",
+      "difficulty": "medium",
+      "question": "What does this loop print first: for c in 'abcd': print(c)?",
+      "choices": {
+        "A": "a",
+        "B": "abcd",
+        "C": "0",
+        "D": "It raises an error"
+      },
+      "correct_choice": "A",
+      "answer": "a",
+      "explanation": "Iterating over a string gives one character at a time."
+    },
+    {
+      "id": "P1-015",
+      "phase": "01",
+      "lecture": "01",
+      "topic": "Objects",
+      "difficulty": "medium",
+      "question": "According to Python semantics, every object has:",
+      "choices": {
+        "A": "identity, type, and value",
+        "B": "only a memory address",
+        "C": "only a class name",
+        "D": "a public and private type"
+      },
+      "correct_choice": "A",
+      "answer": "identity, type, and value",
+      "explanation": "The lecture states that every object has identity, type, and value."
+    },
+    {
+      "id": "P1-016",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "Standard IO",
+      "difficulty": "medium",
+      "question": "In the Unix stream model, an application that receives data from STDIN, processes it, and sends the result to STDOUT is called a:",
+      "choices": {
+        "A": "filter",
+        "B": "compiler",
+        "C": "package",
+        "D": "module"
+      },
+      "correct_choice": "A",
+      "answer": "filter",
+      "explanation": "A filter reads from standard input, processes, and writes to standard output."
+    },
+    {
+      "id": "P1-017",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "Redirection",
+      "difficulty": "easy",
+      "question": "What does > do in a command such as py app.py > out.txt?",
+      "choices": {
+        "A": "Redirects output and replaces the file content if it exists",
+        "B": "Redirects input from out.txt",
+        "C": "Appends output to out.txt",
+        "D": "Pipes output to another app"
+      },
+      "correct_choice": "A",
+      "answer": "Redirects output and replaces the file content if it exists",
+      "explanation": "> redirects output to a file and replaces existing content."
+    },
+    {
+      "id": "P1-018",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "Redirection",
+      "difficulty": "easy",
+      "question": "Which operator appends output to an existing file?",
+      "choices": {
+        "A": ">>",
+        "B": ">",
+        "C": "<",
+        "D": "|"
+      },
+      "correct_choice": "A",
+      "answer": ">>",
+      "explanation": ">> appends to the original content of the file."
+    },
+    {
+      "id": "P1-019",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "Pipes",
+      "difficulty": "easy",
+      "question": "Which operator pipes data from one program to another?",
+      "choices": {
+        "A": "|",
+        "B": "<",
+        "C": ">",
+        "D": "::"
+      },
+      "correct_choice": "A",
+      "answer": "|",
+      "explanation": "The pipe operator connects one program's output to another program's input."
+    },
+    {
+      "id": "P1-020",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "Streams",
+      "difficulty": "easy",
+      "question": "Which Python function sends data to standard output?",
+      "choices": {
+        "A": "print()",
+        "B": "input()",
+        "C": "read()",
+        "D": "open()"
+      },
+      "correct_choice": "A",
+      "answer": "print()",
+      "explanation": "print() writes to standard output."
+    },
+    {
+      "id": "P1-021",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "Streams",
+      "difficulty": "easy",
+      "question": "Which Python function reads one line from standard input?",
+      "choices": {
+        "A": "input()",
+        "B": "print()",
+        "C": "log()",
+        "D": "format()"
+      },
+      "correct_choice": "A",
+      "answer": "input()",
+      "explanation": "input() reads one line from standard input."
+    },
+    {
+      "id": "P1-022",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "Strings",
+      "difficulty": "easy",
+      "question": "Which class handles strings in Python?",
+      "choices": {
+        "A": "str",
+        "B": "string",
+        "C": "char",
+        "D": "text"
+      },
+      "correct_choice": "A",
+      "answer": "str",
+      "explanation": "Strings in Python are handled by the str class."
+    },
+    {
+      "id": "P1-023",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "Strings",
+      "difficulty": "medium",
+      "question": "What is the result of: a = 'abc' 'def'?",
+      "choices": {
+        "A": "'abcdef'",
+        "B": "SyntaxError",
+        "C": "'abc def'",
+        "D": "['abc','def']"
+      },
+      "correct_choice": "A",
+      "answer": "'abcdef'",
+      "explanation": "Sibling string literals are concatenated automatically."
+    },
+    {
+      "id": "P1-024",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "Strings",
+      "difficulty": "easy",
+      "question": "Which statement about Python strings is true?",
+      "choices": {
+        "A": "Strings are immutable",
+        "B": "Strings are mutable lists of characters",
+        "C": "Python has a separate char type",
+        "D": "Strings cannot be iterated"
+      },
+      "correct_choice": "A",
+      "answer": "Strings are immutable",
+      "explanation": "Strings are immutable; there is no separate character type."
+    },
+    {
+      "id": "P1-025",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "String formatting",
+      "difficulty": "easy",
+      "question": "Which expression is an f-string?",
+      "choices": {
+        "A": "f'Hello {name}'",
+        "B": "'Hello {}'.format(name)",
+        "C": "str(name)",
+        "D": "format 'Hello {name}'"
+      },
+      "correct_choice": "A",
+      "answer": "f'Hello {name}'",
+      "explanation": "An f-string begins with f before the opening quote."
+    },
+    {
+      "id": "P1-026",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "String methods",
+      "difficulty": "medium",
+      "question": "What is the result of ' too long '.strip()?",
+      "choices": {
+        "A": "'too long'",
+        "B": "' too long '",
+        "C": "'toolong'",
+        "D": "['too','long']"
+      },
+      "correct_choice": "A",
+      "answer": "'too long'",
+      "explanation": "strip() removes leading and trailing whitespace."
+    },
+    {
+      "id": "P1-027",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "String methods",
+      "difficulty": "medium",
+      "question": "What is the result of 'apples and pears'.split()?",
+      "choices": {
+        "A": [
+          "apples",
+          "and",
+          "pears"
+        ],
+        "B": "applesandpears",
+        "C": [
+          "apples and pears"
+        ],
+        "D": "SyntaxError"
+      },
+      "correct_choice": "A",
+      "answer": "['apples', 'and', 'pears']",
+      "explanation": "split() without arguments splits on whitespace."
+    },
+    {
+      "id": "P1-028",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "String iteration",
+      "difficulty": "medium",
+      "question": "What is printed first by: for character in 'abc': print(character)?",
+      "choices": {
+        "A": "a",
+        "B": "abc",
+        "C": "character",
+        "D": "It raises TypeError"
+      },
+      "correct_choice": "A",
+      "answer": "a",
+      "explanation": "A string is iterable and yields one-character strings."
+    },
+    {
+      "id": "P1-029",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "Lists",
+      "difficulty": "easy",
+      "question": "Which statement about Python lists is correct?",
+      "choices": {
+        "A": "Lists are ordered and mutable",
+        "B": "Lists are unordered and immutable",
+        "C": "Lists cannot contain mixed types",
+        "D": "Lists are not iterable"
+      },
+      "correct_choice": "A",
+      "answer": "Lists are ordered and mutable",
+      "explanation": "Lists are ordered mutable compound data types."
+    },
+    {
+      "id": "P1-030",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "List operations",
+      "difficulty": "medium",
+      "question": "After data = [1, 2, 3]; data.append(4), what is data?",
+      "choices": {
+        "A": "[1, 2, 3, 4]",
+        "B": "[4, 1, 2, 3]",
+        "C": "[1, 2, 3]",
+        "D": "None"
+      },
+      "correct_choice": "A",
+      "answer": "[1, 2, 3, 4]",
+      "explanation": "append() modifies the list by adding the object at the end."
+    },
+    {
+      "id": "P1-031",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "List operations",
+      "difficulty": "medium",
+      "question": "What does data + [6, 7, 8] do?",
+      "choices": {
+        "A": "Creates a new list",
+        "B": "Always modifies data in place",
+        "C": "Deletes data",
+        "D": "Returns a tuple"
+      },
+      "correct_choice": "A",
+      "answer": "Creates a new list",
+      "explanation": "The + operator creates a new concatenated list."
+    },
+    {
+      "id": "P1-032",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "List indexing",
+      "difficulty": "easy",
+      "question": "For data = [3, 4, 45, 26, 1], what is data[-1]?",
+      "choices": {
+        "A": "1",
+        "B": "3",
+        "C": "45",
+        "D": "IndexError"
+      },
+      "correct_choice": "A",
+      "answer": "1",
+      "explanation": "Index -1 refers to the last element."
+    },
+    {
+      "id": "P1-033",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "List slicing",
+      "difficulty": "medium",
+      "question": "For data = [3, 4, 45, 26, 1], what is data[1:3]?",
+      "choices": {
+        "A": "[4, 45]",
+        "B": "[4, 45, 26]",
+        "C": "[3, 4, 45]",
+        "D": "[45, 26]"
+      },
+      "correct_choice": "A",
+      "answer": "[4, 45]",
+      "explanation": "Slicing includes start index 1 and excludes stop index 3."
+    },
+    {
+      "id": "P1-034",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "Debugging",
+      "difficulty": "easy",
+      "question": "What is a debugger used for?",
+      "choices": {
+        "A": "Running an application step by step and inspecting values",
+        "B": "Installing packages",
+        "C": "Formatting strings",
+        "D": "Creating virtual environments"
+      },
+      "correct_choice": "A",
+      "answer": "Running an application step by step and inspecting values",
+      "explanation": "A debugger allows step-by-step execution and value inspection."
+    },
+    {
+      "id": "P1-035",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "Breakpoints",
+      "difficulty": "easy",
+      "question": "What is a breakpoint?",
+      "choices": {
+        "A": "A place where code execution stops",
+        "B": "A syntax error",
+        "C": "A package manager",
+        "D": "A Python string method"
+      },
+      "correct_choice": "A",
+      "answer": "A place where code execution stops",
+      "explanation": "Breakpoints mark where the debugger should stop execution."
+    },
+    {
+      "id": "P1-036",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "Logging",
+      "difficulty": "medium",
+      "question": "Which logging level is the default threshold mentioned in the lecture?",
+      "choices": {
+        "A": "WARNING",
+        "B": "DEBUG",
+        "C": "INFO",
+        "D": "CRITICAL"
+      },
+      "correct_choice": "A",
+      "answer": "WARNING",
+      "explanation": "WARNING is the default logging level."
+    },
+    {
+      "id": "P1-037",
+      "phase": "01",
+      "lecture": "02",
+      "topic": "Logging",
+      "difficulty": "medium",
+      "question": "If the logging level is WARNING, which messages are normally shown?",
+      "choices": {
+        "A": "WARNING, ERROR, and CRITICAL",
+        "B": "DEBUG only",
+        "C": "DEBUG and INFO only",
+        "D": "All messages including DEBUG"
+      },
+      "correct_choice": "A",
+      "answer": "WARNING, ERROR, and CRITICAL",
+      "explanation": "A logging threshold shows messages at that level and more severe ones."
+    },
+    {
+      "id": "P1-038",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "uv",
+      "difficulty": "easy",
+      "question": "Which tool does the lecture use to set up Python projects with one tool?",
+      "choices": {
+        "A": "uv",
+        "B": "pip only",
+        "C": "javac",
+        "D": "makepy"
+      },
+      "correct_choice": "A",
+      "answer": "uv",
+      "explanation": "The lecture presents uv as the single tool for project setup."
+    },
+    {
+      "id": "P1-039",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "uv",
+      "difficulty": "medium",
+      "question": "Which file keeps Python project configuration when using uv?",
+      "choices": {
+        "A": "pyproject.toml",
+        "B": "requirements.exe",
+        "C": "main.lock",
+        "D": "project.py"
+      },
+      "correct_choice": "A",
+      "answer": "pyproject.toml",
+      "explanation": "uv keeps configuration in pyproject.toml."
+    },
+    {
+      "id": "P1-040",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "uv",
+      "difficulty": "medium",
+      "question": "Which uv-related file should be committed to version control according to the lecture?",
+      "choices": {
+        "A": "uv.lock",
+        "B": "__pycache__",
+        "C": "venv/bin/python",
+        "D": "pip.log"
+      },
+      "correct_choice": "A",
+      "answer": "uv.lock",
+      "explanation": "The lecture states that uv.lock should be committed."
+    },
+    {
+      "id": "P1-041",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "Functions",
+      "difficulty": "medium",
+      "question": "Given def foo(a, b): return a+b, what happens when calling foo(2)?",
+      "choices": {
+        "A": "TypeError: missing required argument",
+        "B": "It returns 2",
+        "C": "It returns None",
+        "D": "b becomes 0 automatically"
+      },
+      "correct_choice": "A",
+      "answer": "TypeError: missing required argument",
+      "explanation": "Both positional arguments are required because no default value is defined."
+    },
+    {
+      "id": "P1-042",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "Keyword arguments",
+      "difficulty": "medium",
+      "question": "Given def foo(a=2, b=2): return a+b, which call is valid?",
+      "choices": {
+        "A": "foo(b=1, a=2)",
+        "B": "foo(a=1, 2)",
+        "C": "foo(,2)",
+        "D": "foo(a=)"
+      },
+      "correct_choice": "A",
+      "answer": "foo(b=1, a=2)",
+      "explanation": "Keyword arguments can be reordered."
+    },
+    {
+      "id": "P1-043",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "Keyword arguments",
+      "difficulty": "hard",
+      "question": "Which rule about Python function calls is correct?",
+      "choices": {
+        "A": "After a keyword argument, subsequent arguments must also be keyword arguments",
+        "B": "Positional arguments can always appear after keyword arguments",
+        "C": "Keyword arguments cannot have default values",
+        "D": "Default arguments are mandatory"
+      },
+      "correct_choice": "A",
+      "answer": "After a keyword argument, subsequent arguments must also be keyword arguments",
+      "explanation": "The lecture states that all following arguments after a keyword argument must also be keyword arguments."
+    },
+    {
+      "id": "P1-044",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "Type hints",
+      "difficulty": "medium",
+      "question": "What is true about Python type hints?",
+      "choices": {
+        "A": "They are annotations and can be ignored at runtime",
+        "B": "They always enforce type checks at runtime",
+        "C": "They are required in every Python function",
+        "D": "They replace tests"
+      },
+      "correct_choice": "A",
+      "answer": "They are annotations and can be ignored at runtime",
+      "explanation": "Type hints are annotations; runtime Python does not enforce them automatically."
+    },
+    {
+      "id": "P1-045",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "mypy",
+      "difficulty": "medium",
+      "question": "Which module is used for static code verification in the lecture?",
+      "choices": {
+        "A": "mypy",
+        "B": "logging",
+        "C": "fileinput",
+        "D": "random"
+      },
+      "correct_choice": "A",
+      "answer": "mypy",
+      "explanation": "mypy is used for static code verification."
+    },
+    {
+      "id": "P1-046",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "Lists",
+      "difficulty": "easy",
+      "question": "Lists in Python are:",
+      "choices": {
+        "A": "mutable sequences",
+        "B": "immutable mappings",
+        "C": "unordered sets",
+        "D": "not iterable"
+      },
+      "correct_choice": "A",
+      "answer": "mutable sequences",
+      "explanation": "Lists are mutable sequences indexed by numbers."
+    },
+    {
+      "id": "P1-047",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "append vs extend",
+      "difficulty": "medium",
+      "question": "If a = [1,2,3] and a.append([4,5,6]) is executed, what is len(a)?",
+      "choices": {
+        "A": "4",
+        "B": "6",
+        "C": "3",
+        "D": "1"
+      },
+      "correct_choice": "A",
+      "answer": "4",
+      "explanation": "append adds the whole list [4,5,6] as one element."
+    },
+    {
+      "id": "P1-048",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "append vs extend",
+      "difficulty": "medium",
+      "question": "If a = [1,2,3] and a.extend([4,5,6]) is executed, what is len(a)?",
+      "choices": {
+        "A": "6",
+        "B": "4",
+        "C": "3",
+        "D": "1"
+      },
+      "correct_choice": "A",
+      "answer": "6",
+      "explanation": "extend adds each element from the iterable."
+    },
+    {
+      "id": "P1-049",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "List methods",
+      "difficulty": "medium",
+      "question": "Which list method removes and returns the last element when no index is provided?",
+      "choices": {
+        "A": "pop()",
+        "B": "remove()",
+        "C": "clear()",
+        "D": "append()"
+      },
+      "correct_choice": "A",
+      "answer": "pop()",
+      "explanation": "s.pop() removes and returns the last element."
+    },
+    {
+      "id": "P1-050",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "List methods",
+      "difficulty": "medium",
+      "question": "Which list operation removes the first matching value x?",
+      "choices": {
+        "A": "s.remove(x)",
+        "B": "s.pop(x)",
+        "C": "del s[x]",
+        "D": "s.extend(x)"
+      },
+      "correct_choice": "A",
+      "answer": "s.remove(x)",
+      "explanation": "remove(x) deletes the first occurrence of x from the list."
+    },
+    {
+      "id": "P1-051",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "sort vs sorted",
+      "difficulty": "medium",
+      "question": "What does list.sort() return?",
+      "choices": {
+        "A": "None",
+        "B": "A sorted tuple",
+        "C": "A new sorted list",
+        "D": "The largest element"
+      },
+      "correct_choice": "A",
+      "answer": "None",
+      "explanation": "sort() sorts the list in place and returns None."
+    },
+    {
+      "id": "P1-052",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "sort vs sorted",
+      "difficulty": "medium",
+      "question": "What does sorted(a) do?",
+      "choices": {
+        "A": "Returns a new sorted list and leaves a intact",
+        "B": "Sorts a in place and returns None",
+        "C": "Deletes duplicates from a",
+        "D": "Returns a tuple only"
+      },
+      "correct_choice": "A",
+      "answer": "Returns a new sorted list and leaves a intact",
+      "explanation": "sorted() returns a new sorted list; the original argument remains intact."
+    },
+    {
+      "id": "P1-053",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "range",
+      "difficulty": "medium",
+      "question": "What values are produced by range(0, 15, 5)?",
+      "choices": {
+        "A": "0, 5, 10",
+        "B": "0, 5, 10, 15",
+        "C": "5, 10, 15",
+        "D": "15, 10, 5"
+      },
+      "correct_choice": "A",
+      "answer": "0, 5, 10",
+      "explanation": "The stop value 15 is excluded."
+    },
+    {
+      "id": "P1-054",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "range",
+      "difficulty": "medium",
+      "question": "What values are produced by range(15, 0, -5)?",
+      "choices": {
+        "A": "15, 10, 5",
+        "B": "15, 10, 5, 0",
+        "C": "0, 5, 10, 15",
+        "D": "It raises ValueError"
+      },
+      "correct_choice": "A",
+      "answer": "15, 10, 5",
+      "explanation": "With negative step, values decrease and stop before 0."
+    },
+    {
+      "id": "P1-055",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "List comprehensions",
+      "difficulty": "medium",
+      "question": "What is created by [x*x for x in range(3)]?",
+      "choices": {
+        "A": "[0, 1, 4]",
+        "B": "[1, 4, 9]",
+        "C": "[0, 1, 2]",
+        "D": "(0, 1, 4)"
+      },
+      "correct_choice": "A",
+      "answer": "[0, 1, 4]",
+      "explanation": "range(3) gives 0, 1, 2, and their squares are 0, 1, 4."
+    },
+    {
+      "id": "P1-056",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "Tuples",
+      "difficulty": "easy",
+      "question": "Tuples in Python are:",
+      "choices": {
+        "A": "immutable sequences",
+        "B": "mutable sequences",
+        "C": "unordered mappings",
+        "D": "only numeric lists"
+      },
+      "correct_choice": "A",
+      "answer": "immutable sequences",
+      "explanation": "Tuples are immutable sequences."
+    },
+    {
+      "id": "P1-057",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "Tuple creation",
+      "difficulty": "medium",
+      "question": "Which expression creates a single-element tuple?",
+      "choices": {
+        "A": "('Brian',)",
+        "B": "('Brian')",
+        "C": "tuple('Brian',)",
+        "D": "['Brian']"
+      },
+      "correct_choice": "A",
+      "answer": "('Brian',)",
+      "explanation": "The comma creates the single-element tuple; ('Brian') is just a string in parentheses."
+    },
+    {
+      "id": "P1-058",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "tuple conversion",
+      "difficulty": "medium",
+      "question": "What is len(tuple('123'))?",
+      "choices": {
+        "A": "3",
+        "B": "1",
+        "C": "0",
+        "D": "It raises TypeError"
+      },
+      "correct_choice": "A",
+      "answer": "3",
+      "explanation": "tuple('123') creates ('1','2','3')."
+    },
+    {
+      "id": "P1-059",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "tuple conversion",
+      "difficulty": "medium",
+      "question": "What happens with tuple(1, 2, 3)?",
+      "choices": {
+        "A": "It raises TypeError",
+        "B": "It creates (1, 2, 3)",
+        "C": "It creates [1, 2, 3]",
+        "D": "It returns 1"
+      },
+      "correct_choice": "A",
+      "answer": "It raises TypeError",
+      "explanation": "tuple() expects at most one iterable argument, not three separate arguments."
+    },
+    {
+      "id": "P1-060",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "Tuple sorting",
+      "difficulty": "hard",
+      "question": "Given comps = [('Lenovo', 2499), ('HP', 2099)], what does sorted(comps, key=lambda comp: comp[1]) sort by?",
+      "choices": {
+        "A": "The second element of each tuple",
+        "B": "The first element of each tuple",
+        "C": "The length of the list only",
+        "D": "It cannot sort lists of tuples"
+      },
+      "correct_choice": "A",
+      "answer": "The second element of each tuple",
+      "explanation": "The lambda returns comp[1], so the key is the price/second element."
+    },
+    {
+      "id": "P1-061",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "Tuple sorting",
+      "difficulty": "hard",
+      "question": "What is the result type of sorted((3, 1, 2))?",
+      "choices": {
+        "A": "list",
+        "B": "tuple",
+        "C": "range",
+        "D": "set"
+      },
+      "correct_choice": "A",
+      "answer": "list",
+      "explanation": "sorted() always returns a new list, even when the input is a tuple."
+    },
+    {
+      "id": "P1-062",
+      "phase": "01",
+      "lecture": "03",
+      "topic": "Tuple methods",
+      "difficulty": "hard",
+      "question": "What is the result of calling (3, 1, 2).sort()?",
+      "choices": {
+        "A": "AttributeError because tuple has no sort method",
+        "B": "(1, 2, 3)",
+        "C": "[1, 2, 3]",
+        "D": "None after sorting in place"
+      },
+      "correct_choice": "A",
+      "answer": "AttributeError because tuple has no sort method",
+      "explanation": "Tuples are immutable and do not provide sort(). Use sorted(tuple_obj) for a new list."
+    }
+  ]
+}

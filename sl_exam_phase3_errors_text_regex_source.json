@@ -1,0 +1,2238 @@
+{
+  "name": "SL exam Phase 3 — Errors, encodings, JSON, and regular expressions source",
+  "description": "Exam-style single-choice question bank generated from lectures 06 and 07, using Python semantics only.",
+  "created": "2026-06-17T11:23:58.353754Z",
+  "source_files": [
+    "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+    "SL_W04IST_SI4034_lecture_07-re.pdf"
+  ],
+  "question_count": 106,
+  "questions": [
+    {
+      "id": "P3Q001",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slides 4",
+      "topic": "Logging recap",
+      "type": "single_choice",
+      "question": "Which statement about Python logging matches the lecture recap?",
+      "options": {
+        "A": "Logging is mainly used to change the control flow of a program.",
+        "B": "Logging can show program state without changing execution flow.",
+        "C": "Logging messages must be removed before production code.",
+        "D": "Logging works only inside except blocks."
+      },
+      "correct_option": "B",
+      "correct_answer": "Logging can show program state without changing execution flow.",
+      "explanation": "Logging is used to show information about the program state, does not change flow of execution, and may remain in the code."
+    },
+    {
+      "id": "P3Q002",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 5",
+      "topic": "Assertions",
+      "type": "single_choice",
+      "question": "What happens when an assert expression is false during normal Python execution?",
+      "options": {
+        "A": "Python silently ignores it.",
+        "B": "Python raises AssertionError.",
+        "C": "Python raises ValueError.",
+        "D": "The expression becomes False and execution always continues."
+      },
+      "correct_option": "B",
+      "correct_answer": "Python raises AssertionError.",
+      "explanation": "A failed assert raises AssertionError unless assertions are disabled with optimization."
+    },
+    {
+      "id": "P3Q003",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 6",
+      "topic": "Assertions",
+      "type": "single_choice",
+      "question": "What is the purpose of the second expression in assert condition, message?",
+      "options": {
+        "A": "It is the value returned when the assertion is true.",
+        "B": "It is used as a description/message for the AssertionError.",
+        "C": "It changes AssertionError into ValueError.",
+        "D": "It disables the assertion in optimized mode."
+      },
+      "correct_option": "B",
+      "correct_answer": "It is used as a description/message for the AssertionError.",
+      "explanation": "The optional expression after the comma becomes the explanation carried by the AssertionError."
+    },
+    {
+      "id": "P3Q004",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 7",
+      "topic": "Assertions",
+      "type": "single_choice",
+      "question": "Which statement is correct about assert in Python?",
+      "options": {
+        "A": "assert is intended for debugging, not for normal error handling.",
+        "B": "assert should be used to validate all user input.",
+        "C": "assert always runs even with python -O.",
+        "D": "assert catches exceptions automatically."
+      },
+      "correct_option": "A",
+      "correct_answer": "assert is intended for debugging, not for normal error handling.",
+      "explanation": "The lecture says assert is for debugging and is not for error handling."
+    },
+    {
+      "id": "P3Q005",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 8",
+      "topic": "Assertions",
+      "type": "single_choice",
+      "question": "What can happen to assertions when Python code is run with the -O optimization option?",
+      "options": {
+        "A": "They become warnings.",
+        "B": "They are ignored.",
+        "C": "They become ValueError exceptions.",
+        "D": "They are executed twice."
+      },
+      "correct_option": "B",
+      "correct_answer": "They are ignored.",
+      "explanation": "Python can ignore assertions during optimized execution with -O."
+    },
+    {
+      "id": "P3Q006",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 8",
+      "topic": "Assertions",
+      "type": "single_choice",
+      "question": "In Python, assert x > 0 is best interpreted as:",
+      "options": {
+        "A": "a permanent runtime validation for user input",
+        "B": "a debugging check/invariant that should normally be true",
+        "C": "a replacement for try-except",
+        "D": "a way to log an error message"
+      },
+      "correct_option": "B",
+      "correct_answer": "a debugging check/invariant that should normally be true",
+      "explanation": "Assertions are used to ascertain that an expected expression/invariant is true."
+    },
+    {
+      "id": "P3Q007",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 13",
+      "topic": "Exceptions",
+      "type": "single_choice",
+      "question": "Given try: c = 1/0 except ZeroDivisionError: print(\"bad\"), what happens?",
+      "options": {
+        "A": "The ZeroDivisionError is handled and execution continues after the try-except block.",
+        "B": "The program always stops after printing bad.",
+        "C": "The except block is ignored.",
+        "D": "Python raises SyntaxError because division is inside try."
+      },
+      "correct_option": "A",
+      "correct_answer": "The ZeroDivisionError is handled and execution continues after the try-except block.",
+      "explanation": "If the error matches an except clause, the except block is executed and execution resumes after the try-except."
+    },
+    {
+      "id": "P3Q008",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 13",
+      "topic": "Exceptions",
+      "type": "single_choice",
+      "question": "If an exception occurs in a try block and no except clause matches it, what does Python do?",
+      "options": {
+        "A": "It converts it to AssertionError.",
+        "B": "It searches for an outer try-except block; if none handles it, the program stops with traceback.",
+        "C": "It always ignores the exception.",
+        "D": "It executes the else block."
+      },
+      "correct_option": "B",
+      "correct_answer": "It searches for an outer try-except block; if none handles it, the program stops with traceback.",
+      "explanation": "Unmatched exceptions propagate outward. If still unhandled, execution stops and traceback information is displayed."
+    },
+    {
+      "id": "P3Q009",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 17",
+      "topic": "Exceptions",
+      "type": "single_choice",
+      "question": "In a try-except statement, when is the else block executed?",
+      "options": {
+        "A": "Always, after finally.",
+        "B": "Only if the try block completed successfully without an exception.",
+        "C": "Only if an exception was caught.",
+        "D": "Only when there is no finally block."
+      },
+      "correct_option": "B",
+      "correct_answer": "Only if the try block completed successfully without an exception.",
+      "explanation": "The else clause runs only when the try block succeeds without triggering an exception handled by except."
+    },
+    {
+      "id": "P3Q010",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 15",
+      "topic": "Exceptions",
+      "type": "single_choice",
+      "question": "Which except clause handles both OSError and ValueError in one block?",
+      "options": {
+        "A": "except OSError, ValueError:",
+        "B": "except [OSError, ValueError]:",
+        "C": "except (OSError, ValueError):",
+        "D": "except OSError or ValueError:"
+      },
+      "correct_option": "C",
+      "correct_answer": "except (OSError, ValueError):",
+      "explanation": "Python catches multiple exception types in one except by using a tuple of exception classes."
+    },
+    {
+      "id": "P3Q011",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 16",
+      "topic": "Exceptions",
+      "type": "single_choice",
+      "question": "Why is bare except: usually discouraged?",
+      "options": {
+        "A": "It cannot catch any exception.",
+        "B": "It may catch things like KeyboardInterrupt and hide important control signals.",
+        "C": "It works only in Python 2.",
+        "D": "It always raises SyntaxError."
+      },
+      "correct_option": "B",
+      "correct_answer": "It may catch things like KeyboardInterrupt and hide important control signals.",
+      "explanation": "The lecture notes that bare except is better avoided because it catches exceptions such as KeyboardInterrupt."
+    },
+    {
+      "id": "P3Q012",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slides 16, 18",
+      "topic": "Exceptions",
+      "type": "single_choice",
+      "question": "What does except Exception as e allow you to do?",
+      "options": {
+        "A": "Access the exception object through variable e.",
+        "B": "Disable the exception.",
+        "C": "Convert every exception to OSError.",
+        "D": "Run the else block manually."
+      },
+      "correct_option": "A",
+      "correct_answer": "Access the exception object through variable e.",
+      "explanation": "The exception object can be bound to a variable and inspected or printed."
+    },
+    {
+      "id": "P3Q013",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 18",
+      "topic": "Exceptions",
+      "type": "single_choice",
+      "question": "For OSError, which attributes are mentioned as examples of useful information in the exception object?",
+      "options": {
+        "A": "filename and strerror",
+        "B": "line and column",
+        "C": "host and port",
+        "D": "start and end"
+      },
+      "correct_option": "A",
+      "correct_answer": "filename and strerror",
+      "explanation": "The lecture mentions filename and strerror for OSError objects."
+    },
+    {
+      "id": "P3Q014",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 19",
+      "topic": "Exceptions",
+      "type": "single_choice",
+      "question": "What is the main purpose of finally in try-except-finally?",
+      "options": {
+        "A": "It runs only when no error happened.",
+        "B": "It is usually used for cleanup actions and always executes after try/except handling.",
+        "C": "It catches all exceptions.",
+        "D": "It replaces the else block."
+      },
+      "correct_option": "B",
+      "correct_answer": "It is usually used for cleanup actions and always executes after try/except handling.",
+      "explanation": "finally executes regardless of success or failure and is usually used for cleanup, like closing files or disconnecting."
+    },
+    {
+      "id": "P3Q015",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 20",
+      "topic": "Exceptions",
+      "type": "single_choice",
+      "question": "What is dangerous about using return inside finally?",
+      "options": {
+        "A": "It is ignored by Python.",
+        "B": "It can override returns from try or except.",
+        "C": "It creates a syntax error.",
+        "D": "It automatically re-raises the exception."
+      },
+      "correct_option": "B",
+      "correct_answer": "It can override returns from try or except.",
+      "explanation": "A return in finally is the last one, so it can replace return values from try or except."
+    },
+    {
+      "id": "P3Q016",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 21",
+      "topic": "Exceptions",
+      "type": "single_choice",
+      "question": "What happens after try/except/finally execution if the exception was handled?",
+      "options": {
+        "A": "Execution resumes after the statement.",
+        "B": "The program always exits.",
+        "C": "The else block always repeats.",
+        "D": "All variables are deleted."
+      },
+      "correct_option": "A",
+      "correct_answer": "Execution resumes after the statement.",
+      "explanation": "The lecture summary says execution resumes after try/except/finally when the exception is handled."
+    },
+    {
+      "id": "P3Q017",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 21",
+      "topic": "Exceptions",
+      "type": "single_choice",
+      "question": "Which statement is correct about surrounding a huge block of code in one try block?",
+      "options": {
+        "A": "It is impossible in Python.",
+        "B": "Python allows it, but it may make precise error handling less clear.",
+        "C": "It prevents all exceptions from occurring.",
+        "D": "It forces finally to be skipped."
+      },
+      "correct_option": "B",
+      "correct_answer": "Python allows it, but it may make precise error handling less clear.",
+      "explanation": "The lecture says you can surround a huge block in one try block; from Python semantics, smaller try blocks usually make causes clearer."
+    },
+    {
+      "id": "P3Q018",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 30",
+      "topic": "Encoding",
+      "type": "single_choice",
+      "question": "What does an encoding define?",
+      "options": {
+        "A": "How characters are stored in text files.",
+        "B": "How Python sorts lists.",
+        "C": "How exceptions are matched.",
+        "D": "How functions are called."
+      },
+      "correct_option": "A",
+      "correct_answer": "How characters are stored in text files.",
+      "explanation": "Encoding defines the way characters are stored in text files."
+    },
+    {
+      "id": "P3Q019",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 23",
+      "topic": "Encoding",
+      "type": "single_choice",
+      "question": "Which encoding family supports international characters in one standard?",
+      "options": {
+        "A": "ASCII only",
+        "B": "Extended ASCII only",
+        "C": "Unicode",
+        "D": "CSV"
+      },
+      "correct_option": "C",
+      "correct_answer": "Unicode",
+      "explanation": "Unicode supports all international characters in one standard."
+    },
+    {
+      "id": "P3Q020",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 23",
+      "topic": "Encoding",
+      "type": "single_choice",
+      "question": "How many characters are available in 7-bit ASCII according to the lecture?",
+      "options": {
+        "A": "64",
+        "B": "95",
+        "C": "128",
+        "D": "256"
+      },
+      "correct_option": "C",
+      "correct_answer": "128",
+      "explanation": "The lecture says ASCII is 7-bit and has 128 available characters, 95 printable."
+    },
+    {
+      "id": "P3Q021",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 23",
+      "topic": "Encoding",
+      "type": "single_choice",
+      "question": "Which statement about extended ASCII is correct?",
+      "options": {
+        "A": "It is 7-bit and has 128 characters.",
+        "B": "It is 8-bit and has 256 characters.",
+        "C": "It is the same as UTF-32.",
+        "D": "It cannot contain national characters."
+      },
+      "correct_option": "B",
+      "correct_answer": "It is 8-bit and has 256 characters.",
+      "explanation": "Extended ASCII is 8-bit and has 256 characters."
+    },
+    {
+      "id": "P3Q022",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 26",
+      "topic": "Encoding",
+      "type": "single_choice",
+      "question": "Which file encoding is Python 3 source code interpreted as by default if not declared otherwise?",
+      "options": {
+        "A": "ASCII",
+        "B": "UTF-8",
+        "C": "UTF-32",
+        "D": "Windows CP1250"
+      },
+      "correct_option": "B",
+      "correct_answer": "UTF-8",
+      "explanation": "Python 3 uses UTF-8 source encoding by default if no encoding is declared."
+    },
+    {
+      "id": "P3Q023",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 25",
+      "topic": "Encoding",
+      "type": "single_choice",
+      "question": "What does Python 3 use internally for strings?",
+      "options": {
+        "A": "ASCII byte arrays only",
+        "B": "Unicode text objects",
+        "C": "CSV rows",
+        "D": "JSON objects"
+      },
+      "correct_option": "B",
+      "correct_answer": "Unicode text objects",
+      "explanation": "Python 3 stores strings as Unicode text objects."
+    },
+    {
+      "id": "P3Q024",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 29",
+      "topic": "Encoding",
+      "type": "single_choice",
+      "question": "What exception is raised by default when Python cannot decode a file with the selected encoding?",
+      "options": {
+        "A": "UnicodeDecodeError",
+        "B": "FileNotFoundError",
+        "C": "AssertionError",
+        "D": "StopIteration"
+      },
+      "correct_option": "A",
+      "correct_answer": "UnicodeDecodeError",
+      "explanation": "By default, undecodable byte sequences raise UnicodeDecodeError."
+    },
+    {
+      "id": "P3Q025",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 29",
+      "topic": "Encoding",
+      "type": "single_choice",
+      "question": "In open(..., errors=\"replace\"), what happens to unknown characters during decoding?",
+      "options": {
+        "A": "They are silently omitted.",
+        "B": "They are replaced with the replacement character �.",
+        "C": "They are converted to digits.",
+        "D": "They raise SyntaxError."
+      },
+      "correct_option": "B",
+      "correct_answer": "They are replaced with the replacement character �.",
+      "explanation": "errors=\"replace\" replaces unknown characters with U+FFFD, displayed as �."
+    },
+    {
+      "id": "P3Q026",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 29",
+      "topic": "Encoding",
+      "type": "single_choice",
+      "question": "Which errors option omits unknown characters during decoding?",
+      "options": {
+        "A": "strict",
+        "B": "ignore",
+        "C": "replace",
+        "D": "unicode"
+      },
+      "correct_option": "B",
+      "correct_answer": "ignore",
+      "explanation": "errors=\"ignore\" omits unknown characters."
+    },
+    {
+      "id": "P3Q027",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 29",
+      "topic": "Encoding",
+      "type": "single_choice",
+      "question": "Which errors option corresponds to the default behavior when decoding text?",
+      "options": {
+        "A": "replace",
+        "B": "ignore",
+        "C": "strict",
+        "D": "append"
+      },
+      "correct_option": "C",
+      "correct_answer": "strict",
+      "explanation": "strict is the same as None/default behavior and raises an error."
+    },
+    {
+      "id": "P3Q028",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 30",
+      "topic": "Encoding",
+      "type": "single_choice",
+      "question": "What is the safest rule for reading a text file with non-ASCII characters?",
+      "options": {
+        "A": "Read it with the same encoding used to write it.",
+        "B": "Always use ASCII.",
+        "C": "Open it in binary mode and call json.loads.",
+        "D": "Use errors=\"ignore\" always."
+      },
+      "correct_option": "A",
+      "correct_answer": "Read it with the same encoding used to write it.",
+      "explanation": "The lecture summary says a file should be read in the same encoding as it was written."
+    },
+    {
+      "id": "P3Q029",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 27",
+      "topic": "Encoding",
+      "type": "single_choice",
+      "question": "What does locale.getpreferredencoding() return information about?",
+      "options": {
+        "A": "The preferred system encoding according to locale settings.",
+        "B": "The current Python version.",
+        "C": "The current regex flags.",
+        "D": "The default JSON indentation."
+      },
+      "correct_option": "A",
+      "correct_answer": "The preferred system encoding according to locale settings.",
+      "explanation": "The locale module can be used to check the system-preferred encoding."
+    },
+    {
+      "id": "P3Q030",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 26",
+      "topic": "Encoding",
+      "type": "single_choice",
+      "question": "What is the meaning of # -*- coding: utf-8 -*- near the top of a Python file?",
+      "options": {
+        "A": "It declares the source file encoding.",
+        "B": "It imports the encoding module.",
+        "C": "It converts all strings to bytes.",
+        "D": "It disables Unicode."
+      },
+      "correct_option": "A",
+      "correct_answer": "It declares the source file encoding.",
+      "explanation": "A coding declaration in the first or second line can declare source code encoding."
+    },
+    {
+      "id": "P3Q031",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 32",
+      "topic": "JSON",
+      "type": "single_choice",
+      "question": "What is JSON mainly used for?",
+      "options": {
+        "A": "Data exchange between applications.",
+        "B": "Defining Python classes.",
+        "C": "Replacing try-except.",
+        "D": "Compiling regex patterns."
+      },
+      "correct_option": "A",
+      "correct_answer": "Data exchange between applications.",
+      "explanation": "The lecture describes JSON as a text format used for data exchange between applications."
+    },
+    {
+      "id": "P3Q032",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slides 33-36",
+      "topic": "JSON",
+      "type": "single_choice",
+      "question": "Which Python module is used in the lecture to work with JSON?",
+      "options": {
+        "A": "re",
+        "B": "json",
+        "C": "locale",
+        "D": "logging"
+      },
+      "correct_option": "B",
+      "correct_answer": "json",
+      "explanation": "The standard json module provides dump, dumps, load, and loads."
+    },
+    {
+      "id": "P3Q033",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 34",
+      "topic": "JSON",
+      "type": "single_choice",
+      "question": "Which function stores JSON data directly into a file object?",
+      "options": {
+        "A": "json.dump",
+        "B": "json.dumps",
+        "C": "json.load",
+        "D": "json.loads"
+      },
+      "correct_option": "A",
+      "correct_answer": "json.dump",
+      "explanation": "dump writes/stores data to a file object."
+    },
+    {
+      "id": "P3Q034",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 34",
+      "topic": "JSON",
+      "type": "single_choice",
+      "question": "Which function converts a Python object to a JSON string?",
+      "options": {
+        "A": "json.dump",
+        "B": "json.dumps",
+        "C": "json.load",
+        "D": "json.loads"
+      },
+      "correct_option": "B",
+      "correct_answer": "json.dumps",
+      "explanation": "dumps serializes Python data into a JSON string."
+    },
+    {
+      "id": "P3Q035",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 35",
+      "topic": "JSON",
+      "type": "single_choice",
+      "question": "Which function retrieves JSON data from a file object?",
+      "options": {
+        "A": "json.dump",
+        "B": "json.dumps",
+        "C": "json.load",
+        "D": "json.loads"
+      },
+      "correct_option": "C",
+      "correct_answer": "json.load",
+      "explanation": "load reads/retrieves data from a file object."
+    },
+    {
+      "id": "P3Q036",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 35",
+      "topic": "JSON",
+      "type": "single_choice",
+      "question": "Which function retrieves JSON data from a string?",
+      "options": {
+        "A": "json.dump",
+        "B": "json.dumps",
+        "C": "json.load",
+        "D": "json.loads"
+      },
+      "correct_option": "D",
+      "correct_answer": "json.loads",
+      "explanation": "loads parses a JSON string into Python data."
+    },
+    {
+      "id": "P3Q037",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 33",
+      "topic": "JSON",
+      "type": "single_choice",
+      "question": "In JSON syntax, the boolean literal for true is:",
+      "options": {
+        "A": "True",
+        "B": "TRUE",
+        "C": "true",
+        "D": "1 only"
+      },
+      "correct_option": "C",
+      "correct_answer": "true",
+      "explanation": "JSON uses lowercase true and false, unlike Python True and False."
+    },
+    {
+      "id": "P3Q038",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slide 34",
+      "topic": "JSON",
+      "type": "single_choice",
+      "question": "What does json.dumps(data, indent=4) mainly change?",
+      "options": {
+        "A": "It changes the data type to tuple.",
+        "B": "It pretty-prints the JSON string with indentation.",
+        "C": "It writes to a file named indent.",
+        "D": "It disables Unicode."
+      },
+      "correct_option": "B",
+      "correct_answer": "It pretty-prints the JSON string with indentation.",
+      "explanation": "The indent parameter formats output with indentation, making it easier to read."
+    },
+    {
+      "id": "P3Q039",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slides 33-36",
+      "topic": "JSON",
+      "type": "single_choice",
+      "question": "Which Python data structure is naturally represented by a JSON object?",
+      "options": {
+        "A": "dict",
+        "B": "set",
+        "C": "function",
+        "D": "exception class"
+      },
+      "correct_option": "A",
+      "correct_answer": "dict",
+      "explanation": "JSON objects map naturally to Python dictionaries."
+    },
+    {
+      "id": "P3Q040",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L06 slides 32, 37",
+      "topic": "JSON",
+      "type": "single_choice",
+      "question": "Which statement is correct about JSON?",
+      "options": {
+        "A": "It is a binary-only format.",
+        "B": "It is a text format and is multiplatform.",
+        "C": "It can store every Python object without conversion.",
+        "D": "It is used only by JavaScript programs."
+      },
+      "correct_option": "B",
+      "correct_answer": "It is a text format and is multiplatform.",
+      "explanation": "The lecture describes JSON as a convenient multiplatform text format for data exchange."
+    },
+    {
+      "id": "P3Q041",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 6",
+      "topic": "Raising exceptions",
+      "type": "single_choice",
+      "question": "Which keyword is used to raise an exception manually in Python?",
+      "options": {
+        "A": "throw",
+        "B": "raise",
+        "C": "except",
+        "D": "assertion"
+      },
+      "correct_option": "B",
+      "correct_answer": "raise",
+      "explanation": "Python uses raise to raise exceptions manually."
+    },
+    {
+      "id": "P3Q042",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 7",
+      "topic": "Raising exceptions",
+      "type": "single_choice",
+      "question": "Which statement correctly raises ValueError with an explanatory message?",
+      "options": {
+        "A": "throw ValueError(\"bad\")",
+        "B": "raise ValueError(\"bad\")",
+        "C": "except ValueError(\"bad\")",
+        "D": "ValueError.raise(\"bad\")"
+      },
+      "correct_option": "B",
+      "correct_answer": "raise ValueError(\"bad\")",
+      "explanation": "The lecture shows raise ValueError(\"I must be positive\")."
+    },
+    {
+      "id": "P3Q043",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slides 9-10",
+      "topic": "Raising exceptions",
+      "type": "single_choice",
+      "question": "If you catch an exception but cannot resolve the problem, what should you do according to the lecture?",
+      "options": {
+        "A": "Silently ignore it.",
+        "B": "Re-raise it.",
+        "C": "Always return None.",
+        "D": "Convert it to a string."
+      },
+      "correct_option": "B",
+      "correct_answer": "Re-raise it.",
+      "explanation": "If the problem is not resolved, you should raise the exception again."
+    },
+    {
+      "id": "P3Q044",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 10",
+      "topic": "Raising exceptions",
+      "type": "single_choice",
+      "question": "What does raise ValueError from e express?",
+      "options": {
+        "A": "It raises a new ValueError while preserving exception chaining from e.",
+        "B": "It ignores e completely.",
+        "C": "It converts e into a string.",
+        "D": "It disables traceback information."
+      },
+      "correct_option": "A",
+      "correct_answer": "It raises a new ValueError while preserving exception chaining from e.",
+      "explanation": "raise ... from e chains the new exception to the original exception."
+    },
+    {
+      "id": "P3Q045",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 11",
+      "topic": "Raising exceptions",
+      "type": "single_choice",
+      "question": "What does raise ValueError(\"Wrong filename\") from None do?",
+      "options": {
+        "A": "It raises ValueError and suppresses explicit exception chaining.",
+        "B": "It raises None.",
+        "C": "It returns None.",
+        "D": "It catches FileNotFoundError automatically."
+      },
+      "correct_option": "A",
+      "correct_answer": "It raises ValueError and suppresses explicit exception chaining.",
+      "explanation": "from None suppresses the displayed cause/context for the new exception."
+    },
+    {
+      "id": "P3Q046",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 12",
+      "topic": "Exceptions vs if",
+      "type": "single_choice",
+      "question": "According to the lecture, if a condition is obvious, what should you use?",
+      "options": {
+        "A": "try instead of if",
+        "B": "if instead of try",
+        "C": "raise from None always",
+        "D": "bare except always"
+      },
+      "correct_option": "B",
+      "correct_answer": "if instead of try",
+      "explanation": "The lecture says if the condition is obvious, use if instead of try."
+    },
+    {
+      "id": "P3Q047",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 12",
+      "topic": "Exceptions vs if",
+      "type": "single_choice",
+      "question": "According to the lecture, exceptions are expensive compared to:",
+      "options": {
+        "A": "if statements",
+        "B": "JSON dumps",
+        "C": "string literals",
+        "D": "list slicing"
+      },
+      "correct_option": "A",
+      "correct_answer": "if statements",
+      "explanation": "The lecture says exception handling is expensive compared with an if statement."
+    },
+    {
+      "id": "P3Q048",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 9",
+      "topic": "Exceptions",
+      "type": "single_choice",
+      "question": "What happens logically when Python enters an except block?",
+      "options": {
+        "A": "Python considers the problem handled unless you explicitly stop or re-raise.",
+        "B": "Python always stops after except.",
+        "C": "Python automatically re-raises the same exception.",
+        "D": "Python ignores finally."
+      },
+      "correct_option": "A",
+      "correct_answer": "Python considers the problem handled unless you explicitly stop or re-raise.",
+      "explanation": "The lecture says entering except means Python considers the problem solved and continues execution unless you explicitly stop or re-raise."
+    },
+    {
+      "id": "P3Q049",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 9",
+      "topic": "Exceptions",
+      "type": "single_choice",
+      "question": "Which module/function was shown as a way to explicitly stop the program after catching an exception?",
+      "options": {
+        "A": "os.getenv()",
+        "B": "sys.exit()",
+        "C": "json.dump()",
+        "D": "re.compile()"
+      },
+      "correct_option": "B",
+      "correct_answer": "sys.exit()",
+      "explanation": "The lecture example imports sys and calls sys.exit() after handling ValueError."
+    },
+    {
+      "id": "P3Q050",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 14",
+      "topic": "Searching strings",
+      "type": "single_choice",
+      "question": "Which Python operator is best for checking whether a substring exists in a string?",
+      "options": {
+        "A": "in",
+        "B": "findall",
+        "C": "append",
+        "D": "raise"
+      },
+      "correct_option": "A",
+      "correct_answer": "in",
+      "explanation": "The lecture uses \"User\" in \"User experience\" to check existence."
+    },
+    {
+      "id": "P3Q051",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 14",
+      "topic": "Searching strings",
+      "type": "single_choice",
+      "question": "What does str.find(substring) return when the substring is not found?",
+      "options": {
+        "A": "None",
+        "B": "False",
+        "C": "-1",
+        "D": "It raises ValueError."
+      },
+      "correct_option": "C",
+      "correct_answer": "-1",
+      "explanation": "The lecture explicitly states that -1 means not found."
+    },
+    {
+      "id": "P3Q052",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 15",
+      "topic": "Replacing strings",
+      "type": "single_choice",
+      "question": "What does str.replace(old, new) do to the original string?",
+      "options": {
+        "A": "It modifies the original string in place.",
+        "B": "It returns a new string and does not modify the original.",
+        "C": "It always returns None.",
+        "D": "It works only for one-character strings."
+      },
+      "correct_option": "B",
+      "correct_answer": "It returns a new string and does not modify the original.",
+      "explanation": "Strings are immutable; the lecture says replace does not modify the original string."
+    },
+    {
+      "id": "P3Q053",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 17",
+      "topic": "Regular expressions",
+      "type": "single_choice",
+      "question": "What is a regular expression used for according to the lecture?",
+      "options": {
+        "A": "Checking if a string matches a pattern, replacing substrings, and splitting strings.",
+        "B": "Only drawing graphs.",
+        "C": "Only storing JSON data.",
+        "D": "Only reading binary files."
+      },
+      "correct_option": "A",
+      "correct_answer": "Checking if a string matches a pattern, replacing substrings, and splitting strings.",
+      "explanation": "The lecture lists matching patterns, replacing substrings, and splitting strings as uses of regex."
+    },
+    {
+      "id": "P3Q054",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 19",
+      "topic": "Regex exact matches",
+      "type": "single_choice",
+      "question": "What does the regex ABA match as an exact sequence?",
+      "options": {
+        "A": "Only \"ABA\"",
+        "B": "\"A\", \"B\", and \"A\" separately",
+        "C": "Any string containing A or B",
+        "D": "The empty string only"
+      },
+      "correct_option": "A",
+      "correct_answer": "Only \"ABA\"",
+      "explanation": "A sequence of characters in regex matches that same sequence unless special operators are used."
+    },
+    {
+      "id": "P3Q055",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 20",
+      "topic": "Regex repetitions",
+      "type": "single_choice",
+      "question": "What does A+ mean in a regular expression?",
+      "options": {
+        "A": "zero or more A characters",
+        "B": "one or more A characters",
+        "C": "zero or one A character",
+        "D": "exactly two A characters"
+      },
+      "correct_option": "B",
+      "correct_answer": "one or more A characters",
+      "explanation": "The plus operator means one-or-more repetitions."
+    },
+    {
+      "id": "P3Q056",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 20",
+      "topic": "Regex repetitions",
+      "type": "single_choice",
+      "question": "What does A* mean in a regular expression?",
+      "options": {
+        "A": "one or more A characters",
+        "B": "zero or more A characters",
+        "C": "exactly one A",
+        "D": "a literal asterisk after A"
+      },
+      "correct_option": "B",
+      "correct_answer": "zero or more A characters",
+      "explanation": "The star operator means zero-or-more repetitions."
+    },
+    {
+      "id": "P3Q057",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 20",
+      "topic": "Regex repetitions",
+      "type": "single_choice",
+      "question": "What does A? mean in a regular expression?",
+      "options": {
+        "A": "zero or one A",
+        "B": "one or more A",
+        "C": "zero or more A",
+        "D": "exactly two A characters"
+      },
+      "correct_option": "A",
+      "correct_answer": "zero or one A",
+      "explanation": "The question mark operator means zero-or-one repetition."
+    },
+    {
+      "id": "P3Q058",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 21",
+      "topic": "Regex repetitions",
+      "type": "single_choice",
+      "question": "Which strings can A{1,2} match completely?",
+      "options": {
+        "A": "Only empty string",
+        "B": "Only \"A\" or \"AA\"",
+        "C": "\"A\", \"AA\", and \"AAA\"",
+        "D": "Any number of A characters"
+      },
+      "correct_option": "B",
+      "correct_answer": "Only \"A\" or \"AA\"",
+      "explanation": "{m,n} means between m and n repetitions, so A{1,2} means one or two A characters."
+    },
+    {
+      "id": "P3Q059",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 21",
+      "topic": "Regex repetitions",
+      "type": "single_choice",
+      "question": "Which quantifier is equivalent to +?",
+      "options": {
+        "A": "{0,}",
+        "B": "{1,}",
+        "C": "{0,1}",
+        "D": "{1,2}"
+      },
+      "correct_option": "B",
+      "correct_answer": "{1,}",
+      "explanation": "The lecture states + means {1,}."
+    },
+    {
+      "id": "P3Q060",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 21",
+      "topic": "Regex repetitions",
+      "type": "single_choice",
+      "question": "Which quantifier is equivalent to *?",
+      "options": {
+        "A": "{0,}",
+        "B": "{1,}",
+        "C": "{0,1}",
+        "D": "{2,}"
+      },
+      "correct_option": "A",
+      "correct_answer": "{0,}",
+      "explanation": "The lecture states * means {0,}."
+    },
+    {
+      "id": "P3Q061",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 21",
+      "topic": "Regex repetitions",
+      "type": "single_choice",
+      "question": "Which quantifier is equivalent to ?",
+      "options": {
+        "A": "{0,}",
+        "B": "{1,}",
+        "C": "{0,1}",
+        "D": "{1,}"
+      },
+      "correct_option": "C",
+      "correct_answer": "{0,1}",
+      "explanation": "The lecture states ? means {0,1}."
+    },
+    {
+      "id": "P3Q062",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 22",
+      "topic": "Regex grouping",
+      "type": "single_choice",
+      "question": "Why are parentheses useful in regex repetitions?",
+      "options": {
+        "A": "They make regex case-insensitive automatically.",
+        "B": "They group a longer string so operators apply to the group.",
+        "C": "They turn regex into JSON.",
+        "D": "They remove all special meaning from characters."
+      },
+      "correct_option": "B",
+      "correct_answer": "They group a longer string so operators apply to the group.",
+      "explanation": "Operators like * normally apply to one character; parentheses group longer patterns."
+    },
+    {
+      "id": "P3Q063",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 22",
+      "topic": "Regex grouping",
+      "type": "single_choice",
+      "question": "What can (ABC)+ match?",
+      "options": {
+        "A": "Only \"A\"",
+        "B": "\"ABC\", \"ABCABC\", \"ABCABCABC\", etc.",
+        "C": "Only \"AB\"",
+        "D": "Only strings ending in C but not starting with A"
+      },
+      "correct_option": "B",
+      "correct_answer": "\"ABC\", \"ABCABC\", \"ABCABCABC\", etc.",
+      "explanation": "The group ABC is repeated one or more times."
+    },
+    {
+      "id": "P3Q064",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 22",
+      "topic": "Regex alternatives",
+      "type": "single_choice",
+      "question": "What does (Ana|Eva) match?",
+      "options": {
+        "A": "Only \"Ana\" or \"Eva\"",
+        "B": "Only \"AnaEva\"",
+        "C": "Any name containing A or E",
+        "D": "The empty string"
+      },
+      "correct_option": "A",
+      "correct_answer": "Only \"Ana\" or \"Eva\"",
+      "explanation": "The vertical bar creates alternatives inside the group."
+    },
+    {
+      "id": "P3Q065",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 23",
+      "topic": "Regex character classes",
+      "type": "single_choice",
+      "question": "What does [ABC]+ mean?",
+      "options": {
+        "A": "One or more characters, each of which is A, B, or C.",
+        "B": "Exactly the string \"ABC\".",
+        "C": "Any character except A, B, or C.",
+        "D": "A number followed by B or C."
+      },
+      "correct_option": "A",
+      "correct_answer": "One or more characters, each of which is A, B, or C.",
+      "explanation": "A character class selects one of the listed characters; + repeats it."
+    },
+    {
+      "id": "P3Q066",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 23",
+      "topic": "Regex character classes",
+      "type": "single_choice",
+      "question": "What does [^AB]+ mean?",
+      "options": {
+        "A": "Only A and B.",
+        "B": "One or more characters except A and B.",
+        "C": "The start of a line followed by AB.",
+        "D": "The literal string ^AB."
+      },
+      "correct_option": "B",
+      "correct_answer": "One or more characters except A and B.",
+      "explanation": "A caret at the start of a character class negates it."
+    },
+    {
+      "id": "P3Q067",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 23",
+      "topic": "Regex shortcuts",
+      "type": "single_choice",
+      "question": "Which shortcut represents a decimal digit?",
+      "options": {
+        "A": "\\w",
+        "B": "\\d",
+        "C": "\\s",
+        "D": "."
+      },
+      "correct_option": "B",
+      "correct_answer": "\\d",
+      "explanation": "\\d is the shortcut for [0-9], a decimal digit."
+    },
+    {
+      "id": "P3Q068",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 23",
+      "topic": "Regex shortcuts",
+      "type": "single_choice",
+      "question": "Which shortcut represents a word character such as letter, digit, or underscore?",
+      "options": {
+        "A": "\\w",
+        "B": "\\d",
+        "C": "\\s",
+        "D": "$"
+      },
+      "correct_option": "A",
+      "correct_answer": "\\w",
+      "explanation": "\\w is shorthand for [a-zA-Z0-9_]."
+    },
+    {
+      "id": "P3Q069",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 23",
+      "topic": "Regex shortcuts",
+      "type": "single_choice",
+      "question": "Which shortcut represents whitespace?",
+      "options": {
+        "A": "\\w",
+        "B": "\\d",
+        "C": "\\s",
+        "D": "\\x"
+      },
+      "correct_option": "C",
+      "correct_answer": "\\s",
+      "explanation": "\\s represents whitespace characters such as spaces, tabs, and newlines."
+    },
+    {
+      "id": "P3Q070",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 23",
+      "topic": "Regex special characters",
+      "type": "single_choice",
+      "question": "In the lecture, what does . match by default?",
+      "options": {
+        "A": "Any character except newline",
+        "B": "Only a literal dot",
+        "C": "Only digits",
+        "D": "Only whitespace"
+      },
+      "correct_option": "A",
+      "correct_answer": "Any character except newline",
+      "explanation": "The dot matches any character except \n by default."
+    },
+    {
+      "id": "P3Q071",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slides 23, 26",
+      "topic": "Regex special characters",
+      "type": "single_choice",
+      "question": "What does .* usually represent?",
+      "options": {
+        "A": "Any string except newline, using greedy matching by default",
+        "B": "Only a literal dot followed by a star",
+        "C": "Exactly one digit",
+        "D": "Only an empty string"
+      },
+      "correct_option": "A",
+      "correct_answer": "Any string except newline, using greedy matching by default",
+      "explanation": "Dot means any non-newline character, and star repeats zero or more times; regex is greedy by default."
+    },
+    {
+      "id": "P3Q072",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 24",
+      "topic": "Regex line anchors",
+      "type": "single_choice",
+      "question": "What does ^ mean outside a character class?",
+      "options": {
+        "A": "End of line",
+        "B": "Start of line",
+        "C": "Whitespace",
+        "D": "A literal caret always"
+      },
+      "correct_option": "B",
+      "correct_answer": "Start of line",
+      "explanation": "The caret anchor means start of the line."
+    },
+    {
+      "id": "P3Q073",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 24",
+      "topic": "Regex line anchors",
+      "type": "single_choice",
+      "question": "What does $ mean in regular expressions?",
+      "options": {
+        "A": "Start of line",
+        "B": "End of line",
+        "C": "Any digit",
+        "D": "Any whitespace"
+      },
+      "correct_option": "B",
+      "correct_answer": "End of line",
+      "explanation": "The dollar anchor means end of the line."
+    },
+    {
+      "id": "P3Q074",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 23",
+      "topic": "Regex escaping",
+      "type": "single_choice",
+      "question": "If you want to match a regex special character literally, what should you usually do?",
+      "options": {
+        "A": "Precede it with a backslash.",
+        "B": "Put it after json.dumps.",
+        "C": "Use raise.",
+        "D": "Call find instead of regex."
+      },
+      "correct_option": "A",
+      "correct_answer": "Precede it with a backslash.",
+      "explanation": "Special regex characters must be escaped with backslash to match literally."
+    },
+    {
+      "id": "P3Q075",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 25",
+      "topic": "Regex and Python strings",
+      "type": "single_choice",
+      "question": "Why are raw strings often used for regex patterns in Python?",
+      "options": {
+        "A": "Because Python then does not interpret backslash escapes inside the string.",
+        "B": "Because raw strings automatically compile regex.",
+        "C": "Because raw strings make regex non-greedy.",
+        "D": "Because regex cannot be written in normal strings."
+      },
+      "correct_option": "A",
+      "correct_answer": "Because Python then does not interpret backslash escapes inside the string.",
+      "explanation": "The r prefix means Python will not interpret the string content in the usual escape-processing way."
+    },
+    {
+      "id": "P3Q076",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 25",
+      "topic": "Regex and Python strings",
+      "type": "single_choice",
+      "question": "Which Python string notation is usually clearer for regex paths/backslashes?",
+      "options": {
+        "A": "r\"...\" raw strings",
+        "B": "json strings only",
+        "C": "f-strings only",
+        "D": "bytes only"
+      },
+      "correct_option": "A",
+      "correct_answer": "r\"...\" raw strings",
+      "explanation": "The lecture suggests raw strings as the solution for avoiding doubled Python-level escaping."
+    },
+    {
+      "id": "P3Q077",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 26",
+      "topic": "Regex greedy matching",
+      "type": "single_choice",
+      "question": "What will the regex <.*> match against <h1>Header</h1> by default?",
+      "options": {
+        "A": "Only <h1>",
+        "B": "The whole string <h1>Header</h1>",
+        "C": "Only Header",
+        "D": "Nothing"
+      },
+      "correct_option": "B",
+      "correct_answer": "The whole string <h1>Header</h1>",
+      "explanation": "Regex matching is greedy by default, so <.*> consumes as much as possible."
+    },
+    {
+      "id": "P3Q078",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 27",
+      "topic": "Regex compilation",
+      "type": "single_choice",
+      "question": "Which Python module supports regular expressions?",
+      "options": {
+        "A": "json",
+        "B": "re",
+        "C": "locale",
+        "D": "fileinput"
+      },
+      "correct_option": "B",
+      "correct_answer": "re",
+      "explanation": "Regular expressions are supported by the re module."
+    },
+    {
+      "id": "P3Q079",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 27",
+      "topic": "Regex compilation",
+      "type": "single_choice",
+      "question": "Which function compiles a regex pattern?",
+      "options": {
+        "A": "re.compile",
+        "B": "json.dumps",
+        "C": "str.find",
+        "D": "open"
+      },
+      "correct_option": "A",
+      "correct_answer": "re.compile",
+      "explanation": "The lecture shows p = re.compile(\"a[bcd]*d\")."
+    },
+    {
+      "id": "P3Q080",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 27",
+      "topic": "Regex flags",
+      "type": "single_choice",
+      "question": "Which flag shown in the lecture makes regex matching ignore case?",
+      "options": {
+        "A": "re.IGNORECASE",
+        "B": "re.JSON",
+        "C": "re.ASCII_ONLY",
+        "D": "re.NOCASEERROR"
+      },
+      "correct_option": "A",
+      "correct_answer": "re.IGNORECASE",
+      "explanation": "The compile example uses re.IGNORECASE."
+    },
+    {
+      "id": "P3Q081",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 28",
+      "topic": "Regex match methods",
+      "type": "single_choice",
+      "question": "Which method checks whether the pattern matches at the beginning of the string?",
+      "options": {
+        "A": "match",
+        "B": "fullmatch",
+        "C": "findall",
+        "D": "json.load"
+      },
+      "correct_option": "A",
+      "correct_answer": "match",
+      "explanation": "p.match(...) checks for a match starting at the beginning of the string."
+    },
+    {
+      "id": "P3Q082",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 28",
+      "topic": "Regex match methods",
+      "type": "single_choice",
+      "question": "Which method checks whether the entire string matches the pattern?",
+      "options": {
+        "A": "match",
+        "B": "fullmatch",
+        "C": "search",
+        "D": "finditer"
+      },
+      "correct_option": "B",
+      "correct_answer": "fullmatch",
+      "explanation": "fullmatch requires the whole string to match the pattern."
+    },
+    {
+      "id": "P3Q083",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 28",
+      "topic": "Regex match methods",
+      "type": "single_choice",
+      "question": "Which method searches for a matching substring anywhere in the string?",
+      "options": {
+        "A": "match",
+        "B": "fullmatch",
+        "C": "search",
+        "D": "dump"
+      },
+      "correct_option": "C",
+      "correct_answer": "search",
+      "explanation": "search looks for a match anywhere in the target string."
+    },
+    {
+      "id": "P3Q084",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 28",
+      "topic": "Regex match object",
+      "type": "single_choice",
+      "question": "Which is NOT listed as information available from a regex Match object?",
+      "options": {
+        "A": "group",
+        "B": "start",
+        "C": "end",
+        "D": "append"
+      },
+      "correct_option": "D",
+      "correct_answer": "append",
+      "explanation": "The lecture lists group, start, end, and span for a Match object."
+    },
+    {
+      "id": "P3Q085",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 28",
+      "topic": "Regex match object",
+      "type": "single_choice",
+      "question": "What does span usually return for a Match object?",
+      "options": {
+        "A": "A tuple (start, end)",
+        "B": "A JSON string",
+        "C": "A list of all files",
+        "D": "The original compiled pattern only"
+      },
+      "correct_option": "A",
+      "correct_answer": "A tuple (start, end)",
+      "explanation": "span returns a tuple containing the start and end positions."
+    },
+    {
+      "id": "P3Q086",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 29",
+      "topic": "Regex examples",
+      "type": "single_choice",
+      "question": "The IP regex \\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3} has which limitation?",
+      "options": {
+        "A": "It does not match any IP-like string.",
+        "B": "It can match invalid IPs such as 999.999.999.999.",
+        "C": "It matches only letters.",
+        "D": "It requires exactly two digits per segment."
+      },
+      "correct_option": "B",
+      "correct_answer": "It can match invalid IPs such as 999.999.999.999.",
+      "explanation": "The lecture warns that this expression checks form but not numeric validity."
+    },
+    {
+      "id": "P3Q087",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 29",
+      "topic": "Regex examples",
+      "type": "single_choice",
+      "question": "What kind of string does \\(\\d{2}\\) \\d{3} \\d{2} \\d{2} match according to the lecture?",
+      "options": {
+        "A": "A phone number such as (71) 320 12 34",
+        "B": "An e-mail address",
+        "C": "A JSON object",
+        "D": "A Python identifier"
+      },
+      "correct_option": "A",
+      "correct_answer": "A phone number such as (71) 320 12 34",
+      "explanation": "The lecture gives (71) 320 12 34 as a matching phone number."
+    },
+    {
+      "id": "P3Q088",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 30",
+      "topic": "Regex groups",
+      "type": "single_choice",
+      "question": "What does group(0) return from a regex match?",
+      "options": {
+        "A": "The entire match",
+        "B": "The first captured group only",
+        "C": "The number of groups",
+        "D": "The start index only"
+      },
+      "correct_option": "A",
+      "correct_answer": "The entire match",
+      "explanation": "The lecture notes that group(0) matches the entire match."
+    },
+    {
+      "id": "P3Q089",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 30",
+      "topic": "Regex groups",
+      "type": "single_choice",
+      "question": "How are subsequent regex groups numbered?",
+      "options": {
+        "A": "By the order of closing brackets",
+        "B": "By the starting bracket order",
+        "C": "Alphabetically by group content",
+        "D": "They are not numbered"
+      },
+      "correct_option": "B",
+      "correct_answer": "By the starting bracket order",
+      "explanation": "The lecture says groups are numbered by starting bracket."
+    },
+    {
+      "id": "P3Q090",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 30",
+      "topic": "Regex groups",
+      "type": "single_choice",
+      "question": "Can regex groups be nested?",
+      "options": {
+        "A": "Yes",
+        "B": "No",
+        "C": "Only in JSON strings",
+        "D": "Only with re.IGNORECASE"
+      },
+      "correct_option": "A",
+      "correct_answer": "Yes",
+      "explanation": "The lecture explicitly states groups can be nested."
+    },
+    {
+      "id": "P3Q091",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 31",
+      "topic": "Regex multiple matches",
+      "type": "single_choice",
+      "question": "What does findall return?",
+      "options": {
+        "A": "A list of matched expressions",
+        "B": "Only the first Match object",
+        "C": "A file object",
+        "D": "None always"
+      },
+      "correct_option": "A",
+      "correct_answer": "A list of matched expressions",
+      "explanation": "findall returns a list of matched expressions."
+    },
+    {
+      "id": "P3Q092",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 32",
+      "topic": "Regex multiple matches",
+      "type": "single_choice",
+      "question": "What does finditer return?",
+      "options": {
+        "A": "An iterator over Match objects",
+        "B": "A JSON file",
+        "C": "A single string only",
+        "D": "A boolean"
+      },
+      "correct_option": "A",
+      "correct_answer": "An iterator over Match objects",
+      "explanation": "finditer returns an iterator, and each item is a Match object."
+    },
+    {
+      "id": "P3Q093",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 33",
+      "topic": "Regex module functions",
+      "type": "single_choice",
+      "question": "What is true about re.match, re.search, and re.findall module-level functions?",
+      "options": {
+        "A": "They behave like corresponding methods and internally compile or use cached patterns.",
+        "B": "They are unrelated to compiled regex objects.",
+        "C": "They work only with JSON.",
+        "D": "They always return strings."
+      },
+      "correct_option": "A",
+      "correct_answer": "They behave like corresponding methods and internally compile or use cached patterns.",
+      "explanation": "The lecture says module functions correspond to regex object methods and internally call compile or use cached values."
+    },
+    {
+      "id": "P3Q094",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 33",
+      "topic": "Regex module functions",
+      "type": "single_choice",
+      "question": "What does re.match return if there is no match?",
+      "options": {
+        "A": "None",
+        "B": "False",
+        "C": "0",
+        "D": "An empty string"
+      },
+      "correct_option": "A",
+      "correct_answer": "None",
+      "explanation": "Regex functions return None when there is no match."
+    },
+    {
+      "id": "P3Q095",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slides 20, 33",
+      "topic": "Regex code behavior",
+      "type": "single_choice",
+      "question": "What is the result of re.match(\"ab*\", \"ac\")?",
+      "options": {
+        "A": "A match for \"a\"",
+        "B": "None",
+        "C": "A match for \"ac\"",
+        "D": "SyntaxError"
+      },
+      "correct_option": "A",
+      "correct_answer": "A match for \"a\"",
+      "explanation": "b* means zero or more b characters, so the pattern matches the initial \"a\"."
+    },
+    {
+      "id": "P3Q096",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slides 20, 28",
+      "topic": "Regex code behavior",
+      "type": "single_choice",
+      "question": "What is the result of re.fullmatch(\"ab*\", \"abbb\")?",
+      "options": {
+        "A": "It matches the whole string.",
+        "B": "It returns None because b* cannot match multiple b characters.",
+        "C": "It matches only \"a\" and fails fullmatch.",
+        "D": "It raises ValueError."
+      },
+      "correct_option": "A",
+      "correct_answer": "It matches the whole string.",
+      "explanation": "ab* means a followed by zero or more b characters, so abbb fully matches."
+    },
+    {
+      "id": "P3Q097",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 28",
+      "topic": "Regex code behavior",
+      "type": "single_choice",
+      "question": "What is the result of re.fullmatch(\"ab*\", \"abbbc\")?",
+      "options": {
+        "A": "It matches the whole string.",
+        "B": "It returns None.",
+        "C": "It matches only c.",
+        "D": "It raises AssertionError."
+      },
+      "correct_option": "B",
+      "correct_answer": "It returns None.",
+      "explanation": "fullmatch requires the whole string; c is not allowed by ab*, so there is no full match."
+    },
+    {
+      "id": "P3Q098",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 28",
+      "topic": "Regex code behavior",
+      "type": "single_choice",
+      "question": "What does re.search(\"ab*\", \"xxabbb\") find?",
+      "options": {
+        "A": "The substring \"abbb\"",
+        "B": "Only the first x",
+        "C": "Nothing because the pattern is not at the beginning",
+        "D": "The whole string xxabbb"
+      },
+      "correct_option": "A",
+      "correct_answer": "The substring \"abbb\"",
+      "explanation": "search can find the pattern anywhere, and ab* matches abbb."
+    },
+    {
+      "id": "P3Q099",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 14",
+      "topic": "String search vs regex",
+      "type": "single_choice",
+      "question": "Which tool is enough if you only need to check whether \"User\" exists in \"User experience\"?",
+      "options": {
+        "A": "The in operator",
+        "B": "json.loads",
+        "C": "re.compile with groups is always required",
+        "D": "raise ValueError"
+      },
+      "correct_option": "A",
+      "correct_answer": "The in operator",
+      "explanation": "For simple existence checks, the lecture uses the in operator."
+    },
+    {
+      "id": "P3Q100",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 15",
+      "topic": "String replace vs regex",
+      "type": "single_choice",
+      "question": "For a simple literal replacement like replacing \"User\" with \"Programmer\", which method did the lecture show?",
+      "options": {
+        "A": "str.replace",
+        "B": "list.extend",
+        "C": "re.finditer only",
+        "D": "json.dump"
+      },
+      "correct_option": "A",
+      "correct_answer": "str.replace",
+      "explanation": "The lecture uses s.replace(\"User\", \"Programmer\") for simple replacement."
+    },
+    {
+      "id": "P3Q101",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 12",
+      "topic": "Exceptions and regex",
+      "type": "single_choice",
+      "question": "Which option best follows the lecture advice?",
+      "options": {
+        "A": "Use exceptions for obvious conditions instead of if.",
+        "B": "Use if for obvious conditions, try for exceptional situations, and raise when you cannot handle the problem.",
+        "C": "Use bare except for every block.",
+        "D": "Never raise exceptions manually."
+      },
+      "correct_option": "B",
+      "correct_answer": "Use if for obvious conditions, try for exceptional situations, and raise when you cannot handle the problem.",
+      "explanation": "This summarizes the lecture rules from Exceptions How-to."
+    },
+    {
+      "id": "P3Q102",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slides 23, 29",
+      "topic": "Regex escaping",
+      "type": "single_choice",
+      "question": "In a regex, why must a literal dot in an IP pattern be written as \\.?",
+      "options": {
+        "A": "Because . normally means any character except newline.",
+        "B": "Because . normally means a digit.",
+        "C": "Because . is invalid in regex.",
+        "D": "Because Python lists require it."
+      },
+      "correct_option": "A",
+      "correct_answer": "Because . normally means any character except newline.",
+      "explanation": "The dot is a regex special character; escaping it makes it a literal dot."
+    },
+    {
+      "id": "P3Q103",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 22",
+      "topic": "Regex alternatives",
+      "type": "single_choice",
+      "question": "Which regex matches either \"cat\" or \"dog\" as a whole alternative?",
+      "options": {
+        "A": "(cat|dog)",
+        "B": "[cat|dog]",
+        "C": "cat+dog",
+        "D": "cat*dog"
+      },
+      "correct_option": "A",
+      "correct_answer": "(cat|dog)",
+      "explanation": "Parentheses group alternatives and | means OR between alternatives."
+    },
+    {
+      "id": "P3Q104",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 23",
+      "topic": "Regex character classes",
+      "type": "single_choice",
+      "question": "Which regex matches a single digit using a character class rather than shortcut?",
+      "options": {
+        "A": "[0-9]",
+        "B": "[^0-9]+",
+        "C": "\\w",
+        "D": "[A-Z]+"
+      },
+      "correct_option": "A",
+      "correct_answer": "[0-9]",
+      "explanation": "[0-9] is the class equivalent of \\d for one digit."
+    },
+    {
+      "id": "P3Q105",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 24",
+      "topic": "Regex anchors",
+      "type": "single_choice",
+      "question": "Which regex matches lines starting with abc according to the lecture style?",
+      "options": {
+        "A": "^abc.*",
+        "B": ".*abc$",
+        "C": "[abc]",
+        "D": "abc^"
+      },
+      "correct_option": "A",
+      "correct_answer": "^abc.*",
+      "explanation": "^ marks the start of a line, so ^abc.* matches lines beginning with abc."
+    },
+    {
+      "id": "P3Q106",
+      "phase": 3,
+      "source_files": [
+        "SL_W04IST_SI4034_lecture_06-exceptions.pdf",
+        "SL_W04IST_SI4034_lecture_07-re.pdf"
+      ],
+      "lecture_slide_reference": "L07 slide 24",
+      "topic": "Regex anchors",
+      "type": "single_choice",
+      "question": "Which regex matches lines ending with k according to the lecture style?",
+      "options": {
+        "A": "^k.*",
+        "B": ".*k$",
+        "C": "$k.*",
+        "D": "[k]$*"
+      },
+      "correct_option": "B",
+      "correct_answer": ".*k$",
+      "explanation": "$ marks the end of a line, so .*k$ matches lines ending with k."
+    }
+  ]
+}

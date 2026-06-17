@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: sl-study-webapp
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sl-study-db
+          property: connectionString
+
+databases:
+  - name: sl-study-db
+    plan: free

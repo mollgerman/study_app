@@ -1,0 +1,825 @@
+{
+  "name": "SL Exam Phase 8 - SQLite and sqlite3",
+  "description": "Compact question source for Lecture 12, focused on SQLite, sqlite3, transactions, cursors, parameterized SQL, joins, context managers, row factories, and exceptions.",
+  "phase": 8,
+  "source_files": [
+    "SL_W04IST_SI4034_lecture_12-sqlite.pdf"
+  ],
+  "question_count": 50,
+  "topics": [
+    "SQLite purpose and use cases",
+    "sqlite3 connections and in-memory databases",
+    "transactions, commit, rollback, and autocommit",
+    "storage classes and flexible typing",
+    "cursors and fetch methods",
+    "parameterized statements and SQL injection",
+    "updates, deletes, joins",
+    "resource management and context managers",
+    "sqlite3.Row named access",
+    "sqlite3 exceptions"
+  ],
+  "questions": [
+    {
+      "id": "P8-Q001",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "SQLite basics",
+      "type": "single_choice",
+      "question": "Which description best matches SQLite in Python?",
+      "options": {
+        "A": "A serverless relational database engine stored in a single file",
+        "B": "A remote-only database that always needs a separate server",
+        "C": "A Python package that must always be installed with pip",
+        "D": "A spreadsheet format for Excel files"
+      },
+      "correct_answer": "A",
+      "explanation": "SQLite is serverless, self-contained, relational, and stored in a single file."
+    },
+    {
+      "id": "P8-Q002",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "sqlite3 module",
+      "type": "single_choice",
+      "question": "Which import is used for SQLite support in standard Python?",
+      "options": {
+        "A": "import sqlite3",
+        "B": "import sqlite",
+        "C": "import sqlserver",
+        "D": "import pysql"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture uses Python’s built-in sqlite3 module."
+    },
+    {
+      "id": "P8-Q003",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Installation",
+      "type": "single_choice",
+      "question": "Which statement about sqlite3 installation is correct?",
+      "options": {
+        "A": "sqlite3 is built into Python, so no pip installation is needed",
+        "B": "sqlite3 requires pip install sqlite3",
+        "C": "sqlite3 requires installing MySQL first",
+        "D": "sqlite3 only works through DBeaver"
+      },
+      "correct_answer": "A",
+      "explanation": "The sqlite3 module is included in Python."
+    },
+    {
+      "id": "P8-Q004",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "SQLite use cases",
+      "type": "single_choice",
+      "question": "For which case is SQLite usually appropriate?",
+      "options": {
+        "A": "Local app data storage",
+        "B": "High-volume concurrent writes",
+        "C": "High-availability replication",
+        "D": "Per-user access control in a large client-server system"
+      },
+      "correct_answer": "A",
+      "explanation": "SQLite is good for local app data, configuration, caching, prototyping, and replacing flat files."
+    },
+    {
+      "id": "P8-Q005",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "SQLite limitations",
+      "type": "single_choice",
+      "question": "Which scenario is listed as a reason to avoid SQLite?",
+      "options": {
+        "A": "High-volume concurrent writes",
+        "B": "Local configuration persistence",
+        "C": "Caching downloaded data",
+        "D": "Replacing a small CSV file"
+      },
+      "correct_answer": "A",
+      "explanation": "SQLite is not the best choice for high-volume concurrent writes."
+    },
+    {
+      "id": "P8-Q006",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Flat files vs SQLite",
+      "type": "single_choice",
+      "question": "What is the intended comparison in the lecture?",
+      "options": {
+        "A": "open(\"data.csv\") vs sqlite3.connect(\"data.db\")",
+        "B": "Oracle vs PostgreSQL only",
+        "C": "Excel vs PowerPoint",
+        "D": "Python vs JavaScript"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture says SQLite replaces fopen/open-style file storage, not Oracle."
+    },
+    {
+      "id": "P8-Q007",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Transactions",
+      "type": "single_choice",
+      "question": "A script executes three INSERT statements and crashes before con.commit(). What is saved?",
+      "options": {
+        "A": "Zero rows; uncommitted changes are discarded",
+        "B": "All three rows; SQLite always autocommits",
+        "C": "Only the first row",
+        "D": "Only rows with INTEGER PRIMARY KEY"
+      },
+      "correct_answer": "A",
+      "explanation": "Without commit, the transaction is rolled back when the connection closes."
+    },
+    {
+      "id": "P8-Q008",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Storage classes",
+      "type": "single_choice",
+      "question": "Which is NOT one of SQLite’s five storage classes from the lecture?",
+      "options": {
+        "A": "BOOLEAN",
+        "B": "NULL",
+        "C": "INTEGER",
+        "D": "BLOB"
+      },
+      "correct_answer": "A",
+      "explanation": "SQLite storage classes are NULL, INTEGER, REAL, TEXT, and BLOB."
+    },
+    {
+      "id": "P8-Q009",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "SQLite typing",
+      "type": "single_choice",
+      "question": "What does “flexible typing” mean in SQLite?",
+      "options": {
+        "A": "Column type declarations are advisory and values may be coerced",
+        "B": "Every column strictly rejects all other types",
+        "C": "All values are stored as strings",
+        "D": "Python type hints are required for every column"
+      },
+      "correct_answer": "A",
+      "explanation": "SQLite column declarations are advisory rather than strictly enforced."
+    },
+    {
+      "id": "P8-Q010",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Connecting",
+      "type": "single_choice",
+      "question": "What happens when sqlite3.connect(\"usos.db\") is called and the file does not exist?",
+      "options": {
+        "A": "The database file is created",
+        "B": "Python raises ImportError",
+        "C": "The command silently does nothing",
+        "D": "Only an in-memory database is created"
+      },
+      "correct_answer": "A",
+      "explanation": "sqlite3.connect opens or creates the database file."
+    },
+    {
+      "id": "P8-Q011",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "In-memory database",
+      "type": "single_choice",
+      "question": "What is true about sqlite3.connect(\":memory:\")?",
+      "options": {
+        "A": "It creates a temporary database that is lost on close",
+        "B": "It creates a permanent file named memory.db",
+        "C": "It disables SQL queries",
+        "D": "It requires DBeaver"
+      },
+      "correct_answer": "A",
+      "explanation": "The in-memory database is fast and temporary, and disappears when closed."
+    },
+    {
+      "id": "P8-Q012",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Cursor",
+      "type": "single_choice",
+      "question": "What is a cursor in sqlite3?",
+      "options": {
+        "A": "An object used to send SQL statements to the database",
+        "B": "A pointer to the mouse position",
+        "C": "A special Python list of tables",
+        "D": "A file encoding setting"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture defines Cursor as an object used to send SQL statements to the database."
+    },
+    {
+      "id": "P8-Q013",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Cursor methods",
+      "type": "single_choice",
+      "question": "Which method is used to execute one SQL statement?",
+      "options": {
+        "A": "execute()",
+        "B": "fetchone()",
+        "C": "rollback()",
+        "D": "connect()"
+      },
+      "correct_answer": "A",
+      "explanation": "execute() sends one SQL statement through a cursor or connection."
+    },
+    {
+      "id": "P8-Q014",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Multiple inserts",
+      "type": "single_choice",
+      "question": "Which cursor method is best for inserting many rows using one statement and many parameter sets?",
+      "options": {
+        "A": "executemany()",
+        "B": "fetchmany()",
+        "C": "fetchall()",
+        "D": "row_factory()"
+      },
+      "correct_answer": "A",
+      "explanation": "executemany() runs a statement for multiple parameter sets."
+    },
+    {
+      "id": "P8-Q015",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Fetching one row",
+      "type": "single_choice",
+      "question": "What does fetchone() return when there are no more rows?",
+      "options": {
+        "A": "None",
+        "B": "An empty dictionary",
+        "C": "False",
+        "D": "0"
+      },
+      "correct_answer": "A",
+      "explanation": "fetchone() returns a tuple for a row or None if no more rows exist."
+    },
+    {
+      "id": "P8-Q016",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Fetching batches",
+      "type": "single_choice",
+      "question": "What does fetchmany(4) return?",
+      "options": {
+        "A": "A list of up to 4 rows",
+        "B": "Exactly 4 database files",
+        "C": "One tuple only",
+        "D": "A SQL cursor name"
+      },
+      "correct_answer": "A",
+      "explanation": "fetchmany(n) returns a list containing up to n rows."
+    },
+    {
+      "id": "P8-Q017",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "fetchall behavior",
+      "type": "single_choice",
+      "question": "After some rows have already been consumed, what does fetchall() return?",
+      "options": {
+        "A": "All remaining rows",
+        "B": "Always the whole table from the beginning",
+        "C": "Only the first row",
+        "D": "The number of affected rows"
+      },
+      "correct_answer": "A",
+      "explanation": "fetchall() returns rows not yet consumed by previous fetch operations."
+    },
+    {
+      "id": "P8-Q018",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Cursor iteration",
+      "type": "single_choice",
+      "question": "Which statement is true about cursors?",
+      "options": {
+        "A": "A cursor can be used directly in a for loop",
+        "B": "A cursor cannot be iterated",
+        "C": "A cursor is always a dictionary",
+        "D": "A cursor automatically commits every SELECT"
+      },
+      "correct_answer": "A",
+      "explanation": "The cursor is an iterator and can be used directly in for loops."
+    },
+    {
+      "id": "P8-Q019",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Large result sets",
+      "type": "single_choice",
+      "question": "For large SELECT results, which approach is preferred?",
+      "options": {
+        "A": "Iterating over the cursor",
+        "B": "Always using fetchall()",
+        "C": "Converting the database to CSV first",
+        "D": "Using rollback() before reading"
+      },
+      "correct_answer": "A",
+      "explanation": "Iteration avoids loading all rows into memory at once."
+    },
+    {
+      "id": "P8-Q020",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Primary key",
+      "type": "single_choice",
+      "question": "Which declaration creates an auto-incrementing rowid alias in SQLite?",
+      "options": {
+        "A": "id INTEGER PRIMARY KEY",
+        "B": "id INT PRIMARY KEY",
+        "C": "id TEXT PRIMARY KEY",
+        "D": "id NUMBER PRIMARY KEY"
+      },
+      "correct_answer": "A",
+      "explanation": "The exact keyword INTEGER PRIMARY KEY creates the rowid alias."
+    },
+    {
+      "id": "P8-Q021",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Primary key mistake",
+      "type": "single_choice",
+      "question": "Why can INT PRIMARY KEY be a mistake in SQLite?",
+      "options": {
+        "A": "It does not create the auto-incrementing rowid alias",
+        "B": "It creates two tables",
+        "C": "It prevents SELECT queries",
+        "D": "It forces values to become TEXT"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture warns that INT PRIMARY KEY is not equivalent to INTEGER PRIMARY KEY for rowid aliasing."
+    },
+    {
+      "id": "P8-Q022",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Commit",
+      "type": "single_choice",
+      "question": "What is the purpose of con.commit() after write operations?",
+      "options": {
+        "A": "Finalize the transaction so changes are saved",
+        "B": "Open a new cursor",
+        "C": "Delete all rows",
+        "D": "Convert rows to dictionaries"
+      },
+      "correct_answer": "A",
+      "explanation": "Every write operation needs commit() to finalize the transaction unless managed otherwise."
+    },
+    {
+      "id": "P8-Q023",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "SQL injection prevention",
+      "type": "single_choice",
+      "question": "Which code style is safest for user data in INSERT or WHERE clauses?",
+      "options": {
+        "A": "Use ? placeholders and pass parameters separately",
+        "B": "Use f-strings to build SQL directly",
+        "C": "Concatenate strings with +",
+        "D": "Use assert before SQL"
+      },
+      "correct_answer": "A",
+      "explanation": "Parameterized statements avoid SQL injection attacks."
+    },
+    {
+      "id": "P8-Q024",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Dangerous SQL construction",
+      "type": "single_choice",
+      "question": "Why is cur.execute(f\"INSERT ... {name} ...\") dangerous with user data?",
+      "options": {
+        "A": "It may allow SQL injection",
+        "B": "It always creates an in-memory database",
+        "C": "It prevents commit() from working",
+        "D": "It automatically closes the connection"
+      },
+      "correct_answer": "A",
+      "explanation": "Building SQL with f-strings can mix user input into SQL code."
+    },
+    {
+      "id": "P8-Q025",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Placeholder tuple",
+      "type": "single_choice",
+      "question": "In cur.execute(\"DELETE FROM faculties WHERE code = ?\", (\"W5\",)), why is the comma needed?",
+      "options": {
+        "A": "To create a one-element tuple",
+        "B": "To create a dictionary",
+        "C": "To commit the deletion",
+        "D": "To convert W5 to bytes"
+      },
+      "correct_answer": "A",
+      "explanation": "(\"W5\",) is a one-element tuple; without the comma it is just a parenthesized string."
+    },
+    {
+      "id": "P8-Q026",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Named placeholders",
+      "type": "single_choice",
+      "question": "Which placeholder style matches a dictionary such as {\"id\": 6, \"name\": \"Computer Science\"}?",
+      "options": {
+        "A": ":id and :name",
+        "B": "?id and ?name",
+        "C": "%id and %name",
+        "D": "{id} only inside f-strings"
+      },
+      "correct_answer": "A",
+      "explanation": "sqlite3 supports named placeholders like :id with dictionary parameters."
+    },
+    {
+      "id": "P8-Q027",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "UPDATE without WHERE",
+      "type": "single_choice",
+      "question": "What happens if an UPDATE statement has no WHERE clause?",
+      "options": {
+        "A": "It may modify every row",
+        "B": "It raises SyntaxError automatically",
+        "C": "It modifies no rows",
+        "D": "It only changes the first row"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture warns that UPDATE without WHERE modifies every row."
+    },
+    {
+      "id": "P8-Q028",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "DELETE without WHERE",
+      "type": "single_choice",
+      "question": "What happens if a DELETE statement has no WHERE clause?",
+      "options": {
+        "A": "It deletes every row",
+        "B": "It deletes only duplicate rows",
+        "C": "It automatically rolls back",
+        "D": "It creates a new table"
+      },
+      "correct_answer": "A",
+      "explanation": "DELETE without WHERE deletes all rows in the table."
+    },
+    {
+      "id": "P8-Q029",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Default JOIN",
+      "type": "single_choice",
+      "question": "In SQLite SQL, what is the default JOIN shown in the lecture?",
+      "options": {
+        "A": "INNER JOIN",
+        "B": "LEFT JOIN",
+        "C": "FULL OUTER JOIN",
+        "D": "CROSS DATABASE JOIN"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture states that default JOIN is INNER JOIN."
+    },
+    {
+      "id": "P8-Q030",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "LEFT JOIN",
+      "type": "single_choice",
+      "question": "What does LEFT JOIN preserve?",
+      "options": {
+        "A": "All rows from the left table, even if there is no match",
+        "B": "Only rows with matches in both tables",
+        "C": "Only rows from the right table",
+        "D": "Only duplicate rows"
+      },
+      "correct_answer": "A",
+      "explanation": "LEFT JOIN keeps all rows from the left table and uses NULL for missing right-side values."
+    },
+    {
+      "id": "P8-Q031",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Closing resources",
+      "type": "single_choice",
+      "question": "Which pair explicitly closes sqlite3 resources?",
+      "options": {
+        "A": "cur.close(); con.close()",
+        "B": "cur.commit(); con.fetchall()",
+        "C": "con.rollback(); sqlite3.close_all()",
+        "D": "fetchone(); fetchmany()"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture shows closing cursor and connection explicitly."
+    },
+    {
+      "id": "P8-Q032",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "contextlib.closing",
+      "type": "single_choice",
+      "question": "Why use contextlib.closing() with sqlite3 connections/cursors?",
+      "options": {
+        "A": "To close them automatically at the end of a with block",
+        "B": "To make SELECT statements faster",
+        "C": "To change row names to uppercase",
+        "D": "To disable transactions"
+      },
+      "correct_answer": "A",
+      "explanation": "contextlib.closing() ensures close() is called automatically."
+    },
+    {
+      "id": "P8-Q033",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Connection context manager",
+      "type": "single_choice",
+      "question": "What does with con: manage?",
+      "options": {
+        "A": "The transaction only",
+        "B": "The connection closing only",
+        "C": "The SQL syntax checking only",
+        "D": "The table schema only"
+      },
+      "correct_answer": "A",
+      "explanation": "with con: commits on success and rolls back on exception, but does not close the connection."
+    },
+    {
+      "id": "P8-Q034",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "with con close",
+      "type": "single_choice",
+      "question": "After using with con:, what must still be done if you want to close the connection?",
+      "options": {
+        "A": "Call con.close() or combine with contextlib.closing()",
+        "B": "Call fetchall()",
+        "C": "Call sqlite3.disconnect_all()",
+        "D": "Nothing, with con always closes it"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture emphasizes that with con: does not close the connection."
+    },
+    {
+      "id": "P8-Q035",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Context manager transaction",
+      "type": "single_choice",
+      "question": "What happens in with con: if an exception occurs inside the block?",
+      "options": {
+        "A": "The transaction is rolled back",
+        "B": "The transaction is always committed",
+        "C": "The database file is deleted",
+        "D": "The cursor becomes a list"
+      },
+      "correct_answer": "A",
+      "explanation": "Connection context manager rolls back on exception."
+    },
+    {
+      "id": "P8-Q036",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "autocommit False",
+      "type": "single_choice",
+      "question": "In Python 3.12+, which autocommit setting is recommended for new sqlite3 code?",
+      "options": {
+        "A": "autocommit=False",
+        "B": "autocommit=True",
+        "C": "autocommit=\"always\"",
+        "D": "autocommit=None only"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture says autocommit=False is recommended in new code."
+    },
+    {
+      "id": "P8-Q037",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "autocommit True",
+      "type": "single_choice",
+      "question": "What does autocommit=True mean?",
+      "options": {
+        "A": "Each statement commits immediately",
+        "B": "No statement is ever committed",
+        "C": "Only SELECT statements are allowed",
+        "D": "The database is stored in memory"
+      },
+      "correct_answer": "A",
+      "explanation": "With autocommit=True, each statement commits immediately."
+    },
+    {
+      "id": "P8-Q038",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "legacy transaction control",
+      "type": "single_choice",
+      "question": "What does LEGACY_TRANSACTION_CONTROL refer to?",
+      "options": {
+        "A": "Pre-Python-3.12 transaction behavior/current default that will change",
+        "B": "A storage class for old rows",
+        "C": "A function for deleting rows",
+        "D": "A DBeaver-only feature"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture lists it as pre-3.12 behavior and notes the default will change."
+    },
+    {
+      "id": "P8-Q039",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Connection shortcut",
+      "type": "single_choice",
+      "question": "Which shortcut can be used without explicitly creating a cursor for simple statements?",
+      "options": {
+        "A": "con.execute(\"SELECT * FROM faculties\")",
+        "B": "sqlite3.execute_all(\"SELECT *\")",
+        "C": "con.fetchcursor(\"SELECT *\")",
+        "D": "cursorless.rollback(\"SELECT *\")"
+      },
+      "correct_answer": "A",
+      "explanation": "The connection object has shortcut methods such as con.execute()."
+    },
+    {
+      "id": "P8-Q040",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Explicit cursor need",
+      "type": "single_choice",
+      "question": "When is an explicit cursor especially useful according to the lecture?",
+      "options": {
+        "A": "When you need cur.lastrowid or cur.rowcount",
+        "B": "When you want to avoid SQL entirely",
+        "C": "When using print()",
+        "D": "When reading a text file encoding"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture says to use an explicit cursor when lastrowid or rowcount are needed."
+    },
+    {
+      "id": "P8-Q041",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "row_factory",
+      "type": "single_choice",
+      "question": "How do you enable named column access for rows?",
+      "options": {
+        "A": "con.row_factory = sqlite3.Row",
+        "B": "con.named_rows = True",
+        "C": "cur.row_type = dict",
+        "D": "sqlite3.enable_json_rows()"
+      },
+      "correct_answer": "A",
+      "explanation": "Setting con.row_factory to sqlite3.Row enables named access."
+    },
+    {
+      "id": "P8-Q042",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "sqlite3.Row access",
+      "type": "single_choice",
+      "question": "After setting sqlite3.Row, which access is valid?",
+      "options": {
+        "A": "Both row[\"name\"] and row[0]",
+        "B": "Only row[\"name\"], never row[0]",
+        "C": "Only row.name",
+        "D": "Only row.get_column(0)"
+      },
+      "correct_answer": "A",
+      "explanation": "sqlite3.Row supports named access and index access."
+    },
+    {
+      "id": "P8-Q043",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "row.keys",
+      "type": "single_choice",
+      "question": "What does row.keys() provide for sqlite3.Row?",
+      "options": {
+        "A": "The column names",
+        "B": "The primary keys of all tables",
+        "C": "The database password",
+        "D": "The SQL query history"
+      },
+      "correct_answer": "A",
+      "explanation": "row.keys() returns column names such as id, name, code."
+    },
+    {
+      "id": "P8-Q044",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Case sensitivity",
+      "type": "single_choice",
+      "question": "What is true about column names in sqlite3.Row access?",
+      "options": {
+        "A": "Column names are case-insensitive",
+        "B": "Column names must be uppercase only",
+        "C": "Column names cannot be strings",
+        "D": "Column names require UTF-32"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture states that column names are case-insensitive."
+    },
+    {
+      "id": "P8-Q045",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "IntegrityError",
+      "type": "single_choice",
+      "question": "Which problem commonly raises sqlite3.IntegrityError?",
+      "options": {
+        "A": "Duplicate primary key",
+        "B": "Wrong number of placeholders",
+        "C": "Missing table name",
+        "D": "Calling fetchone()"
+      },
+      "correct_answer": "A",
+      "explanation": "IntegrityError is associated with constraint violations like duplicate primary keys or foreign key violations."
+    },
+    {
+      "id": "P8-Q046",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "OperationalError",
+      "type": "single_choice",
+      "question": "Which problem commonly raises sqlite3.OperationalError?",
+      "options": {
+        "A": "Missing table, locked database, or wrong path",
+        "B": "Using a duplicate primary key only",
+        "C": "Wrong number of question mark placeholders only",
+        "D": "A failed Python assert"
+      },
+      "correct_answer": "A",
+      "explanation": "The lecture lists missing table, locked database, and wrong path as typical OperationalError causes."
+    },
+    {
+      "id": "P8-Q047",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "ProgrammingError",
+      "type": "single_choice",
+      "question": "Which problem commonly raises sqlite3.ProgrammingError?",
+      "options": {
+        "A": "Wrong number of ? placeholders",
+        "B": "Duplicate primary key",
+        "C": "Using SELECT",
+        "D": "Closing a file after reading"
+      },
+      "correct_answer": "A",
+      "explanation": "ProgrammingError can occur when the number of placeholders does not match parameters."
+    },
+    {
+      "id": "P8-Q048",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Rollback",
+      "type": "single_choice",
+      "question": "Why call con.rollback() after a database error?",
+      "options": {
+        "A": "To undo uncommitted changes in the current transaction",
+        "B": "To permanently save all changes",
+        "C": "To create a new table",
+        "D": "To fetch rows as dictionaries"
+      },
+      "correct_answer": "A",
+      "explanation": "rollback() reverts uncommitted changes after a failure."
+    },
+    {
+      "id": "P8-Q049",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "SELECT vs write transaction",
+      "type": "single_choice",
+      "question": "Which operation normally changes data and therefore needs a commit?",
+      "options": {
+        "A": "INSERT",
+        "B": "SELECT",
+        "C": "fetchone()",
+        "D": "row.keys()"
+      },
+      "correct_answer": "A",
+      "explanation": "INSERT, UPDATE, and DELETE are write operations that need commit unless managed by transaction context/autocommit."
+    },
+    {
+      "id": "P8-Q050",
+      "phase": 8,
+      "source_file": "SL_W04IST_SI4034_lecture_12-sqlite.pdf",
+      "topic": "Exam trap",
+      "type": "single_choice",
+      "question": "Which answer is the best exam rule for sqlite3 user input?",
+      "options": {
+        "A": "Never format user input into SQL; use parameters",
+        "B": "Always use f-strings because they are modern Python",
+        "C": "Use assert to check SQL injection",
+        "D": "Use fetchall() before every INSERT"
+      },
+      "correct_answer": "A",
+      "explanation": "The safe pattern is parameterized SQL with placeholders."
+    }
+  ],
+  "created": "2026-06-17T12:01:54.846997+00:00",
+  "note": "Generated with fewer questions by user request."
+}

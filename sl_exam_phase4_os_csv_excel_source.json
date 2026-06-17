@@ -1,0 +1,1047 @@
+{
+  "name": "SL Exam Phase 4 source: OS interfaces, CSV, and Excel",
+  "description": "Exam-like single-choice questions generated from Lecture 08, strictly using Python semantics.",
+  "phase": 4,
+  "source_files": [
+    "SL_W04IST_SI4034_lecture_08-os.pdf"
+  ],
+  "question_count": 98,
+  "topics": [
+    "Lambda expressions",
+    "Program arguments",
+    "Environment variables and .env",
+    "CSV files",
+    "Excel files with openpyxl"
+  ],
+  "questions": [
+    {
+      "id": "P4-Q001",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "In Python, lambda x, y: x + y creates an anonymous function.",
+      "correct_answer": "True",
+      "explanation": "lambda creates an unnamed function object whose body is an expression."
+    },
+    {
+      "id": "P4-Q002",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "A lambda expression in Python is best used when a short function is needed in only one place.",
+      "correct_answer": "True",
+      "explanation": "That is the main use shown in the lecture."
+    },
+    {
+      "id": "P4-Q003",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "The expression lambda x, y: x + y is equivalent in behavior to a simple function that returns x + y.",
+      "correct_answer": "True",
+      "explanation": "It is similar to def f(x, y): return x + y."
+    },
+    {
+      "id": "P4-Q004",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "A Python lambda can contain several statements separated by indentation, just like a def function body.",
+      "correct_answer": "False",
+      "explanation": "A lambda body must be a single expression, not a statement block."
+    },
+    {
+      "id": "P4-Q005",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "A Python lambda can directly contain a return statement.",
+      "correct_answer": "False",
+      "explanation": "return is a statement; lambda contains an expression whose value is returned implicitly."
+    },
+    {
+      "id": "P4-Q006",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "The expression lambda x: x if x > 0 else -x is valid Python.",
+      "correct_answer": "True",
+      "explanation": "A conditional expression is still an expression, so it is allowed inside lambda."
+    },
+    {
+      "id": "P4-Q007",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "The expression lambda x: if x > 0: x else: -x is valid Python.",
+      "correct_answer": "False",
+      "explanation": "That uses statement syntax; a lambda requires expression syntax: x if x > 0 else -x."
+    },
+    {
+      "id": "P4-Q008",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "For l = [(1, 'Bob'), (2, 'Alice')], l.sort() sorts by the whole tuple by default.",
+      "correct_answer": "True",
+      "explanation": "Tuple comparison starts with element 0, then element 1 if needed."
+    },
+    {
+      "id": "P4-Q009",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "For l = [(1, 'Bob'), (2, 'Alice')], l.sort(key=lambda k: k[1]) sorts using the names rather than the numbers.",
+      "correct_answer": "True",
+      "explanation": "The key function returns tuple element 1, the name."
+    },
+    {
+      "id": "P4-Q010",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "For l = [(1, 'Bob'), (2, 'Alice')], after l.sort(key=lambda k: k[1]), the first tuple is (2, 'Alice').",
+      "correct_answer": "True",
+      "explanation": "Alphabetically, 'Alice' comes before 'Bob'."
+    },
+    {
+      "id": "P4-Q011",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "In sorted(items, key=lambda x: x[1]), the lambda is called to compute a sorting key.",
+      "correct_answer": "True",
+      "explanation": "The key function tells Python what value to sort by."
+    },
+    {
+      "id": "P4-Q012",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "A lambda function cannot take more than one parameter.",
+      "correct_answer": "False",
+      "explanation": "lambda x, y: x + y is valid and has two parameters."
+    },
+    {
+      "id": "P4-Q013",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "A lambda expression must always be assigned to a variable before it can be used.",
+      "correct_answer": "False",
+      "explanation": "It can be passed directly, for example as a key function."
+    },
+    {
+      "id": "P4-Q014",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "Tuple sorting compares tuple elements one by one from the first element.",
+      "correct_answer": "True",
+      "explanation": "Default tuple comparison is lexicographic."
+    },
+    {
+      "id": "P4-Q015",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "true_false",
+      "question": "Using key=lambda k: k[1] can change how a list of tuples is sorted.",
+      "correct_answer": "True",
+      "explanation": "The key selects the second item as the comparison key."
+    },
+    {
+      "id": "P4-Q016",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "sys.argv is a list containing command-line arguments.",
+      "correct_answer": "True",
+      "explanation": "The sys module exposes command-line arguments through sys.argv."
+    },
+    {
+      "id": "P4-Q017",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "sys.argv includes the Python interpreter command itself, such as 'python'.",
+      "correct_answer": "False",
+      "explanation": "It excludes the interpreter; it includes the script name and following arguments."
+    },
+    {
+      "id": "P4-Q018",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "When running python myprog.py file.txt -s 3, sys.argv can contain ['myprog.py', 'file.txt', '-s', '3'].",
+      "correct_answer": "True",
+      "explanation": "The lecture shows this exact structure."
+    },
+    {
+      "id": "P4-Q019",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "When using sys.argv directly, Python automatically knows which argument is a filename and which one is an option.",
+      "correct_answer": "False",
+      "explanation": "With sys.argv, the user/programmer must interpret arguments manually."
+    },
+    {
+      "id": "P4-Q020",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "The argparse module helps handle command-line arguments in Python.",
+      "correct_answer": "True",
+      "explanation": "argparse is designed for parsing arguments."
+    },
+    {
+      "id": "P4-Q021",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "argparse.ArgumentParser() creates an argument parser object.",
+      "correct_answer": "True",
+      "explanation": "That is the standard starting point shown in the lecture."
+    },
+    {
+      "id": "P4-Q022",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "parser.parse_args() parses the command-line arguments according to the parser configuration.",
+      "correct_answer": "True",
+      "explanation": "parse_args reads and validates the command line."
+    },
+    {
+      "id": "P4-Q023",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "A positional argument added as parser.add_argument('number') is optional by default.",
+      "correct_answer": "False",
+      "explanation": "Positional arguments are required by default."
+    },
+    {
+      "id": "P4-Q024",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "In argparse, the default type of an argument value is string unless type=... is specified.",
+      "correct_answer": "True",
+      "explanation": "The lecture explicitly says type describes the type, string by default."
+    },
+    {
+      "id": "P4-Q025",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "parser.add_argument('number', type=int) makes argparse convert that argument to int.",
+      "correct_answer": "True",
+      "explanation": "type=int requests integer conversion."
+    },
+    {
+      "id": "P4-Q026",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "Optional arguments in argparse can have both a short and long version, such as -e and --extra.",
+      "correct_answer": "True",
+      "explanation": "The lecture shows parser.add_argument('-e', '--extra', ...)."
+    },
+    {
+      "id": "P4-Q027",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "In argparse, default=2 provides the value 2 when the optional argument is not passed.",
+      "correct_answer": "True",
+      "explanation": "default supplies a fallback value."
+    },
+    {
+      "id": "P4-Q028",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "The help parameter in add_argument describes the argument in help output.",
+      "correct_answer": "True",
+      "explanation": "help text is used in argparse help messages."
+    },
+    {
+      "id": "P4-Q029",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "The description parameter of ArgumentParser can be used to add text to the generated help.",
+      "correct_answer": "True",
+      "explanation": "The lecture uses argparse.ArgumentParser(description='App to increase integers')."
+    },
+    {
+      "id": "P4-Q030",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "A long option normally starts with two dashes, for example --version.",
+      "correct_answer": "True",
+      "explanation": "That is the command-line convention from the lecture."
+    },
+    {
+      "id": "P4-Q031",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "A short option normally starts with two dashes, for example --v.",
+      "correct_answer": "False",
+      "explanation": "A short option normally uses one dash, like -v."
+    },
+    {
+      "id": "P4-Q032",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "A positional argument is written without an option name, for example file.txt.",
+      "correct_answer": "True",
+      "explanation": "file.txt is used as an example of a positional argument."
+    },
+    {
+      "id": "P4-Q033",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "true_false",
+      "question": "In the lecture's argparse example, args.number + args.extra works because both arguments use type=int.",
+      "correct_answer": "True",
+      "explanation": "Without type=int, they would be strings and + would concatenate or fail depending on context."
+    },
+    {
+      "id": "P4-Q034",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Environment variables",
+      "type": "true_false",
+      "question": "os.environ gives access to environment variables in Python.",
+      "correct_answer": "True",
+      "explanation": "The os module exposes environment variables through os.environ."
+    },
+    {
+      "id": "P4-Q035",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Environment variables",
+      "type": "true_false",
+      "question": "os.environ behaves like a dictionary of environment variables.",
+      "correct_answer": "True",
+      "explanation": "The lecture says environ is a dictionary with all variables."
+    },
+    {
+      "id": "P4-Q036",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Environment variables",
+      "type": "true_false",
+      "question": "os.environ['USERPROFILE'] and os.environ.get('USERPROFILE') behave identically when USERPROFILE is missing.",
+      "correct_answer": "False",
+      "explanation": "Indexing raises KeyError; get returns None or a provided default."
+    },
+    {
+      "id": "P4-Q037",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Environment variables",
+      "type": "true_false",
+      "question": "os.getenv('USERPROFILE', 'C:\\Users\\Default') can return a default value if the variable is missing.",
+      "correct_answer": "True",
+      "explanation": "os.getenv supports a default parameter."
+    },
+    {
+      "id": "P4-Q038",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Environment variables",
+      "type": "true_false",
+      "question": "Setting os.environ['DATAFILE'] = 'filename.csv' changes the system environment permanently for all future applications.",
+      "correct_answer": "False",
+      "explanation": "It only affects the current app and child processes started by it."
+    },
+    {
+      "id": "P4-Q039",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Environment variables",
+      "type": "true_false",
+      "question": "An application's environment is a copy of the system environment.",
+      "correct_answer": "True",
+      "explanation": "Changes inside the app do not rewrite the global system environment."
+    },
+    {
+      "id": "P4-Q040",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Environment variables",
+      "type": "true_false",
+      "question": "Environment variables are often used to pass configuration to applications.",
+      "correct_answer": "True",
+      "explanation": "The lecture mentions they are widely used by containers for configuration."
+    },
+    {
+      "id": "P4-Q041",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Environment variables",
+      "type": "true_false",
+      "question": "The python-dotenv package can read runtime settings from a .env file.",
+      "correct_answer": "True",
+      "explanation": "python-dotenv loads variables from .env."
+    },
+    {
+      "id": "P4-Q042",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Environment variables",
+      "type": "true_false",
+      "question": "load_dotenv() overwrites existing environment variables by default.",
+      "correct_answer": "False",
+      "explanation": "Existing variables are not overwritten unless override=True is explicitly passed."
+    },
+    {
+      "id": "P4-Q043",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Environment variables",
+      "type": "true_false",
+      "question": "If a .env file contains sensitive data, it should usually be added to .gitignore.",
+      "correct_answer": "True",
+      "explanation": "The lecture warns to add sensitive .env files to .gitignore."
+    },
+    {
+      "id": "P4-Q044",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Environment variables",
+      "type": "true_false",
+      "question": "If no .env file is present, an application using load_dotenv() can still read normal environment variables.",
+      "correct_answer": "True",
+      "explanation": "The lecture says if .env is absent, the application reads just environment variables."
+    },
+    {
+      "id": "P4-Q045",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Environment variables",
+      "type": "true_false",
+      "question": "In a .env file, ADMIN_EMAIL=admin@${DOMAIN} can reuse another variable named DOMAIN.",
+      "correct_answer": "True",
+      "explanation": "The lecture example uses ADMIN_EMAIL=admin@${DOMAIN}."
+    },
+    {
+      "id": "P4-Q046",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "CSV files are text files.",
+      "correct_answer": "True",
+      "explanation": "The lecture describes CSV files as text files editable by a text editor or spreadsheet."
+    },
+    {
+      "id": "P4-Q047",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "CSV files can have problems with different separators and encodings.",
+      "correct_answer": "True",
+      "explanation": "The lecture lists separators and encodings as CSV problems."
+    },
+    {
+      "id": "P4-Q048",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "A CSV field can contain the separator character if it is quoted properly.",
+      "correct_answer": "True",
+      "explanation": "The lecture example includes 'New York, Manhattan' as one field."
+    },
+    {
+      "id": "P4-Q049",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "csv.reader(dataFile) returns rows as dictionaries by default.",
+      "correct_answer": "False",
+      "explanation": "csv.reader returns rows as lists; DictReader returns dictionaries."
+    },
+    {
+      "id": "P4-Q050",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "A csv.reader object can normally be iterated only once because it consumes the stream.",
+      "correct_answer": "True",
+      "explanation": "The lecture says dataReader can be used in the loop only once."
+    },
+    {
+      "id": "P4-Q051",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "list(dataReader) reads all rows at once into a list.",
+      "correct_answer": "True",
+      "explanation": "The lecture shows dataList = list(dataReader) and notes all rows are read at once."
+    },
+    {
+      "id": "P4-Q052",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "csv.DictReader is usually useful when the first row contains column headers.",
+      "correct_answer": "True",
+      "explanation": "DictReader maps values to column names."
+    },
+    {
+      "id": "P4-Q053",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "If fieldnames is not provided to DictReader, it uses the first row as column names.",
+      "correct_answer": "True",
+      "explanation": "This is explicitly stated in the lecture."
+    },
+    {
+      "id": "P4-Q054",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "If fieldnames=['Id', 'Name'] is passed to DictReader, those names are used as keys.",
+      "correct_answer": "True",
+      "explanation": "The fieldnames parameter supplies column names."
+    },
+    {
+      "id": "P4-Q055",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "csv.Sniffer().sniff(dataFile.read(1024)) can be used to guess the CSV dialect.",
+      "correct_answer": "True",
+      "explanation": "The lecture shows this pattern."
+    },
+    {
+      "id": "P4-Q056",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "After reading a sample for csv.Sniffer, dataFile.seek(0) returns the file pointer to the start.",
+      "correct_answer": "True",
+      "explanation": "The lecture includes dataFile.seek(0) after sniffing."
+    },
+    {
+      "id": "P4-Q057",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "csv.writer(dataFile).writerow(row) can write one CSV row.",
+      "correct_answer": "True",
+      "explanation": "writerow writes a single row."
+    },
+    {
+      "id": "P4-Q058",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "When writing CSV in Python, open(..., newline='') is shown in the lecture examples.",
+      "correct_answer": "True",
+      "explanation": "Both writer and DictWriter examples use newline=''."
+    },
+    {
+      "id": "P4-Q059",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "csv.DictWriter writes rows from dictionaries instead of lists.",
+      "correct_answer": "True",
+      "explanation": "DictWriter maps dictionary keys to CSV columns."
+    },
+    {
+      "id": "P4-Q060",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "writer.writeheader() writes the header row when using DictWriter.",
+      "correct_answer": "True",
+      "explanation": "The lecture shows writer.writeheader()."
+    },
+    {
+      "id": "P4-Q061",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "With DictWriter, the order of dictionary keys in each row determines the CSV column order.",
+      "correct_answer": "False",
+      "explanation": "DictWriter uses the fieldnames order."
+    },
+    {
+      "id": "P4-Q062",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "With DictWriter, you must provide every field in every row dictionary or Python always raises an exception.",
+      "correct_answer": "False",
+      "explanation": "The lecture says you do not have to put all fields in each row."
+    },
+    {
+      "id": "P4-Q063",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "Using csv.reader is safer than manually splitting CSV lines with split(',') because fields can include separators.",
+      "correct_answer": "True",
+      "explanation": "The lecture highlights that fields can include separators, so proper CSV parsing is needed."
+    },
+    {
+      "id": "P4-Q064",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "csv.DictReader always requires a manually provided fieldnames list.",
+      "correct_answer": "False",
+      "explanation": "It can infer field names from the first row."
+    },
+    {
+      "id": "P4-Q065",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "true_false",
+      "question": "A CSV file can be edited in Excel or LibreOffice Calc.",
+      "correct_answer": "True",
+      "explanation": "The lecture says CSV files can be edited with a spreadsheet."
+    },
+    {
+      "id": "P4-Q066",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "The lecture uses openpyxl as the library for working with Excel files.",
+      "correct_answer": "True",
+      "explanation": "openpyxl is described as the most popular library for Excel files."
+    },
+    {
+      "id": "P4-Q067",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "openpyxl is built into Python, so it never needs installation.",
+      "correct_answer": "False",
+      "explanation": "The lecture says it is an additional library and shows pip install openpyxl."
+    },
+    {
+      "id": "P4-Q068",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "A spreadsheet workbook consists of sheets.",
+      "correct_answer": "True",
+      "explanation": "The lecture describes spreadsheets as consisting of sheets."
+    },
+    {
+      "id": "P4-Q069",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "A newly created openpyxl.Workbook() contains a default sheet.",
+      "correct_answer": "True",
+      "explanation": "The lecture says a new Workbook contains the default sheet."
+    },
+    {
+      "id": "P4-Q070",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "workbook.active gives access to the active sheet.",
+      "correct_answer": "True",
+      "explanation": "The lecture uses sheet = workbook.active."
+    },
+    {
+      "id": "P4-Q071",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "sheet.title = 'My sheet' changes the worksheet name.",
+      "correct_answer": "True",
+      "explanation": "The lecture shows setting sheet.title."
+    },
+    {
+      "id": "P4-Q072",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "workbook.create_sheet(title='Next sheet') creates another worksheet.",
+      "correct_answer": "True",
+      "explanation": "That is the lecture example."
+    },
+    {
+      "id": "P4-Q073",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "workbook.save('mySheet.xlsx') overwrites existing files without warning.",
+      "correct_answer": "True",
+      "explanation": "The lecture explicitly warns that save() overwrites existing files without warning."
+    },
+    {
+      "id": "P4-Q074",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "openpyxl.load_workbook('test.xlsx') opens an existing workbook.",
+      "correct_answer": "True",
+      "explanation": "The lecture uses load_workbook for existing files."
+    },
+    {
+      "id": "P4-Q075",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "workbook.sheetnames returns the list of worksheet names.",
+      "correct_answer": "True",
+      "explanation": "The lecture prints workbook.sheetnames."
+    },
+    {
+      "id": "P4-Q076",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "workbook['Mysheet'] selects a worksheet by name.",
+      "correct_answer": "True",
+      "explanation": "The lecture shows sheet2 = workbook['Mysheet']."
+    },
+    {
+      "id": "P4-Q077",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "Cells in Excel can be indexed by columns A, B, C and rows 1, 2, 3.",
+      "correct_answer": "True",
+      "explanation": "The lecture describes Excel-style cell indexing."
+    },
+    {
+      "id": "P4-Q078",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "sheet['B3'] = 34 writes the value 34 to cell B3.",
+      "correct_answer": "True",
+      "explanation": "The lecture shows direct cell assignment using B3."
+    },
+    {
+      "id": "P4-Q079",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "sheet.cell(row=3, column=2, value=10) writes to cell B3.",
+      "correct_answer": "True",
+      "explanation": "Row 3 and column 2 correspond to B3."
+    },
+    {
+      "id": "P4-Q080",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "In openpyxl, row and column indexes in sheet.cell() are 0-based.",
+      "correct_answer": "False",
+      "explanation": "Excel/openpyxl row and column numbers are 1-based in this API."
+    },
+    {
+      "id": "P4-Q081",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "The result of sheet.cell(row=3, column=2) is a Cell object.",
+      "correct_answer": "True",
+      "explanation": "The lecture says cell() returns a Cell object."
+    },
+    {
+      "id": "P4-Q082",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "cell.value = '=SUM(A2:A10)' assigns an Excel formula to the cell.",
+      "correct_answer": "True",
+      "explanation": "Formulas are assigned as strings beginning with '='."
+    },
+    {
+      "id": "P4-Q083",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "When assigning Excel formulas in openpyxl, the lecture reminds to use English function names.",
+      "correct_answer": "True",
+      "explanation": "The lecture explicitly says to remember to use English names."
+    },
+    {
+      "id": "P4-Q084",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "worksheet['A1':'B6'] selects a rectangular range of cells.",
+      "correct_answer": "True",
+      "explanation": "That is the lecture's range example."
+    },
+    {
+      "id": "P4-Q085",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "worksheet['A'] selects a full column range.",
+      "correct_answer": "True",
+      "explanation": "The lecture lists worksheet['A'] as a column-only selection."
+    },
+    {
+      "id": "P4-Q086",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "worksheet[5] selects row 5.",
+      "correct_answer": "True",
+      "explanation": "The lecture shows cell_row = worksheet[5]."
+    },
+    {
+      "id": "P4-Q087",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "worksheet.iter_rows(...) iterates through cells by rows.",
+      "correct_answer": "True",
+      "explanation": "The lecture shows nested loops over worksheet.iter_rows."
+    },
+    {
+      "id": "P4-Q088",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "worksheet.iter_cols(...) iterates through cells by columns.",
+      "correct_answer": "True",
+      "explanation": "The lecture shows nested loops over worksheet.iter_cols."
+    },
+    {
+      "id": "P4-Q089",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "openpyxl.styles.Font(color='FF0000', italic=True) creates a font style that can be assigned to cell.font.",
+      "correct_answer": "True",
+      "explanation": "The lecture uses this exact pattern for simple styling."
+    },
+    {
+      "id": "P4-Q090",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "true_false",
+      "question": "Changing cell.font modifies the value stored inside the cell.",
+      "correct_answer": "False",
+      "explanation": "cell.font changes styling, not the cell value."
+    },
+    {
+      "id": "P4-Q091",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Lambda expressions",
+      "type": "single_choice",
+      "question": "Which expression correctly defines a Python lambda that returns the absolute value of x?",
+      "correct_answer": "B",
+      "explanation": "The conditional expression form is valid inside lambda.",
+      "options": {
+        "A": "lambda x: if x > 0: x else: -x",
+        "B": "lambda x: x if x > 0 else -x",
+        "C": "lambda x: return abs(x)",
+        "D": "lambda x { abs(x) }"
+      }
+    },
+    {
+      "id": "P4-Q092",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Program arguments",
+      "type": "single_choice",
+      "question": "Which module is specifically shown for easier command-line argument handling?",
+      "correct_answer": "C",
+      "explanation": "The lecture introduces argparse for command-line parsing.",
+      "options": {
+        "A": "os",
+        "B": "csv",
+        "C": "argparse",
+        "D": "openpyxl"
+      }
+    },
+    {
+      "id": "P4-Q093",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Environment variables",
+      "type": "single_choice",
+      "question": "Which Python expression is the safest choice if USERPROFILE may be missing and you want a default value?",
+      "correct_answer": "D",
+      "explanation": "os.getenv with a default avoids KeyError.",
+      "options": {
+        "A": "os.environ['USERPROFILE']",
+        "B": "sys.argv['USERPROFILE']",
+        "C": "csv.getenv('USERPROFILE')",
+        "D": "os.getenv('USERPROFILE', 'C:\\Users\\Default')"
+      }
+    },
+    {
+      "id": "P4-Q094",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "single_choice",
+      "question": "Which class reads CSV rows as dictionaries using column names?",
+      "correct_answer": "C",
+      "explanation": "csv.DictReader maps rows to dictionaries.",
+      "options": {
+        "A": "csv.reader",
+        "B": "csv.writer",
+        "C": "csv.DictReader",
+        "D": "csv.Sniffer"
+      }
+    },
+    {
+      "id": "P4-Q095",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "CSV files",
+      "type": "single_choice",
+      "question": "After reading 1024 bytes from a file to sniff its CSV dialect, what should be done before reading rows from the beginning?",
+      "correct_answer": "B",
+      "explanation": "seek(0) moves the file pointer back to the beginning.",
+      "options": {
+        "A": "close()",
+        "B": "seek(0)",
+        "C": "writeheader()",
+        "D": "load_workbook()"
+      }
+    },
+    {
+      "id": "P4-Q096",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "single_choice",
+      "question": "Which command opens an existing Excel workbook?",
+      "correct_answer": "B",
+      "explanation": "load_workbook opens an existing .xlsx file.",
+      "options": {
+        "A": "openpyxl.Workbook('test.xlsx')",
+        "B": "openpyxl.load_workbook('test.xlsx')",
+        "C": "csv.reader('test.xlsx')",
+        "D": "os.environ['test.xlsx']"
+      }
+    },
+    {
+      "id": "P4-Q097",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "single_choice",
+      "question": "In openpyxl, which cell is addressed by row=3, column=2?",
+      "correct_answer": "B",
+      "explanation": "Column 2 is B and row 3 is 3.",
+      "options": {
+        "A": "A2",
+        "B": "B3",
+        "C": "C2",
+        "D": "B2"
+      }
+    },
+    {
+      "id": "P4-Q098",
+      "phase": 4,
+      "source_file": "SL_W04IST_SI4034_lecture_08-os.pdf",
+      "topic": "Excel files with openpyxl",
+      "type": "single_choice",
+      "question": "Which statement is true about workbook.save('file.xlsx') according to the lecture?",
+      "correct_answer": "A",
+      "explanation": "The lecture warns that save overwrites existing files without warning.",
+      "options": {
+        "A": "It may overwrite an existing file without warning.",
+        "B": "It never writes to disk.",
+        "C": "It only saves the active sheet.",
+        "D": "It automatically creates a backup."
+      }
+    }
+  ],
+  "created": "2026-06-17T11:32:22.996871+00:00"
+}

@@ -1,0 +1,1443 @@
+{
+  "name": "SL Exam Phase 2 - Objects, Collections, and Files Question Source",
+  "description": "Exam-style Python-only single-choice/true-false questions generated from Script Languages lectures 04 and 05.",
+  "created": "2026-06-17T11:10:29.102825+00:00",
+  "phase": "Phase 2",
+  "sources": [
+    "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+    "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf"
+  ],
+  "question_count": 88,
+  "questions": [
+    {
+      "id": "P2-001",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 5,
+      "topic": "Scopes and namespaces",
+      "type": "true_false",
+      "question": "In Python, the LEGB rule means Python searches names in the order Local, Enclosing, Global, Built-in.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "LEGB is Local, Enclosing, Global, Built-in."
+    },
+    {
+      "id": "P2-002",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 6,
+      "topic": "Scopes and namespaces",
+      "type": "true_false",
+      "question": "A variable assigned inside a function is global by default.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "False",
+      "explanation": "Assignment inside a function creates or changes a local variable unless global or nonlocal is declared."
+    },
+    {
+      "id": "P2-003",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 6,
+      "topic": "Scopes and namespaces",
+      "type": "true_false",
+      "question": "The keyword global tells Python that assignments to that name should affect the module-level name.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "global binds the name to the global/module namespace."
+    },
+    {
+      "id": "P2-004",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 6,
+      "topic": "Scopes and namespaces",
+      "type": "true_false",
+      "question": "The keyword nonlocal is used to modify a variable in an enclosing function scope.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "nonlocal targets an enclosing non-global scope."
+    },
+    {
+      "id": "P2-005",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 5,
+      "topic": "Scopes and namespaces",
+      "type": "single_choice",
+      "question": "Which namespace is checked first when Python resolves a name inside a function?",
+      "options": [
+        "A. Local",
+        "B. Built-in",
+        "C. Global",
+        "D. Enclosing"
+      ],
+      "correct_answer": "A",
+      "explanation": "Python checks the local function scope first."
+    },
+    {
+      "id": "P2-006",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 5,
+      "topic": "Scopes and namespaces",
+      "type": "true_false",
+      "question": "Built-in names such as print and len are checked before local variables.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "False",
+      "explanation": "Built-ins are checked last in LEGB."
+    },
+    {
+      "id": "P2-007",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 3,
+      "source_slide": 9,
+      "topic": "OOP basics",
+      "type": "true_false",
+      "question": "In object-oriented programming, object state is represented by attributes.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Attributes are variables belonging to the object."
+    },
+    {
+      "id": "P2-008",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 3,
+      "source_slide": 9,
+      "topic": "OOP basics",
+      "type": "true_false",
+      "question": "In object-oriented programming, object behaviour is represented by methods.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Methods are functions belonging to the object/class."
+    },
+    {
+      "id": "P2-009",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 3,
+      "source_slide": 9,
+      "topic": "OOP basics",
+      "type": "true_false",
+      "question": "A class is the blueprint used to create objects.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture states that each object is created from a blueprint named class."
+    },
+    {
+      "id": "P2-010",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 3,
+      "source_slide": 12,
+      "topic": "OOP basics",
+      "type": "true_false",
+      "question": "An object created from a class is also called an instance.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "An object of a given class is an instance of that class."
+    },
+    {
+      "id": "P2-011",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 3,
+      "source_slide": 9,
+      "topic": "OOP basics",
+      "type": "single_choice",
+      "question": "Which statement best describes a method in Python?",
+      "options": [
+        "A. A variable belonging to an object",
+        "B. A module imported with pip",
+        "C. A function belonging to a class/object",
+        "D. A value stored in a list"
+      ],
+      "correct_answer": "C",
+      "explanation": "A method is a function belonging to a class/object and usually operates on attributes."
+    },
+    {
+      "id": "P2-012",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 13,
+      "topic": "Classes, constructors, and methods",
+      "type": "true_false",
+      "question": "A class definition must be present before an object of that class is created.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Python needs the class name to exist before instantiation."
+    },
+    {
+      "id": "P2-013",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 15,
+      "topic": "Classes, constructors, and methods",
+      "type": "true_false",
+      "question": "The special method used when a new object is created is always named __init__.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "__init__ initializes object attributes."
+    },
+    {
+      "id": "P2-014",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 15,
+      "topic": "Classes, constructors, and methods",
+      "type": "true_false",
+      "question": "__init__ usually sets the initial state of the object.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The constructor-like method sets attribute values."
+    },
+    {
+      "id": "P2-015",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 16,
+      "topic": "Classes, constructors, and methods",
+      "type": "true_false",
+      "question": "The first argument of an instance method is a reference to the object.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "This parameter is normally called self."
+    },
+    {
+      "id": "P2-016",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 16,
+      "topic": "Classes, constructors, and methods",
+      "type": "true_false",
+      "question": "The name self is a Python keyword and cannot be replaced.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "False",
+      "explanation": "self is a convention, not a reserved keyword, although the first instance-method parameter must receive the object."
+    },
+    {
+      "id": "P2-017",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 16,
+      "topic": "Classes, constructors, and methods",
+      "type": "true_false",
+      "question": "For an instance w of Student, w.display() is equivalent to Student.display(w).",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Calling through the instance automatically passes the object as the first argument."
+    },
+    {
+      "id": "P2-018",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 15,
+      "topic": "Classes, constructors, and methods",
+      "type": "single_choice",
+      "question": "Which method is called when executing Student(\"Ann\", 34)?",
+      "options": [
+        "A. __str__",
+        "B. __init__",
+        "C. __repr__",
+        "D. __call_method__"
+      ],
+      "correct_answer": "B",
+      "explanation": "Creating an object calls __init__."
+    },
+    {
+      "id": "P2-019",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 5,
+      "source_slide": 17,
+      "topic": "Classes, constructors, and methods",
+      "type": "true_false",
+      "question": "Methods must always be physically defined inside the class block.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "False",
+      "explanation": "The lecture shows assigning an outside function to a class attribute as a method."
+    },
+    {
+      "id": "P2-020",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 13,
+      "topic": "Attributes and privacy",
+      "type": "true_false",
+      "question": "Python allows adding a new attribute to an existing object after it was created.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture shows w.dog = \"Fuks\" after object creation."
+    },
+    {
+      "id": "P2-021",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 13,
+      "topic": "Attributes and privacy",
+      "type": "true_false",
+      "question": "Python allows deleting an attribute from an object using del.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture shows del w.dog."
+    },
+    {
+      "id": "P2-022",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 14,
+      "topic": "Attributes and privacy",
+      "type": "true_false",
+      "question": "Python has strict private attributes exactly like Java private fields.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "False",
+      "explanation": "The lecture says there are no private attributes nor methods; underscores are conventions/name mangling."
+    },
+    {
+      "id": "P2-023",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 14,
+      "topic": "Attributes and privacy",
+      "type": "true_false",
+      "question": "A single leading underscore in an attribute name is mainly a convention for internal use.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Single underscore does not enforce privacy."
+    },
+    {
+      "id": "P2-024",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 14,
+      "topic": "Attributes and privacy",
+      "type": "true_false",
+      "question": "A double leading underscore triggers name mangling in Python.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Name mangling makes outside access harder, but not impossible."
+    },
+    {
+      "id": "P2-025",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 14,
+      "topic": "Attributes and privacy",
+      "type": "single_choice",
+      "question": "Which option is the usual convention for an internal-use attribute?",
+      "options": [
+        "A. public_name",
+        "B. _name",
+        "C. name$private",
+        "D. final name"
+      ],
+      "correct_answer": "B",
+      "explanation": "A single leading underscore marks a name as internal by convention."
+    },
+    {
+      "id": "P2-026",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 5,
+      "source_slide": 18,
+      "topic": "Inheritance and attributes",
+      "type": "true_false",
+      "question": "If an attribute is stored in an object, it is an instance variable.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Instance variables are stored per object."
+    },
+    {
+      "id": "P2-027",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 5,
+      "source_slide": 18,
+      "topic": "Inheritance and attributes",
+      "type": "true_false",
+      "question": "If an attribute is stored in a class, it is a class variable shared by instances unless shadowed.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Class variables are common for all instances of the class."
+    },
+    {
+      "id": "P2-028",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 5,
+      "source_slide": 19,
+      "topic": "Inheritance and attributes",
+      "type": "true_false",
+      "question": "A new class can inherit attributes and methods from a base class.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Inheritance defines a new class based on an existing class."
+    },
+    {
+      "id": "P2-029",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 3,
+      "source_slide": 10,
+      "topic": "Inheritance and attributes",
+      "type": "true_false",
+      "question": "If a subclass defines a method with the same name as the base class method, it overrides it.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The subclass method replaces the inherited version for subclass instances."
+    },
+    {
+      "id": "P2-030",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 5,
+      "source_slide": 19,
+      "topic": "Inheritance and attributes",
+      "type": "true_false",
+      "question": "Since Python 3.0, super() can be used instead of writing the base class name directly.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture explicitly mentions super() as an alternative."
+    },
+    {
+      "id": "P2-031",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 5,
+      "source_slide": 18,
+      "topic": "Inheritance and attributes",
+      "type": "single_choice",
+      "question": "Which one is shared by default between all instances of a class?",
+      "options": [
+        "A. Instance variable",
+        "B. Class variable",
+        "C. Local variable",
+        "D. Function parameter"
+      ],
+      "correct_answer": "B",
+      "explanation": "Class variables are stored in the class and shared unless shadowed."
+    },
+    {
+      "id": "P2-032",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 5,
+      "source_slide": 20,
+      "topic": "String representation",
+      "type": "true_false",
+      "question": "__str__ should return a string.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture states __str__ should return string."
+    },
+    {
+      "id": "P2-033",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 5,
+      "source_slide": 20,
+      "topic": "String representation",
+      "type": "true_false",
+      "question": "print(obj) uses str(obj), which uses obj.__str__() for conversion.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Functions such as print(), str(), and format() use __str__ for conversion."
+    },
+    {
+      "id": "P2-034",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 21,
+      "topic": "String representation",
+      "type": "true_false",
+      "question": "__repr__ is mainly intended for debugging/unambiguous representation.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "__repr__ is less about pretty printing and more about unambiguous/debug information."
+    },
+    {
+      "id": "P2-035",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 21,
+      "topic": "String representation",
+      "type": "true_false",
+      "question": "If __str__ is undefined, __repr__ can be called for string conversion.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture states that if __str__ is undefined, __repr__ is called."
+    },
+    {
+      "id": "P2-036",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 22,
+      "topic": "Dataclasses",
+      "type": "true_false",
+      "question": "@dataclass automatically adds common “boring” methods such as __init__.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "dataclass is a decorator that can generate __init__, __repr__, __eq__, etc."
+    },
+    {
+      "id": "P2-037",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 23,
+      "topic": "Dataclasses",
+      "type": "true_false",
+      "question": "In a dataclass, frozen=True means the object is immutable.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture lists frozen as the option that makes the object immutable."
+    },
+    {
+      "id": "P2-038",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 23,
+      "topic": "Dataclasses",
+      "type": "true_false",
+      "question": "To create a class variable in a dataclass, the lecture says to use typing.ClassVar.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "ClassVar marks an attribute as a class variable."
+    },
+    {
+      "id": "P2-039",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_04-classes-objects.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 23,
+      "topic": "Dataclasses",
+      "type": "single_choice",
+      "question": "Which dataclass option controls whether __repr__ is generated?",
+      "options": [
+        "A. init",
+        "B. repr",
+        "C. frozen",
+        "D. classvar"
+      ],
+      "correct_answer": "B",
+      "explanation": "The dataclass parameter repr controls generation of __repr__."
+    },
+    {
+      "id": "P2-040",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 1,
+      "source_slide": 4,
+      "topic": "Sets",
+      "type": "true_false",
+      "question": "A set is an unordered collection of elements.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Sets do not preserve an indexable order for exam purposes."
+    },
+    {
+      "id": "P2-041",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 1,
+      "source_slide": 4,
+      "topic": "Sets",
+      "type": "true_false",
+      "question": "Set elements are not duplicated.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "A set stores unique elements only."
+    },
+    {
+      "id": "P2-042",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 1,
+      "source_slide": 4,
+      "topic": "Sets",
+      "type": "true_false",
+      "question": "{} creates an empty set.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "False",
+      "explanation": "{} creates an empty dictionary; use set() for an empty set."
+    },
+    {
+      "id": "P2-043",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 1,
+      "source_slide": 4,
+      "topic": "Sets",
+      "type": "true_false",
+      "question": "set([3, 4]) creates a mutable set.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture labels set([3,4]) as mutable."
+    },
+    {
+      "id": "P2-044",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 1,
+      "source_slide": 4,
+      "topic": "Sets",
+      "type": "true_false",
+      "question": "frozenset([7, 8]) creates an immutable set-like object.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "frozenset is immutable."
+    },
+    {
+      "id": "P2-045",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 7,
+      "topic": "Sets",
+      "type": "true_false",
+      "question": "Sets are indexable using numeric indexes such as s[0].",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "False",
+      "explanation": "Sets have no order and are not indexable."
+    },
+    {
+      "id": "P2-046",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 7,
+      "topic": "Sets",
+      "type": "true_false",
+      "question": "Sets can be sliced like lists.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "False",
+      "explanation": "The lecture says sets have no slicing."
+    },
+    {
+      "id": "P2-047",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 7,
+      "topic": "Sets",
+      "type": "true_false",
+      "question": "Sets are iterable.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Sets are not indexable, but can be iterated."
+    },
+    {
+      "id": "P2-048",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 5,
+      "topic": "Sets",
+      "type": "true_false",
+      "question": "For a={1,2,3} and b={3,4}, a | b is the union.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "| is union."
+    },
+    {
+      "id": "P2-049",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 5,
+      "topic": "Sets",
+      "type": "true_false",
+      "question": "For a={1,2,3} and b={3,4}, a & b gives the intersection {3}.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "& is intersection."
+    },
+    {
+      "id": "P2-050",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 5,
+      "topic": "Sets",
+      "type": "true_false",
+      "question": "For a={1,2,3} and b={3,4}, a - b gives {1, 2}.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "- is difference."
+    },
+    {
+      "id": "P2-051",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 6,
+      "topic": "Sets",
+      "type": "true_false",
+      "question": "remove(e) raises an exception if e does not exist in the set.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture explicitly says remove(e) raises an exception if e does not exist."
+    },
+    {
+      "id": "P2-052",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 6,
+      "topic": "Sets",
+      "type": "true_false",
+      "question": "discard(e) is the same as remove(e) because both raise an exception when e is absent.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "False",
+      "explanation": "discard does not raise an error for a missing element; remove does."
+    },
+    {
+      "id": "P2-053",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 2,
+      "source_slide": 6,
+      "topic": "Sets",
+      "type": "true_false",
+      "question": "pop() removes and returns an arbitrary set element.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Because sets are unordered, pop returns an arbitrary element."
+    },
+    {
+      "id": "P2-054",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 1,
+      "source_slide": 4,
+      "topic": "Sets",
+      "type": "single_choice",
+      "question": "Which expression creates an empty set?",
+      "options": [
+        "A. {}",
+        "B. []",
+        "C. set()",
+        "D. frozendict()"
+      ],
+      "correct_answer": "C",
+      "explanation": "set() creates an empty set; {} creates an empty dict."
+    },
+    {
+      "id": "P2-055",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 3,
+      "source_slide": 10,
+      "topic": "Dictionaries",
+      "type": "true_false",
+      "question": "A dictionary stores objects as key-value pairs.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Dictionaries/maps are key-value containers."
+    },
+    {
+      "id": "P2-056",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 3,
+      "source_slide": 10,
+      "topic": "Dictionaries",
+      "type": "true_false",
+      "question": "Dictionaries are indexed by keys.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Dictionary access uses keys, not numeric positions by default."
+    },
+    {
+      "id": "P2-057",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 3,
+      "source_slide": 10,
+      "topic": "Dictionaries",
+      "type": "true_false",
+      "question": "Only hashable objects can be dictionary keys.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture explicitly states this requirement."
+    },
+    {
+      "id": "P2-058",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 3,
+      "source_slide": 11,
+      "topic": "Dictionaries",
+      "type": "true_false",
+      "question": "{} creates an empty dictionary.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "{} is an empty dictionary, not an empty set."
+    },
+    {
+      "id": "P2-059",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 3,
+      "source_slide": 12,
+      "topic": "Dictionaries",
+      "type": "true_false",
+      "question": "For m={\"Python\":3, \"Java\":7}, m[\"Python\"] returns 3.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The key \"Python\" maps to value 3."
+    },
+    {
+      "id": "P2-060",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 3,
+      "source_slide": 12,
+      "topic": "Dictionaries",
+      "type": "true_false",
+      "question": "For m={\"Python\":3}, the expression \"Python\" in m checks whether the key exists.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "in on a dictionary checks keys."
+    },
+    {
+      "id": "P2-061",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 14,
+      "topic": "Dictionaries",
+      "type": "true_false",
+      "question": "m.keys(), m.values(), and m.items() return dynamic views of the dictionary.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "View objects always show the current state of the dictionary."
+    },
+    {
+      "id": "P2-062",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 15,
+      "topic": "Dictionaries",
+      "type": "true_false",
+      "question": "Iterating directly over a dictionary iterates over its keys.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The shorter loop for lang in m1 iterates over keys."
+    },
+    {
+      "id": "P2-063",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 16,
+      "topic": "Dictionaries",
+      "type": "true_false",
+      "question": "In for lang, ver in m.items(): changing ver directly modifies m[lang].",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "False",
+      "explanation": "The lecture warns that changing ver does not modify the dictionary."
+    },
+    {
+      "id": "P2-064",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 4,
+      "source_slide": 14,
+      "topic": "Dictionaries",
+      "type": "single_choice",
+      "question": "Which method returns key-value pairs as a dynamic view?",
+      "options": [
+        "A. keys()",
+        "B. values()",
+        "C. items()",
+        "D. pairs()"
+      ],
+      "correct_answer": "C",
+      "explanation": "items() returns pairs."
+    },
+    {
+      "id": "P2-065",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 3,
+      "source_slide": 12,
+      "topic": "Dictionaries",
+      "type": "single_choice",
+      "question": "Which expression removes the value stored under key \"Java\" from m1?",
+      "options": [
+        "A. remove m1[\"Java\"]",
+        "B. del m1[\"Java\"]",
+        "C. m1.delete(\"Java\")",
+        "D. m1.remove(\"Java\")"
+      ],
+      "correct_answer": "B",
+      "explanation": "del m1[\"Java\"] removes that key-value pair."
+    },
+    {
+      "id": "P2-066",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 5,
+      "source_slide": 18,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "Binary file content is a sequence of bytes.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Binary files store bytes interpreted by the application."
+    },
+    {
+      "id": "P2-067",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 5,
+      "source_slide": 18,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "Text file content is a sequence of characters divided into lines by endline characters.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Text files are character data with line separators."
+    },
+    {
+      "id": "P2-068",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 5,
+      "source_slide": 18,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "By default, open() uses text mode.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture says default is text mode and default mode is rt."
+    },
+    {
+      "id": "P2-069",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 22,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "By default, open(\"log.txt\") assumes read-only text mode rt.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Default rt means read text."
+    },
+    {
+      "id": "P2-070",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 5,
+      "source_slide": 20,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "Using with open(...) as f helps prevent forgetting to close the file.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The file is closed automatically after leaving the with block."
+    },
+    {
+      "id": "P2-071",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 5,
+      "source_slide": 20,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "A file opened inside a with block remains open after the block ends.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "False",
+      "explanation": "The lecture says the file is closed outside the with block."
+    },
+    {
+      "id": "P2-072",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 21,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "f.read() reads the whole file at once.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "read() reads all content."
+    },
+    {
+      "id": "P2-073",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 21,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "f.readline() reads a single line.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "readline() returns one line at a time."
+    },
+    {
+      "id": "P2-074",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 21,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "When f.readline() reaches end of file, it returns an empty string \"\".",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture states \"\" means there is no more data."
+    },
+    {
+      "id": "P2-075",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 21,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "When f.readline() returns \"\n\", it means there is no more data.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "False",
+      "explanation": "\"\n\" means an empty line; \"\" means no more data."
+    },
+    {
+      "id": "P2-076",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 21,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "The most efficient way shown for reading a text file line by line is for line in f.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture recommends iterating over the file object."
+    },
+    {
+      "id": "P2-077",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 22,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "File mode w means append new data at the end.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "False",
+      "explanation": "w means write only; a means append."
+    },
+    {
+      "id": "P2-078",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 22,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "File mode a means append new data at the end.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "a is append mode."
+    },
+    {
+      "id": "P2-079",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 22,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "File mode r+ means you can write and read.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "r+ enables reading and writing."
+    },
+    {
+      "id": "P2-080",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 22,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "File mode b means binary file mode.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "b is binary mode."
+    },
+    {
+      "id": "P2-081",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 23,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "f.write(s) returns the number of characters written.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture states write returns the number of characters written."
+    },
+    {
+      "id": "P2-082",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 23,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "f.writelines(ls) returns the number of written lines.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "False",
+      "explanation": "writelines stores a list of strings and returns None."
+    },
+    {
+      "id": "P2-083",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 24,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "f.tell() returns the current position in the file.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "tell returns the current position."
+    },
+    {
+      "id": "P2-084",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 24,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "f.seek(5) moves to the 5th character or byte of the file.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture uses f.seek(5) for moving to the 5th character/byte."
+    },
+    {
+      "id": "P2-085",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 24,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "f.seek(-3, 2) is shown as moving from the end only in binary files.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The lecture says this is only in binary files."
+    },
+    {
+      "id": "P2-086",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 7,
+      "source_slide": 25,
+      "topic": "Files",
+      "type": "true_false",
+      "question": "Without arguments, fileinput.input() defaults to sys.stdin.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "The fileinput helper defaults to standard input when no files are passed."
+    },
+    {
+      "id": "P2-087",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 22,
+      "topic": "Files",
+      "type": "single_choice",
+      "question": "Which mode should be used to append text to the end of a file?",
+      "options": [
+        "A. w",
+        "B. a",
+        "C. b",
+        "D. t"
+      ],
+      "correct_answer": "B",
+      "explanation": "a means append."
+    },
+    {
+      "id": "P2-088",
+      "phase": "Phase 2",
+      "source_file": "SL_W04IST_SI4034_lecture_05-sets-maps-files.pdf",
+      "source_pdf_page": 6,
+      "source_slide": 21,
+      "topic": "Files",
+      "type": "single_choice",
+      "question": "Which method should you use to read one line from a text file?",
+      "options": [
+        "A. read()",
+        "B. readline()",
+        "C. writelines()",
+        "D. tell()"
+      ],
+      "correct_answer": "B",
+      "explanation": "readline() reads a single line."
+    }
+  ]
+}

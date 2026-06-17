@@ -1,0 +1,179 @@
+{
+  "name": "SL Thomas screenshot exam seed question bank",
+  "description": "Questions extracted from Sc_lang_thomas.pdf and corrected using Python semantics / lecture content.",
+  "question_count": 17,
+  "coverage_note": "The PDF contains 17 screenshots from a 20-question ePortal quiz. It includes quiz numbers 1-10, 12-16, 18, and 20; quiz numbers 11, 17, and 19 were not visible in the PDF.",
+  "questions": [
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 2,
+      "quiz_question_no": 1,
+      "topic": "Functions: default/keyword arguments",
+      "question": "You have defined a function: def myfunction(x=5, y=7). All following calls are correct: myfunction(3), myfunction(y=8), myfunction().",
+      "type": "true_false",
+      "correct_answer": "True",
+      "explanation": "Both parameters have default values; one positional argument, one keyword argument, or no arguments are all valid."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 3,
+      "quiz_question_no": 2,
+      "topic": "Tuples: iteration",
+      "question": "When you run code to iterate over a tuple: for a in ('abc', 'def', 'ghi'): print(a), you will see an error.",
+      "type": "true_false",
+      "correct_answer": "False",
+      "explanation": "Tuples are iterable. The loop prints abc, def, ghi on separate lines."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 4,
+      "quiz_question_no": 3,
+      "topic": "Functions: positional arguments",
+      "question": "You have defined a function: def f(a, b): # body. If you call f(6), variable a will be equal to 6 and variable b will be equal to 0.",
+      "type": "true_false",
+      "correct_answer": "False",
+      "explanation": "b has no default value. Calling f(6) raises TypeError for the missing required argument b."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 5,
+      "quiz_question_no": 4,
+      "topic": "Tuples: immutability",
+      "question": "You can add a new element to the tuple using append(element) method.",
+      "type": "true_false",
+      "correct_answer": "False",
+      "explanation": "Tuples are immutable and do not have append(). Lists have append()."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 6,
+      "quiz_question_no": 5,
+      "topic": "Logging: levels",
+      "question": "If you set logging level to WARNING, all DEBUG messages will also be displayed.",
+      "type": "true_false",
+      "correct_answer": "False",
+      "explanation": "WARNING shows WARNING and more severe messages, such as ERROR and CRITICAL. DEBUG is lower priority and is hidden."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 7,
+      "quiz_question_no": 6,
+      "topic": "Lists and strings: iteration",
+      "question": "When you run: for a in ['abcd']: print(a). In the first printed line you will see: abcd.",
+      "type": "true_false",
+      "correct_answer": "True",
+      "explanation": "The list has one element: the string 'abcd'. The first and only printed value is abcd."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 8,
+      "quiz_question_no": 7,
+      "topic": "Lists: append",
+      "question": "If you perform append([4, 5, 6]) on the list [1, 2, 3], its length will be 4.",
+      "type": "true_false",
+      "correct_answer": "True",
+      "explanation": "append() adds its argument as one element. The list becomes [1, 2, 3, [4, 5, 6]], length 4."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 9,
+      "quiz_question_no": 8,
+      "topic": "Lists: slicing",
+      "question": "You have a list l = [1, 2, 3, 4, 5]. The sum of elements defined by slice [1:3] equals 5.",
+      "type": "true_false",
+      "correct_answer": "True",
+      "explanation": "l[1:3] gives [2, 3]. Their sum is 5."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 10,
+      "quiz_question_no": 9,
+      "topic": "Lists: append",
+      "question": "You can add a new element to the list using append(element) method.",
+      "type": "true_false",
+      "correct_answer": "True",
+      "explanation": "append(x) adds x at the end of a list."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 11,
+      "quiz_question_no": 10,
+      "topic": "Assertions",
+      "question": "The command assert c==4 raises an exception if c is not equal 4.",
+      "type": "true_false",
+      "correct_answer": "True",
+      "explanation": "In normal execution, a failed assert raises AssertionError. With Python -O, asserts can be ignored."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 12,
+      "quiz_question_no": 12,
+      "topic": "Lists: extend",
+      "question": "If you perform extend([4, 5, 6]) on the list [1, 2, 3], its length will be 4.",
+      "type": "true_false",
+      "correct_answer": "False",
+      "explanation": "extend() adds each element from the iterable. The list becomes [1, 2, 3, 4, 5, 6], length 6."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 13,
+      "quiz_question_no": 13,
+      "topic": "Strong typing / string concatenation",
+      "question": "age = 20; s = 'Jane is ' + (age+5) + ' years old'; print(s). This code will display: Jane is 25 years old.",
+      "type": "true_false",
+      "correct_answer": "False",
+      "explanation": "The expression tries to concatenate a string with an int. Python raises TypeError unless the number is converted to str or formatted."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 14,
+      "quiz_question_no": 14,
+      "topic": "Strings: iteration",
+      "question": "When you run: for a in 'abcd': print(a). In the first printed line you will see: abcd.",
+      "type": "true_false",
+      "correct_answer": "False",
+      "explanation": "Iterating over a string gives one character at a time. The first printed value is 'a'."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 15,
+      "quiz_question_no": 15,
+      "topic": "Tuples: tuple() conversion",
+      "question": "The length of the tuple created with tuple('123') is 3.",
+      "type": "true_false",
+      "correct_answer": "True",
+      "explanation": "tuple('123') creates ('1', '2', '3'), so the length is 3."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 16,
+      "quiz_question_no": 16,
+      "topic": "range",
+      "question": "If you run the for loop with range(15, 0, -5), the last value in the range is 5.",
+      "type": "true_false",
+      "correct_answer": "True",
+      "explanation": "The generated values are 15, 10, 5. The stop value 0 is excluded."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 17,
+      "quiz_question_no": 18,
+      "topic": "Sorting tuples with lambda / sorted() return value",
+      "question": "You have comps = ((\"Lenovo\", 2499), (\"Toshiba\", 1699), (\"HP\", 2099)). If you sort the tuple using sorted(comps, key=lambda laptop: laptop[1]), the first element of the tuple comps is (\"Toshiba\", 1699).",
+      "type": "true_false",
+      "correct_answer": "False",
+      "explanation": "sorted(...) returns a new sorted list and does not modify the original tuple comps. The sorted result starts with ('Toshiba', 1699), but comps itself still starts with ('Lenovo', 2499).",
+      "note": "Ambiguous wording: if the exam means 'first element of the sorted result', the expected answer could be True. For strict Python semantics, False."
+    },
+    {
+      "source_file": "Sc_lang_thomas.pdf",
+      "source_pdf_page": 1,
+      "quiz_question_no": 20,
+      "topic": "Files: read vs readline",
+      "question": "You have opened file with f=open('file.txt'). The command f.read() reads a single line from the file f.",
+      "type": "true_false",
+      "correct_answer": "False",
+      "explanation": "f.read() reads the whole file content. f.readline() reads one line."
+    }
+  ]
+}
